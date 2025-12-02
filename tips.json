@@ -1609,4 +1609,1404 @@
     "category": "filesystem",
     "tags": ["truncate", "size"]
   }
+  {
+    "id": 231,
+    "title": "Use flock to avoid running duplicate cron jobs",
+    "body": "Wrap commands with `flock` like `flock -n /tmp/backup.lock /usr/local/bin/backup` to prevent overlapping runs from cron.",
+    "category": "automation",
+    "tags": ["flock", "cron", "locking"]
+  },
+  {
+    "id": 232,
+    "title": "Use ss -s for a quick socket summary",
+    "body": "Run `ss -s` to see a high-level summary of TCP, UDP, and RAW socket usage on the system.",
+    "category": "network",
+    "tags": ["ss", "sockets", "summary"]
+  },
+  {
+    "id": 233,
+    "title": "Use watch -g to stop when output changes",
+    "body": "Run `watch -g command` and it will exit when the command’s output is different from the previous iteration.",
+    "category": "monitoring",
+    "tags": ["watch", "change-detection"]
+  },
+  {
+    "id": 234,
+    "title": "Use paste to merge columns from files",
+    "body": "Use `paste file1 file2` to combine lines from two files side by side into a single output.",
+    "category": "text",
+    "tags": ["paste", "columns"]
+  },
+  {
+    "id": 235,
+    "title": "Use join to combine files on a common field",
+    "body": "Sort files and use `join -1 1 -2 1 file1 file2` to join them on their first field like a simple database join.",
+    "category": "text",
+    "tags": ["join", "data"]
+  },
+  {
+    "id": 236,
+    "title": "Use comm to compare sorted files",
+    "body": "Run `comm file1 file2` on sorted files to see lines only in file1, only in file2, or in both.",
+    "category": "text",
+    "tags": ["comm", "compare"]
+  },
+  {
+    "id": 237,
+    "title": "Use nl to add line numbers",
+    "body": "Use `nl -ba file` to print a file with line numbers, including blank lines.",
+    "category": "text",
+    "tags": ["nl", "numbering"]
+  },
+  {
+    "id": 238,
+    "title": "Use tac to print files in reverse order",
+    "body": "Use `tac file` to print lines in reverse order, useful for logs or reading the bottom up.",
+    "category": "text",
+    "tags": ["tac", "reverse"]
+  },
+  {
+    "id": 239,
+    "title": "Use grep -n to show line numbers",
+    "body": "Run `grep -n pattern file` to see which line numbers contain the match.",
+    "category": "text",
+    "tags": ["grep", "line-numbers"]
+  },
+  {
+    "id": 240,
+    "title": "Use grep -R --include for targeted recursive search",
+    "body": "Use `grep -R --include='*.py' pattern .` to search only in files matching a glob.",
+    "category": "development",
+    "tags": ["grep", "filters"]
+  },
+  {
+    "id": 241,
+    "title": "Use sed -r (or -E) for extended regex",
+    "body": "Run `sed -r 's/([0-9]+)/[&]/g' file` for more powerful expressions without escaping braces.",
+    "category": "text",
+    "tags": ["sed", "regex"]
+  },
+  {
+    "id": 242,
+    "title": "Use awk -F to change field separators",
+    "body": "Use `awk -F: '{print $1,$3}' /etc/passwd` to specify colon-separated input fields.",
+    "category": "text",
+    "tags": ["awk", "fields"]
+  },
+  {
+    "id": 243,
+    "title": "Use awk BEGIN block for headers",
+    "body": "Add `BEGIN {print \"Name\tUID\"}` to an awk script to print a header before processing lines.",
+    "category": "text",
+    "tags": ["awk", "reporting"]
+  },
+  {
+    "id": 244,
+    "title": "Use sed '0,/pattern/s//' for first occurrence only",
+    "body": "Use `sed '0,/old/s//new/' file` to replace only the first occurrence of a pattern globally.",
+    "category": "text",
+    "tags": ["sed", "first-match"]
+  },
+  {
+    "id": 245,
+    "title": "Use tr -d to remove characters",
+    "body": "`tr -d '\\r' < file` removes carriage returns, helpful for cleaning text from Windows.",
+    "category": "text",
+    "tags": ["tr", "cleanup"]
+  },
+  {
+    "id": 246,
+    "title": "Use sort -k to sort by specific columns",
+    "body": "`sort -k2,2 file` sorts by the second field only, preserving stable sorts.",
+    "category": "text",
+    "tags": ["sort", "columns"]
+  },
+  {
+    "id": 247,
+    "title": "Use sort -h for human-readable sorting",
+    "body": "Run `sort -h sizes.txt` to sort values like 1K, 2M, 3G correctly by size.",
+    "category": "text",
+    "tags": ["sort", "human"]
+  },
+  {
+    "id": 248,
+    "title": "Use split to break large files",
+    "body": "Use `split -b 100M bigfile part_` to split into 100MB chunks prefixed with part_.",
+    "category": "filesystem",
+    "tags": ["split", "chunks"]
+  },
+  {
+    "id": 249,
+    "title": "Rebuild a file from split pieces with cat",
+    "body": "Run `cat part_* > bigfile` to recombine files split by `split`.",
+    "category": "filesystem",
+    "tags": ["cat", "merge"]
+  },
+  {
+    "id": 250,
+    "title": "Use watch -n 1 'ls -l' to monitor directory changes",
+    "body": "Quickly spot new or modified files by repeatedly listing a directory with watch.",
+    "category": "monitoring",
+    "tags": ["watch", "ls"]
+  },
+  {
+    "id": 251,
+    "title": "Use inotifywait to react to file changes",
+    "body": "With `inotifywait -m` you can watch directories and trigger actions when files change.",
+    "category": "automation",
+    "tags": ["inotify", "events"]
+  },
+  {
+    "id": 252,
+    "title": "Use entr for simple file-change automation",
+    "body": "`ls *.go | entr go test` automatically reruns tests when Go files change.",
+    "category": "development",
+    "tags": ["entr", "watch"]
+  },
+  {
+    "id": 253,
+    "title": "Use flock in scripts to serialize access to resources",
+    "body": "Wrap critical sections with `flock` on a lock file to prevent concurrent runs that might corrupt data.",
+    "category": "scripting",
+    "tags": ["flock", "concurrency"]
+  },
+  {
+    "id": 254,
+    "title": "Use timeout to bound command runtime",
+    "body": "`timeout 10s command` kills the command if it runs longer than 10 seconds.",
+    "category": "scripting",
+    "tags": ["timeout", "control"]
+  },
+  {
+    "id": 255,
+    "title": "Use at for human-readable one-off scheduling",
+    "body": "Run `echo 'backup.sh' | at 01:30` or `at now + 2 hours` for simple delayed tasks.",
+    "category": "automation",
+    "tags": ["at", "schedule"]
+  },
+  {
+    "id": 256,
+    "title": "Use printf %q to shell-escape strings",
+    "body": "Run `printf '%q\n' \"string with spaces\"` to see how to safely quote it in shell scripts.",
+    "category": "scripting",
+    "tags": ["printf", "escaping"]
+  },
+  {
+    "id": 257,
+    "title": "Use mapfile to read command output into an array",
+    "body": "`mapfile -t arr < <(ls)` fills a bash array with filenames for further processing.",
+    "category": "scripting",
+    "tags": ["bash", "arrays"]
+  },
+  {
+    "id": 258,
+    "title": "Use ${var:?message} to enforce required variables",
+    "body": "In bash, `${VAR:?not set}` exits the script with an error if VAR is unset or empty.",
+    "category": "scripting",
+    "tags": ["bash", "safety"]
+  },
+  {
+    "id": 259,
+    "title": "Use ${var:-default} for default values",
+    "body": "Use `${PORT:-8080}` to use $PORT if set, otherwise 8080 as a safe default in scripts.",
+    "category": "scripting",
+    "tags": ["bash", "defaults"]
+  },
+  {
+    "id": 260,
+    "title": "Use exec to replace the shell process",
+    "body": "In scripts, `exec command` replaces the shell with command, avoiding an extra process.",
+    "category": "scripting",
+    "tags": ["exec", "processes"]
+  },
+  {
+    "id": 261,
+    "title": "Use trap to clean up temporary files",
+    "body": "Set `trap 'rm -f \"$tmpfile\"' EXIT` in scripts to automatically delete temp files on exit.",
+    "category": "scripting",
+    "tags": ["trap", "cleanup"]
+  },
+  {
+    "id": 262,
+    "title": "Use trap to handle Ctrl+C gracefully",
+    "body": "Use `trap 'echo Interrupted; exit 1' INT` to catch SIGINT instead of abruptly stopping.",
+    "category": "scripting",
+    "tags": ["signals", "trap"]
+  },
+  {
+    "id": 263,
+    "title": "Use readonly for constants in bash",
+    "body": "Declare constants with `readonly VAR=value` to avoid accidental reassignment.",
+    "category": "scripting",
+    "tags": ["bash", "constants"]
+  },
+  {
+    "id": 264,
+    "title": "Use select for simple shell menus",
+    "body": "Bash’s `select` construct can build basic text menus without external tools.",
+    "category": "scripting",
+    "tags": ["bash", "menus"]
+  },
+  {
+    "id": 265,
+    "title": "Use /etc/hosts for quick local overrides",
+    "body": "Add `ip hostname` lines to `/etc/hosts` for temporary hostname overrides or offline development.",
+    "category": "network",
+    "tags": ["hosts", "dns"]
+  },
+  {
+    "id": 266,
+    "title": "Use iptables or nftables comment matches",
+    "body": "Adding `-m comment --comment 'purpose'` to firewall rules helps future you understand why they exist.",
+    "category": "security",
+    "tags": ["firewall", "documentation"]
+  },
+  {
+    "id": 267,
+    "title": "Use dig +short for minimal DNS answers",
+    "body": "Run `dig +short example.com` to get just IP addresses or records without extra text.",
+    "category": "network",
+    "tags": ["dig", "dns"]
+  },
+  {
+    "id": 268,
+    "title": "Test HTTP/HTTPS with curl -v",
+    "body": "`curl -v https://example.com` displays verbose connection info including TLS negotiation and headers.",
+    "category": "network",
+    "tags": ["curl", "debug"]
+  },
+  {
+    "id": 269,
+    "title": "Use curl --resolve for testing virtual hosts",
+    "body": "Run `curl --resolve example.com:443:IP https://example.com` to test hostnames against test IPs.",
+    "category": "network",
+    "tags": ["curl", "vhost"]
+  },
+  {
+    "id": 270,
+    "title": "Use parallel to execute commands concurrently",
+    "body": "`parallel echo ::: a b c` runs echo in parallel for each argument; great for speeding up batch work.",
+    "category": "performance",
+    "tags": ["gnu-parallel", "concurrency"]
+  },
+  {
+    "id": 271,
+    "title": "Limit parallel jobs to protect the system",
+    "body": "With GNU parallel, use `--jobs 4` to run at most four tasks at once.",
+    "category": "performance",
+    "tags": ["gnu-parallel", "limits"]
+  },
+  {
+    "id": 272,
+    "title": "Use renice on whole process groups",
+    "body": "Use `renice 10 -g PGID` to change priority of an entire group of related processes.",
+    "category": "performance",
+    "tags": ["priority", "groups"]
+  },
+  {
+    "id": 273,
+    "title": "Use pstree to visualize process hierarchy",
+    "body": "Run `pstree -p` to see parent-child relationships and PIDs in a tree form.",
+    "category": "system",
+    "tags": ["pstree", "processes"]
+  },
+  {
+    "id": 274,
+    "title": "Use pmap to inspect process memory mappings",
+    "body": "`pmap -x PID` shows which memory segments a process has mapped and how much they consume.",
+    "category": "debugging",
+    "tags": ["pmap", "memory"]
+  },
+  {
+    "id": 275,
+    "title": "Use free -m or free -g for memory in MB/GB",
+    "body": "`free -m` shows memory stats in megabytes, which can be easier to read.",
+    "category": "system",
+    "tags": ["memory", "free"]
+  },
+  {
+    "id": 276,
+    "title": "Use top’s field selection to show only relevant columns",
+    "body": "Press `f` inside top to toggle which columns to display for a cleaner view.",
+    "category": "monitoring",
+    "tags": ["top", "customization"]
+  },
+  {
+    "id": 277,
+    "title": "Use mkdir -p to create nested paths safely",
+    "body": "Run `mkdir -p a/b/c` to create entire directory trees without errors if intermediate paths exist.",
+    "category": "filesystem",
+    "tags": ["mkdir", "directories"]
+  },
+  {
+    "id": 278,
+    "title": "Use rsync --dry-run to preview changes",
+    "body": "`rsync -avh --dry-run src/ dest/` shows what would be copied or deleted without making changes.",
+    "category": "backup",
+    "tags": ["rsync", "safety"]
+  },
+  {
+    "id": 279,
+    "title": "Use mount -o remount,rw to remount read-only volumes",
+    "body": "If a filesystem is read-only, `mount -o remount,rw /mountpoint` can re-enable writes when safe.",
+    "category": "filesystem",
+    "tags": ["mount", "remount"]
+  },
+  {
+    "id": 280,
+    "title": "Use tune2fs to set filesystem labels",
+    "body": "On ext filesystems, `tune2fs -L NEWLABEL /dev/sda1` lets you label partitions for easier mounts.",
+    "category": "system",
+    "tags": ["tune2fs", "labels"]
+  },
+  {
+    "id": 281,
+    "title": "Use mkswap and swapon for manual swap files",
+    "body": "Create a swap file with `dd`, then `mkswap /swapfile` and `swapon /swapfile` to increase swap space.",
+    "category": "system",
+    "tags": ["swap", "memory"]
+  },
+  {
+    "id": 282,
+    "title": "Add swap files permanently in /etc/fstab",
+    "body": "Create a line like `/swapfile none swap sw 0 0` in `/etc/fstab` so swapfile is activated on boot.",
+    "category": "system",
+    "tags": ["swap", "fstab"]
+  },
+  {
+    "id": 283,
+    "title": "Use ls -i to see inode numbers",
+    "body": "`ls -i` shows inode numbers; useful when trying to track hard links or filesystem issues.",
+    "category": "filesystem",
+    "tags": ["inode", "ls"]
+  },
+  {
+    "id": 284,
+    "title": "Use find -inum to locate files by inode",
+    "body": "If you know an inode, `find / -inum 12345 -xdev` finds files linked to it.",
+    "category": "filesystem",
+    "tags": ["find", "inode"]
+  },
+  {
+    "id": 285,
+    "title": "Use ln to create hard links to large static files",
+    "body": "Hard links share data blocks, saving space when duplicating immutable data sets.",
+    "category": "filesystem",
+    "tags": ["hard-links", "storage"]
+  },
+  {
+    "id": 286,
+    "title": "Use chattr +i to make files immutable",
+    "body": "`sudo chattr +i file` prevents modifications or deletion even by root until the bit is cleared.",
+    "category": "security",
+    "tags": ["chattr", "immutable"]
+  },
+  {
+    "id": 287,
+    "title": "Use lsattr to inspect special file attributes",
+    "body": "`lsattr` shows flags like immutable or append-only on ext filesystems.",
+    "category": "filesystem",
+    "tags": ["lsattr", "attributes"]
+  },
+  {
+    "id": 288,
+    "title": "Use usermod -aG to add a user to a group safely",
+    "body": "Always use `usermod -aG group user` so existing group memberships are preserved.",
+    "category": "system",
+    "tags": ["users", "groups"]
+  },
+  {
+    "id": 289,
+    "title": "Use passwd -l to lock an account",
+    "body": "Lock local accounts with `passwd -l username` to prevent logins without deleting the user.",
+    "category": "security",
+    "tags": ["accounts", "lock"]
+  },
+  {
+    "id": 290,
+    "title": "Use passwd -e to force password change on next login",
+    "body": "`passwd -e username` expires the password, forcing the user to change it at next login.",
+    "category": "security",
+    "tags": ["passwords", "policy"]
+  },
+  {
+    "id": 291,
+    "title": "Use chage to view and change password ageing",
+    "body": "`chage -l username` shows password expiration policy and last change date.",
+    "category": "security",
+    "tags": ["chage", "policy"]
+  },
+  {
+    "id": 292,
+    "title": "Use lastb to see failed login attempts",
+    "body": "`lastb` reads `/var/log/btmp` to show bad logins and is useful for intrusion detection.",
+    "category": "security",
+    "tags": ["logins", "audit"]
+  },
+  {
+    "id": 293,
+    "title": "Use /etc/issue for pre-login legal banners",
+    "body": "Customize `/etc/issue` and `/etc/issue.net` for legal or informational login banners.",
+    "category": "security",
+    "tags": ["banners", "policy"]
+  },
+  {
+    "id": 294,
+    "title": "Use motd for post-login messages",
+    "body": "Place information into `/etc/motd` so users see important notices after logging in.",
+    "category": "system",
+    "tags": ["motd", "info"]
+  },
+  {
+    "id": 295,
+    "title": "Use ip netns for lightweight network namespacing",
+    "body": "`ip netns add testns` and `ip netns exec testns command` allow network isolation for testing.",
+    "category": "network",
+    "tags": ["namespaces", "testing"]
+  },
+  {
+    "id": 296,
+    "title": "Use unshare to create isolated namespaces",
+    "body": "Run `unshare -n -m bash` to get a shell with new network and mount namespaces without containers.",
+    "category": "system",
+    "tags": ["namespaces", "unshare"]
+  },
+  {
+    "id": 297,
+    "title": "Use chroot for simple jails",
+    "body": "`chroot /newroot /bin/bash` starts a shell with a new filesystem root, useful for rescue or build chroots.",
+    "category": "system",
+    "tags": ["chroot", "jail"]
+  },
+  {
+    "id": 298,
+    "title": "Use debootstrap to build minimal Debian chroots",
+    "body": "`debootstrap stable /chroot http://deb.debian.org/debian` creates a minimal Debian environment.",
+    "category": "system",
+    "tags": ["debootstrap", "chroot"]
+  },
+  {
+    "id": 299,
+    "title": "Use systemd-nspawn for container-like chroots",
+    "body": "`systemd-nspawn -D /chroot` runs a container-style environment with systemd integration.",
+    "category": "containers",
+    "tags": ["systemd-nspawn", "chroot"]
+  },
+  {
+    "id": 300,
+    "title": "Use ps --sort to order processes",
+    "body": "`ps aux --sort=-%mem | head` lists the top memory-consuming processes first.",
+    "category": "monitoring",
+    "tags": ["ps", "sorting"]
+  },
+  {
+    "id": 301,
+    "title": "Use watch -n 1 'ps aux --sort=-%cpu | head'",
+    "body": "Continuously track which processes are hogging CPU with one-line output.",
+    "category": "monitoring",
+    "tags": ["ps", "watch"]
+  },
+  {
+    "id": 302,
+    "title": "Use lscpu for detailed CPU information",
+    "body": "Run `lscpu` to see CPU model, cores, threads, cache sizes, and virtualization support.",
+    "category": "system",
+    "tags": ["cpu", "hardware"]
+  },
+  {
+    "id": 303,
+    "title": "Use lsusb to list USB devices",
+    "body": "`lsusb` shows connected USB hardware, handy for debugging peripherals.",
+    "category": "system",
+    "tags": ["usb", "hardware"]
+  },
+  {
+    "id": 304,
+    "title": "Use lspci for PCI hardware info",
+    "body": "`lspci` lists PCI devices like network cards, GPUs, and storage controllers.",
+    "category": "system",
+    "tags": ["pci", "hardware"]
+  },
+  {
+    "id": 305,
+    "title": "Use lsmod to list loaded kernel modules",
+    "body": "`lsmod` shows which kernel modules are currently loaded into the kernel.",
+    "category": "system",
+    "tags": ["modules", "kernel"]
+  },
+  {
+    "id": 306,
+    "title": "Use modinfo for module details",
+    "body": "`modinfo module_name` prints version, license, parameters, and file path of a kernel module.",
+    "category": "system",
+    "tags": ["modules", "kernel"]
+  },
+  {
+    "id": 307,
+    "title": "Use modprobe to load and auto-resolve dependencies",
+    "body": "`modprobe module` loads the module and its dependencies instead of manipulating files manually.",
+    "category": "system",
+    "tags": ["modules", "modprobe"]
+  },
+  {
+    "id": 308,
+    "title": "Use powertop to analyze power consumption",
+    "body": "On laptops, `sudo powertop` helps identify processes and settings that drain battery.",
+    "category": "performance",
+    "tags": ["powertop", "power"]
+  },
+  {
+    "id": 309,
+    "title": "Use tlp for laptop power saving",
+    "body": "`tlp` applies sane power-saving defaults for many laptops with minimal configuration.",
+    "category": "system",
+    "tags": ["laptop", "power"]
+  },
+  {
+    "id": 310,
+    "title": "Use hdparm for drive performance testing",
+    "body": "Run `sudo hdparm -Tt /dev/sda` to benchmark disk buffer and read performance.",
+    "category": "performance",
+    "tags": ["hdparm", "disk"]
+  },
+  {
+    "id": 311,
+    "title": "Use smartctl to check disk health",
+    "body": "`sudo smartctl -a /dev/sda` shows SMART health info and error logs for drives.",
+    "category": "system",
+    "tags": ["smartctl", "health"]
+  },
+  {
+    "id": 312,
+    "title": "Use badblocks to scan for disk errors",
+    "body": "`sudo badblocks -sv /dev/sdX` tests a disk for unreadable blocks; use cautiously on in-use disks.",
+    "category": "system",
+    "tags": ["badblocks", "testing"]
+  },
+  {
+    "id": 313,
+    "title": "Use df -i to monitor inode exhaustion",
+    "body": "`df -i` shows inode usage per filesystem; full inodes can block file creation even with free space.",
+    "category": "filesystem",
+    "tags": ["df", "inode"]
+  },
+  {
+    "id": 314,
+    "title": "Use mount options noatime or relatime to reduce disk writes",
+    "body": "Set `noatime` or `relatime` on frequently read filesystems to reduce atime updates and I/O.",
+    "category": "performance",
+    "tags": ["mount", "atime"]
+  },
+  {
+    "id": 315,
+    "title": "Use rsync over SSH for secure incremental backups",
+    "body": "`rsync -avh --delete src/ user@host:/backup/src/` keeps a remote backup in sync over SSH.",
+    "category": "backup",
+    "tags": ["rsync", "ssh"]
+  },
+  {
+    "id": 316,
+    "title": "Use borgbackup for deduplicated encrypted backups",
+    "body": "`borg init --encryption=repokey repo` and `borg create repo::archive path` provide efficient secure backups.",
+    "category": "backup",
+    "tags": ["borg", "encryption"]
+  },
+  {
+    "id": 317,
+    "title": "Use restic for cloud-friendly backups",
+    "body": "Restic supports many backends (S3, SFTP, local) and encrypts data by default.",
+    "category": "backup",
+    "tags": ["restic", "cloud"]
+  },
+  {
+    "id": 318,
+    "title": "Use duplicity for incremental encrypted backups",
+    "body": "`duplicity` uses rsync-like deltas and GPG encryption, ideal for offsite backups.",
+    "category": "backup",
+    "tags": ["duplicity", "incremental"]
+  },
+  {
+    "id": 319,
+    "title": "Use ssh -L for local port forwarding",
+    "body": "`ssh -L 8080:localhost:80 user@server` makes remote port 80 available via local port 8080.",
+    "category": "network",
+    "tags": ["ssh", "tunnel"]
+  },
+  {
+    "id": 320,
+    "title": "Use ssh -R for remote port forwarding",
+    "body": "`ssh -R 9000:localhost:22 user@server` exposes your local SSH on port 9000 at the remote host.",
+    "category": "network",
+    "tags": ["ssh", "reverse-tunnel"]
+  },
+  {
+    "id": 321,
+    "title": "Use ssh -D to create a SOCKS proxy",
+    "body": "`ssh -D 1080 user@server` creates a SOCKS proxy for browsing through the remote host.",
+    "category": "network",
+    "tags": ["ssh", "proxy"]
+  },
+  {
+    "id": 322,
+    "title": "Use rsync --checksum when timestamps are unreliable",
+    "body": "Add `--checksum` so rsync compares file content hashes instead of times and sizes.",
+    "category": "backup",
+    "tags": ["rsync", "checksum"]
+  },
+  {
+    "id": 323,
+    "title": "Use watch 'netstat -tulpn' during service debugging",
+    "body": "Repeatedly view port bindings while starting or restarting network services.",
+    "category": "network",
+    "tags": ["netstat", "watch"]
+  },
+  {
+    "id": 324,
+    "title": "Use xargs -p for interactive confirmation",
+    "body": "Run `echo *.log | xargs -p rm` to preview and confirm deletions before they happen.",
+    "category": "safety",
+    "tags": ["xargs", "confirm"]
+  },
+  {
+    "id": 325,
+    "title": "Use xargs -n to limit arguments per invocation",
+    "body": "`seq 1 100 | xargs -n 10 echo` processes inputs in batches of 10 per command invocation.",
+    "category": "shell",
+    "tags": ["xargs", "batches"]
+  },
+  {
+    "id": 326,
+    "title": "Use sssd or nss-pam-ldapd for centralized authentication",
+    "body": "Integrate Linux logins with LDAP/AD via SSSD to avoid local-only user management.",
+    "category": "security",
+    "tags": ["auth", "ldap"]
+  },
+  {
+    "id": 327,
+    "title": "Use ssh-agent to cache decrypted keys",
+    "body": "Start `ssh-agent` and add keys with `ssh-add` so you’re not prompted for passphrases repeatedly.",
+    "category": "security",
+    "tags": ["ssh", "agent"]
+  },
+  {
+    "id": 328,
+    "title": "Use gpg-agent for shared SSH/GPG key caching",
+    "body": "GPG agent can handle both GPG and SSH keys, integrating cryptographic operations under one agent.",
+    "category": "security",
+    "tags": ["gpg", "ssh"]
+  },
+  {
+    "id": 329,
+    "title": "Use pass as a simple password manager",
+    "body": "`pass` stores passwords as GPG-encrypted files, easily synchronized with git.",
+    "category": "security",
+    "tags": ["pass", "passwords"]
+  },
+  {
+    "id": 330,
+    "title": "Use age instead of GPG for file encryption",
+    "body": "`age` provides simple, modern file encryption with small, auditable code.",
+    "category": "security",
+    "tags": ["age", "encryption"]
+  },
+  {
+    "id": 331,
+    "title": "Use gpg --symmetric for quick file encryption",
+    "body": "`gpg -c file` encrypts it with a passphrase; `gpg file.gpg` decrypts it later.",
+    "category": "security",
+    "tags": ["gpg", "encryption"]
+  },
+  {
+    "id": 332,
+    "title": "Use openssl enc for ad-hoc encryption",
+    "body": "`openssl enc -aes-256-cbc -salt -in file -out file.enc` provides simple password-based encryption.",
+    "category": "security",
+    "tags": ["openssl", "encryption"]
+  },
+  {
+    "id": 333,
+    "title": "Use hexdump -C to view binary files",
+    "body": "`hexdump -C file` displays hexadecimal and ASCII side by side for quick inspections.",
+    "category": "debugging",
+    "tags": ["hexdump", "binary"]
+  },
+  {
+    "id": 334,
+    "title": "Use strings to extract text from binaries",
+    "body": "`strings binary` prints human-readable strings in a binary file, helpful for quick analysis.",
+    "category": "debugging",
+    "tags": ["strings", "binary"]
+  },
+  {
+    "id": 335,
+    "title": "Use file -i for MIME-type detection",
+    "body": "`file -i file` shows the MIME type, which is handy for web or content-type decisions.",
+    "category": "filesystem",
+    "tags": ["file", "mime"]
+  },
+  {
+    "id": 336,
+    "title": "Use stat to see last access and modification times",
+    "body": "`stat file` shows atime, mtime, and ctime, helpful for forensic investigations.",
+    "category": "filesystem",
+    "tags": ["stat", "timestamps"]
+  },
+  {
+    "id": 337,
+    "title": "Use touch -t to backdate test files",
+    "body": "`touch -t 202201010000 file` sets timestamps to simulate old files for testing.",
+    "category": "testing",
+    "tags": ["touch", "timestamps"]
+  },
+  {
+    "id": 338,
+    "title": "Use flock in conjunction with logrotate postrotate scripts",
+    "body": "Wrap applications in a `flock` when reopening logs during rotation to avoid conflicts.",
+    "category": "logging",
+    "tags": ["logrotate", "locking"]
+  },
+  {
+    "id": 339,
+    "title": "Use sed -n '/start/,/end/p' to print blocks",
+    "body": "Print only the lines between two patterns, inclusive, using sed’s range addresses.",
+    "category": "text",
+    "tags": ["sed", "ranges"]
+  },
+  {
+    "id": 340,
+    "title": "Use awk with RS and ORS to manipulate records",
+    "body": "Change record separators with `RS` and `ORS` to handle multi-line records in awk scripts.",
+    "category": "text",
+    "tags": ["awk", "records"]
+  },
+  {
+    "id": 341,
+    "title": "Use nl -ba and diff to compare logical lines",
+    "body": "Number lines in both files with `nl -ba` and then diff to identify moved or altered lines more clearly.",
+    "category": "development",
+    "tags": ["nl", "diff"]
+  },
+  {
+    "id": 342,
+    "title": "Use md5sum or sha256sum to verify downloads",
+    "body": "`sha256sum file` and compare with provided checksums to ensure integrity of downloaded files.",
+    "category": "security",
+    "tags": ["hashes", "integrity"]
+  },
+  {
+    "id": 343,
+    "title": "Use watch 'ls -l --time-style=+%s' to see changes precisely",
+    "body": "Changing the time format to epoch seconds helps see exact modification moments.",
+    "category": "monitoring",
+    "tags": ["ls", "timestamps"]
+  },
+  {
+    "id": 344,
+    "title": "Use bc for arbitrary precision math",
+    "body": "`echo 'scale=4; 10/3' | bc` allows high-precision calculations from the shell.",
+    "category": "shell",
+    "tags": ["bc", "math"]
+  },
+  {
+    "id": 345,
+    "title": "Use units to convert between measurement systems",
+    "body": "`units '10 MB' 'MiB'` converts between metric and binary units or any supported measurements.",
+    "category": "productivity",
+    "tags": ["units", "conversion"]
+  },
+  {
+    "id": 346,
+    "title": "Use cal 2025 to view full-year calendars",
+    "body": "`cal 2025` prints the calendar for the entire year, helpful for planning.",
+    "category": "system",
+    "tags": ["calendar", "cal"]
+  },
+  {
+    "id": 347,
+    "title": "Use tzselect to help choose timezone names",
+    "body": "Run `tzselect` to interactively choose a proper timezone string like Asia/Kolkata.",
+    "category": "system",
+    "tags": ["timezone", "tz"]
+  },
+  {
+    "id": 348,
+    "title": "Use watch 'curl -s URL' for simple HTTP monitoring",
+    "body": "Repeatedly fetch a URL and inspect key metrics or health endpoints.",
+    "category": "network",
+    "tags": ["curl", "monitoring"]
+  },
+  {
+    "id": 349,
+    "title": "Use lnav for interactive log browsing",
+    "body": "`lnav` provides a log-aware viewer with automatic parsing and search, better than plain less for logs.",
+    "category": "logging",
+    "tags": ["lnav", "logs"]
+  },
+  {
+    "id": 350,
+    "title": "Use multitail to view multiple logs at once",
+    "body": "`multitail file1 file2` shows several log files simultaneously in a split TUI.",
+    "category": "logging",
+    "tags": ["multitail", "monitoring"]
+  },
+  {
+    "id": 351,
+    "title": "Use watch -c to avoid clearing the screen",
+    "body": "`watch -c command` stops watch from clearing the screen between updates in some implementations.",
+    "category": "monitoring",
+    "tags": ["watch", "screen"]
+  },
+  {
+    "id": 352,
+    "title": "Use printf with %-*s to dynamically pad text",
+    "body": "`printf '%-*s\n' 20 \"$str\"` pads or truncates strings to a column width.",
+    "category": "scripting",
+    "tags": ["printf", "formatting"]
+  },
+  {
+    "id": 353,
+    "title": "Use stow to manage dotfiles by symlinks",
+    "body": "`stow bash git vim` in your home directory creates symlinks from a managed dotfiles repo.",
+    "category": "productivity",
+    "tags": ["stow", "dotfiles"]
+  },
+  {
+    "id": 354,
+    "title": "Use git bare repos for dotfile management",
+    "body": "A bare repo in `$HOME` with alias `config='git --git-dir=$HOME/.cfg --work-tree=$HOME'` keeps dotfiles under version control.",
+    "category": "productivity",
+    "tags": ["git", "dotfiles"]
+  },
+  {
+    "id": 355,
+    "title": "Use diff -r for directory comparison",
+    "body": "`diff -r dir1 dir2` recursively compares two directories to find changed or missing files.",
+    "category": "filesystem",
+    "tags": ["diff", "directories"]
+  },
+  {
+    "id": 356,
+    "title": "Use unzip -l to list contents without extracting",
+    "body": "`unzip -l archive.zip` shows files inside a ZIP archive, saving time and space.",
+    "category": "filesystem",
+    "tags": ["unzip", "inspect"]
+  },
+  {
+    "id": 357,
+    "title": "Use tar -tvf to inspect tar archives",
+    "body": "`tar -tvf archive.tar` lists contents with permissions and sizes.",
+    "category": "filesystem",
+    "tags": ["tar", "inspect"]
+  },
+  {
+    "id": 358,
+    "title": "Use grep -H to always print filenames",
+    "body": "`grep -H pattern *.log` prints filenames even when there’s a single input file.",
+    "category": "text",
+    "tags": ["grep", "output"]
+  },
+  {
+    "id": 359,
+    "title": "Use grep --line-buffered in pipelines for real-time output",
+    "body": "Add `--line-buffered` to grep when piping from long-running commands to see results immediately.",
+    "category": "monitoring",
+    "tags": ["grep", "buffering"]
+  },
+  {
+    "id": 360,
+    "title": "Use sed -z for NUL-separated streams",
+    "body": "`sed -z 's/\\n/ /g'` treats the entire input as a single line delimited by NUL, useful for some advanced tasks.",
+    "category": "text",
+    "tags": ["sed", "nul"]
+  },
+  {
+    "id": 361,
+    "title": "Use awk -v var=value to pass shell variables into awk",
+    "body": "`awk -v name=\"$USER\" 'BEGIN {print name}'` bridges shell and awk contexts cleanly.",
+    "category": "text",
+    "tags": ["awk", "integration"]
+  },
+  {
+    "id": 362,
+    "title": "Use tput cols and tput lines to query terminal size",
+    "body": "Scripts can adapt output to the terminal by reading `$(tput cols)` and `$(tput lines)`.",
+    "category": "scripting",
+    "tags": ["tput", "terminal"]
+  },
+  {
+    "id": 363,
+    "title": "Use less -R to preserve color codes",
+    "body": "`command | less -R` allows ANSI colors to pass through when paging colored output.",
+    "category": "shell",
+    "tags": ["less", "color"]
+  },
+  {
+    "id": 364,
+    "title": "Use less +F as a smarter tail -f",
+    "body": "`less +F file` begins in follow mode like tail -f but allows pausing and searching.",
+    "category": "logging",
+    "tags": ["less", "follow"]
+  },
+  {
+    "id": 365,
+    "title": "Use fc -l to list recent history with numbers",
+    "body": "`fc -l -10` shows the last 10 commands with line numbers useful for quick re-execution.",
+    "category": "shell",
+    "tags": ["history", "fc"]
+  },
+  {
+    "id": 366,
+    "title": "Use history -a to append session history immediately",
+    "body": "`history -a` writes current session’s commands to the history file without waiting for exit.",
+    "category": "shell",
+    "tags": ["history", "sync"]
+  },
+  {
+    "id": 367,
+    "title": "Use PROMPT_COMMAND to auto-save history",
+    "body": "Setting `PROMPT_COMMAND='history -a; history -n'` in bash syncs history across terminals in near real time.",
+    "category": "productivity",
+    "tags": ["history", "prompt"]
+  },
+  {
+    "id": 368,
+    "title": "Use watch 'df -h' while managing large copies",
+    "body": "See free disk space change in real time while copying or deleting large datasets.",
+    "category": "monitoring",
+    "tags": ["df", "watch"]
+  },
+  {
+    "id": 369,
+    "title": "Use git clean -fdx to wipe untracked files safely",
+    "body": "`git clean -fdx` removes untracked files, but always test with `git clean -ndx` first.",
+    "category": "development",
+    "tags": ["git", "cleanup"]
+  },
+  {
+    "id": 370,
+    "title": "Use git reflog to recover lost commits",
+    "body": "`git reflog` shows where HEAD and branches pointed in the past, letting you recover with `git checkout <hash>`.",
+    "category": "development",
+    "tags": ["git", "recovery"]
+  },
+  {
+    "id": 371,
+    "title": "Use git bisect to find regressions",
+    "body": "`git bisect` helps identify the commit that introduced a bug using binary search.",
+    "category": "development",
+    "tags": ["git", "debugging"]
+  },
+  {
+    "id": 372,
+    "title": "Use shellcheck in CI pipelines",
+    "body": "Run `shellcheck` on all shell scripts during CI to catch problems before deployments.",
+    "category": "devops",
+    "tags": ["shellcheck", "ci"]
+  },
+  {
+    "id": 373,
+    "title": "Use hadolint to lint Dockerfiles",
+    "body": "`hadolint Dockerfile` surfaces best-practice issues in container images before building.",
+    "category": "containers",
+    "tags": ["hadolint", "docker"]
+  },
+  {
+    "id": 374,
+    "title": "Use docker system prune to reclaim space",
+    "body": "`docker system prune -af` removes unused containers, images, and networks, but confirm before running on production.",
+    "category": "containers",
+    "tags": ["cleanup", "docker"]
+  },
+  {
+    "id": 375,
+    "title": "Use nc -l for simple TCP servers",
+    "body": "`nc -l 1234` listens on port 1234 and prints anything sent; good for quick debugging.",
+    "category": "network",
+    "tags": ["netcat", "listener"]
+  },
+  {
+    "id": 376,
+    "title": "Use ipcalc to quickly calculate subnet info",
+    "body": "`ipcalc 192.0.2.10/24` prints network, broadcast, and usable ranges for that CIDR.",
+    "category": "network",
+    "tags": ["subnet", "ipcalc"]
+  },
+  {
+    "id": 377,
+    "title": "Use watch 'iptables -nvL' while testing firewall rules",
+    "body": "Counters update as packets hit rules, useful for verifying firewall behavior.",
+    "category": "security",
+    "tags": ["iptables", "watch"]
+  },
+  {
+    "id": 378,
+    "title": "Use fail2ban-regex to test jail filters",
+    "body": "`fail2ban-regex /var/log/auth.log /etc/fail2ban/filter.d/ssh.conf` simulates which lines would lead to bans.",
+    "category": "security",
+    "tags": ["fail2ban", "testing"]
+  },
+  {
+    "id": 379,
+    "title": "Use journalctl -S and -U for time range queries",
+    "body": "`journalctl -S '2025-01-01' -U '2025-01-02'` restricts logs to a specific time window.",
+    "category": "logging",
+    "tags": ["journalctl", "time-range"]
+  },
+  {
+    "id": 380,
+    "title": "Use logger to send messages to syslog",
+    "body": "`logger \"Deployment complete\"` writes a message into syslog or journald from scripts.",
+    "category": "logging",
+    "tags": ["logger", "syslog"]
+  },
+  {
+    "id": 381,
+    "title": "Use atop log mode for historical usage",
+    "body": "`atop -w /var/log/atop/atop.log 60` collects data every 60 seconds for later playback with `atop -r`.",
+    "category": "monitoring",
+    "tags": ["atop", "history"]
+  },
+  {
+    "id": 382,
+    "title": "Use htop F9 to send signals interactively",
+    "body": "Select a process, press F9, and choose a signal like SIGTERM or SIGKILL from a menu.",
+    "category": "monitoring",
+    "tags": ["htop", "signals"]
+  },
+  {
+    "id": 383,
+    "title": "Use envsubst to template config files in containers",
+    "body": "Put placeholders like `${VAR}` in configs and run `envsubst < in > out` at container start.",
+    "category": "devops",
+    "tags": ["templating", "envsubst"]
+  },
+  {
+    "id": 384,
+    "title": "Use jq -r to strip quotes from output",
+    "body": "`jq -r '.field'` prints raw strings without double quotes, making it easier to use in scripts.",
+    "category": "development",
+    "tags": ["jq", "output"]
+  },
+  {
+    "id": 385,
+    "title": "Use jq '.[].field' to map over JSON arrays",
+    "body": "`jq '.[].name' data.json` prints the name property for each element of an array.",
+    "category": "development",
+    "tags": ["jq", "arrays"]
+  },
+  {
+    "id": 386,
+    "title": "Use yq to edit YAML in-place",
+    "body": "`yq -i '.spec.replicas = 3' deployment.yaml` updates YAML safely in scripts.",
+    "category": "devops",
+    "tags": ["yq", "yaml"]
+  },
+  {
+    "id": 387,
+    "title": "Use awk as a CSV processor with -F,",
+    "body": "`awk -F, '{print $2}' file.csv` quickly extracts CSV columns when quoting is simple.",
+    "category": "text",
+    "tags": ["awk", "csv"]
+  },
+  {
+    "id": 388,
+    "title": "Use csvtool or miller for robust CSV work",
+    "body": "Tools like `mlr` (Miller) handle CSV/TSV with quoting and type awareness better than plain awk.",
+    "category": "text",
+    "tags": ["csv", "miller"]
+  },
+  {
+    "id": 389,
+    "title": "Use rename with regex capturing groups",
+    "body": "`rename 's/(.*)-(\\d+)\\.log/$1.log.$2/' *.log` can reformat filenames flexibly.",
+    "category": "filesystem",
+    "tags": ["rename", "regex"]
+  },
+  {
+    "id": 390,
+    "title": "Use lnav + SQL to query logs",
+    "body": "`lnav` can run SQL queries over structured log data, such as counting errors by minute.",
+    "category": "logging",
+    "tags": ["lnav", "sql"]
+  },
+  {
+    "id": 391,
+    "title": "Use ssh -o StrictHostKeyChecking=no only for automation in trusted networks",
+    "body": "Disabling host key checking is risky; use only in tightly controlled internal systems when necessary.",
+    "category": "security",
+    "tags": ["ssh", "host-keys"]
+  },
+  {
+    "id": 392,
+    "title": "Use mosh for resilient remote shells",
+    "body": "`mosh user@host` survives IP changes and temporary network drops better than plain SSH.",
+    "category": "remote",
+    "tags": ["mosh", "ssh"]
+  },
+  {
+    "id": 393,
+    "title": "Use screen as an alternative to tmux",
+    "body": "`screen` provides detachable terminal sessions similar to tmux; useful on minimal servers.",
+    "category": "remote",
+    "tags": ["screen", "sessions"]
+  },
+  {
+    "id": 394,
+    "title": "Use tmux sessions per project",
+    "body": "Create tmux sessions named after projects (`tmux new -s proj`) to keep windows and panes organized.",
+    "category": "productivity",
+    "tags": ["tmux", "workflow"]
+  },
+  {
+    "id": 395,
+    "title": "Use tmux copy-mode for keyboard-driven selection",
+    "body": "Enter copy mode with `[`, navigate, mark selections, and paste with `]` to avoid the mouse.",
+    "category": "productivity",
+    "tags": ["tmux", "copy"]
+  },
+  {
+    "id": 396,
+    "title": "Use \"/\" and \"?\" in less to search forward and backward",
+    "body": "In less, `/pattern` searches forward, `?pattern` backward; `n` jumps to next match.",
+    "category": "shell",
+    "tags": ["less", "search"]
+  },
+  {
+    "id": 397,
+    "title": "Use ctrl+g in less to see file position",
+    "body": "Press Ctrl+G in less to see filename, line number, and percentage through the file.",
+    "category": "shell",
+    "tags": ["less", "navigation"]
+  },
+  {
+    "id": 398,
+    "title": "Use dconf and gsettings for GNOME configuration",
+    "body": "Run `gsettings list-recursively` or `dconf` tools to script desktop environment tweaks.",
+    "category": "desktop",
+    "tags": ["gnome", "settings"]
+  },
+  {
+    "id": 399,
+    "title": "Use xrandr to script display layouts",
+    "body": "`xrandr` can enable, disable, and position monitors in scripts for multi-display setups.",
+    "category": "desktop",
+    "tags": ["xrandr", "display"]
+  },
+  {
+    "id": 400,
+    "title": "Use feh or sxiv to quickly preview images from the CLI",
+    "body": "Minimal image viewers like `feh` integrate well with shell scripts.",
+    "category": "desktop",
+    "tags": ["images", "feh"]
+  },
+  {
+    "id": 401,
+    "title": "Use scrot or maim to take screenshots from the terminal",
+    "body": "CLI screenshot tools are scriptable and work great with tiling window managers.",
+    "category": "desktop",
+    "tags": ["screenshots", "scrot"]
+  },
+  {
+    "id": 402,
+    "title": "Use xdotool to automate keyboard and mouse input",
+    "body": "`xdotool` can simulate key presses and mouse events to automate GUI tasks.",
+    "category": "desktop",
+    "tags": ["xdotool", "automation"]
+  },
+  {
+    "id": 403,
+    "title": "Use wmctrl to manage windows from scripts",
+    "body": "`wmctrl` can list, focus, move, and resize windows for automation.",
+    "category": "desktop",
+    "tags": ["wmctrl", "windows"]
+  },
+  {
+    "id": 404,
+    "title": "Use fc-cache -fv after installing new fonts",
+    "body": "`fc-cache -fv` rebuilds fontconfig caches so newly added fonts become available.",
+    "category": "desktop",
+    "tags": ["fonts", "cache"]
+  },
+  {
+    "id": 405,
+    "title": "Use alsamixer or amixer for audio control",
+    "body": "`alsamixer` is a TUI mixer; `amixer` lets you set volume and mute from scripts.",
+    "category": "desktop",
+    "tags": ["audio", "alsa"]
+  },
+  {
+    "id": 406,
+    "title": "Use pactl and pacmd for PulseAudio control",
+    "body": "Change default sinks, move streams, and inspect audio state via PulseAudio’s CLI tools.",
+    "category": "desktop",
+    "tags": ["audio", "pulseaudio"]
+  },
+  {
+    "id": 407,
+    "title": "Use systemd user services for per-user daemons",
+    "body": "Place unit files in `~/.config/systemd/user` and manage them with `systemctl --user`.",
+    "category": "system",
+    "tags": ["systemd", "user-services"]
+  },
+  {
+    "id": 408,
+    "title": "Use network namespaces to test client/server on one host",
+    "body": "Run server in one namespace and client in another to simulate multi-host setups locally.",
+    "category": "network",
+    "tags": ["namespaces", "testing"]
+  },
+  {
+    "id": 409,
+    "title": "Use perf stat for quick performance counters",
+    "body": "`perf stat command` reports cache misses, branch mispredictions, and more hardware events.",
+    "category": "performance",
+    "tags": ["perf", "counters"]
+  },
+  {
+    "id": 410,
+    "title": "Use uname -a to see kernel version and architecture",
+    "body": "`uname -a` prints kernel version, build, and CPU architecture in one line.",
+    "category": "system",
+    "tags": ["uname", "kernel"]
+  },
+  {
+    "id": 411,
+    "title": "Use sysctl to view and tweak kernel parameters",
+    "body": "`sysctl -a` lists tunables; `sysctl net.ipv4.ip_forward=1` changes them at runtime.",
+    "category": "system",
+    "tags": ["sysctl", "tuning"]
+  },
+  {
+    "id": 412,
+    "title": "Persist sysctl changes in /etc/sysctl.d",
+    "body": "Drop files into `/etc/sysctl.d/*.conf` to apply kernel tunings at boot time.",
+    "category": "system",
+    "tags": ["sysctl", "persist"]
+  },
+  {
+    "id": 413,
+    "title": "Use find /var/log -type f -size +100M for log audits",
+    "body": "Quickly locate oversized logs that may need rotation or inspection.",
+    "category": "logging",
+    "tags": ["find", "logs"]
+  },
+  {
+    "id": 414,
+    "title": "Use /etc/security/limits.conf for per-user resource limits",
+    "body": "Configure max open files or processes to prevent runaway workloads from one user.",
+    "category": "security",
+    "tags": ["limits", "pam"]
+  },
+  {
+    "id": 415,
+    "title": "Use pam_tally2 or faillock to track failed logins",
+    "body": "PAM modules can lock accounts temporarily after repeated authentication failures.",
+    "category": "security",
+    "tags": ["pam", "lockout"]
+  },
+  {
+    "id": 416,
+    "title": "Use sshd Match blocks for per-group rules",
+    "body": "In `sshd_config`, Match blocks allow different settings (like AllowTcpForwarding) per user or group.",
+    "category": "security",
+    "tags": ["ssh", "config"]
+  },
+  {
+    "id": 417,
+    "title": "Use firewalld zones for context-aware rules",
+    "body": "Assign interfaces to zones like public or internal and apply firewall rules by zone.",
+    "category": "security",
+    "tags": ["firewalld", "zones"]
+  },
+  {
+    "id": 418,
+    "title": "Use nmcli connection profiles for predictable networking",
+    "body": "Create named profiles and switch between wired/wireless configs with a single command.",
+    "category": "network",
+    "tags": ["nmcli", "profiles"]
+  },
+  {
+    "id": 419,
+    "title": "Use ethtool to inspect and tweak NIC settings",
+    "body": "`ethtool eth0` shows speed, duplex, and offload settings; some issues are fixed by adjusting these.",
+    "category": "network",
+    "tags": ["ethtool", "nic"]
+  },
+  {
+    "id": 420,
+    "title": "Use tcpdump 'port 53' to troubleshoot DNS",
+    "body": "Capturing DNS packets helps understand resolver issues and misconfigurations.",
+    "category": "network",
+    "tags": ["tcpdump", "dns"]
+  },
+  {
+    "id": 421,
+    "title": "Use journalctl -u ssh to debug SSH issues",
+    "body": "`journalctl -u ssh -f` shows live SSH server logs during connection attempts.",
+    "category": "logging",
+    "tags": ["ssh", "journalctl"]
+  },
+  {
+    "id": 422,
+    "title": "Use watch sensors for hardware temperature monitoring",
+    "body": "Install `lm-sensors` and run `watch -n 2 sensors` to monitor CPU and board temperatures.",
+    "category": "monitoring",
+    "tags": ["sensors", "hardware"]
+  },
+  {
+    "id": 423,
+    "title": "Use fwupdmgr to update firmware safely",
+    "body": "`fwupdmgr get-updates` checks for BIOS/firmware updates on supported hardware.",
+    "category": "system",
+    "tags": ["firmware", "updates"]
+  },
+  {
+    "id": 424,
+    "title": "Use fzf + ssh for host selection",
+    "body": "`cat ~/.ssh/config | grep '^Host ' | awk '{print $2}' | fzf | xargs ssh` lets you pick a host interactively.",
+    "category": "productivity",
+    "tags": ["fzf", "ssh"]
+  },
+  {
+    "id": 425,
+    "title": "Use rg --files | fzf to fuzzy-find files",
+    "body": "`rg --files | fzf` lists tracked files and lets you select one to open in your editor.",
+    "category": "development",
+    "tags": ["rg", "fzf"]
+  },
+  {
+    "id": 426,
+    "title": "Use PATH order to prefer custom tools",
+    "body": "Place `$HOME/bin` or `/usr/local/bin` early in PATH so your own versions override system defaults where desired.",
+    "category": "shell",
+    "tags": ["PATH", "priority"]
+  },
+  {
+    "id": 427,
+    "title": "Use which -a to see all executable locations",
+    "body": "`which -a command` shows every matching executable along PATH, helping debug PATH issues.",
+    "category": "shell",
+    "tags": ["which", "path"]
+  },
+  {
+    "id": 428,
+    "title": "Use /etc/profile.d scripts for system-wide environment tweaks",
+    "body": "Drop small shell scripts into `/etc/profile.d` to adjust PATH and variables for all interactive users.",
+    "category": "system",
+    "tags": ["profile", "env"]
+  },
+  {
+    "id": 429,
+    "title": "Use ssh -t to force allocation of a TTY",
+    "body": "`ssh -t user@host 'sudo journalctl -f'` forces an interactive TTY, which some commands require.",
+    "category": "remote",
+    "tags": ["ssh", "tty"]
+  },
+  {
+    "id": 430,
+    "title": "Use yes | command cautiously for non-interactive confirmation",
+    "body": "`yes | apt-get install package` auto-answers yes, but must be used carefully to avoid unintended changes.",
+    "category": "automation",
+    "tags": ["yes", "noninteractive"]
+  }
 ]
