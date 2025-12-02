@@ -1,0 +1,137 @@
+[
+  {
+    "id": "ls",
+    "command": "ls",
+    "title": "List directory contents",
+    "category": "files",
+    "description": "List files and directories in the current path.",
+    "usage": "ls [options] [path]",
+    "examples": [
+      {
+        "title": "List files in the current directory",
+        "code": "ls",
+        "explanation": "Shows non-hidden files and directories in the current location."
+      },
+      {
+        "title": "Show detailed information",
+        "code": "ls -l",
+        "explanation": "Displays permissions, owner, size and modification time."
+      },
+      {
+        "title": "List all files including hidden",
+        "code": "ls -la",
+        "explanation": "Adds hidden files (starting with a dot) to the output."
+      }
+    ],
+    "level": "beginner",
+    "tags": ["files", "navigation", "basics"]
+  },
+  {
+    "id": "cd",
+    "command": "cd",
+    "title": "Change directory",
+    "category": "files",
+    "description": "Change the current working directory.",
+    "usage": "cd [directory]",
+    "examples": [
+      {
+        "title": "Move into a directory",
+        "code": "cd /var/log",
+        "explanation": "Makes /var/log the current working directory."
+      },
+      {
+        "title": "Go to the home directory",
+        "code": "cd ~",
+        "explanation": "Jumps to the current user's home directory."
+      },
+      {
+        "title": "Go back to the previous directory",
+        "code": "cd -",
+        "explanation": "Toggles between the current and previous directory."
+      }
+    ],
+    "level": "beginner",
+    "tags": ["files", "navigation", "basics"]
+  },
+  {
+    "id": "grep",
+    "command": "grep",
+    "title": "Search text using patterns",
+    "category": "text",
+    "description": "Search for lines matching a pattern in files or input.",
+    "usage": "grep [options] pattern [file...]",
+    "examples": [
+      {
+        "title": "Search for a word in a file",
+        "code": "grep 'error' /var/log/syslog",
+        "explanation": "Shows all lines in syslog that contain the word 'error'."
+      },
+      {
+        "title": "Case-insensitive search",
+        "code": "grep -i 'warning' /var/log/syslog",
+        "explanation": "Matches 'warning', 'Warning', 'WARNING', etc."
+      },
+      {
+        "title": "Recursive search in a directory",
+        "code": "grep -R 'TODO' .",
+        "explanation": "Searches 'TODO' in all files under the current directory."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["search", "text", "logs"]
+  },
+  {
+    "id": "systemctl",
+    "command": "systemctl",
+    "title": "Control systemd services",
+    "category": "system",
+    "description": "Start, stop, enable, disable and inspect systemd services.",
+    "usage": "systemctl [command] [unit]",
+    "examples": [
+      {
+        "title": "Check the status of a service",
+        "code": "systemctl status nginx",
+        "explanation": "Shows whether nginx is running, with logs and status info."
+      },
+      {
+        "title": "Restart a service",
+        "code": "systemctl restart sshd",
+        "explanation": "Restarts the SSH daemon and applies configuration changes."
+      },
+      {
+        "title": "Enable a service at boot",
+        "code": "systemctl enable docker",
+        "explanation": "Configures Docker to start automatically after reboot."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["services", "systemd", "admin"]
+  },
+  {
+    "id": "iptables",
+    "command": "iptables",
+    "title": "Configure IPv4 packet filtering rules",
+    "category": "network",
+    "description": "Low-level firewall rule management for Linux networking.",
+    "usage": "iptables [table] [command] [chain] [conditions] [target]",
+    "examples": [
+      {
+        "title": "List all rules with line numbers",
+        "code": "sudo iptables -L -n --line-numbers",
+        "explanation": "Shows all rules in filter table with numeric output."
+      },
+      {
+        "title": "Allow incoming SSH from a specific IP",
+        "code": "sudo iptables -A INPUT -p tcp --dport 22 -s 203.0.113.10 -j ACCEPT",
+        "explanation": "Adds a rule to accept SSH only from 203.0.113.10."
+      },
+      {
+        "title": "Drop all incoming traffic by default",
+        "code": "sudo iptables -P INPUT DROP",
+        "explanation": "Changes the default policy for INPUT chain to drop packets."
+      }
+    ],
+    "level": "pro",
+    "tags": ["firewall", "network", "security"]
+  }
+]

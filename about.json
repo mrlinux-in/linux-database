@@ -1,0 +1,27 @@
+{
+  "project": "Mr. Linux",
+  "dataset": "linux-database",
+  "version": "1.0.0",
+  "author": "Mr. Linux",
+  "description": "Mr. Linux is a learning resource that teaches Linux commands, tips and real-world workflows. Content is structured into beginner, intermediate and pro levels so you can grow from basic navigation to advanced system administration.",
+  "website": "https://mrlinux.in",
+  "contact": "contact@mrlinux.in",
+  "levels": [
+    {
+      "key": "beginner",
+      "label": "Beginner",
+      "summary": "Safe commands and foundational concepts for new users."
+    },
+    {
+      "key": "intermediate",
+      "label": "Intermediate",
+      "summary": "Practical tools for daily server and workstation use."
+    },
+    {
+      "key": "pro",
+      "label": "Pro",
+      "summary": "Deep-dive topics: security, networking, monitoring and automation."
+    }
+  ],
+  "license": "Open data for educational use. Please credit 'Mr. Linux' if you reuse this dataset."
+}

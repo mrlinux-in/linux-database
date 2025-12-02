@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "title": "Use the shell history efficiently",
+    "body": "Press the Up arrow to cycle through previous commands, and use `history | grep <keyword>` to find old commands quickly.",
+    "category": "productivity",
+    "level": "beginner",
+    "tags": ["history", "navigation"]
+  },
+  {
+    "id": 2,
+    "title": "Use aliases for frequent commands",
+    "body": "Define aliases like `alias ll='ls -la'` in your shell config (e.g. ~/.bashrc or ~/.zshrc) to speed up everyday commands.",
+    "category": "shell",
+    "level": "intermediate",
+    "tags": ["alias", "shell", "bash", "zsh"]
+  },
+  {
+    "id": 3,
+    "title": "Combine SSH with tmux for remote work",
+    "body": "Run long tasks over SSH inside tmux or screen sessions to avoid losing work when your connection drops.",
+    "category": "remote",
+    "level": "pro",
+    "tags": ["ssh", "tmux", "admin"]
+  }
+]

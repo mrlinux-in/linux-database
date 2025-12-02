@@ -1,0 +1,46 @@
+{
+  "levels": [
+    {
+      "key": "beginner",
+      "label": "Beginner",
+      "description": "Core Linux basics — safe commands and concepts for new users."
+    },
+    {
+      "key": "intermediate",
+      "label": "Intermediate",
+      "description": "More powerful tools, piping, services and everyday admin tasks."
+    },
+    {
+      "key": "pro",
+      "label": "Pro",
+      "description": "Advanced system administration, networking, security and performance tuning."
+    }
+  ],
+  "topics": [
+    {
+      "key": "files",
+      "label": "Files & Directories",
+      "description": "Navigating, listing, moving and managing files and folders."
+    },
+    {
+      "key": "text",
+      "label": "Text & Search",
+      "description": "Working with text files, searching logs and filtering output."
+    },
+    {
+      "key": "system",
+      "label": "System & Services",
+      "description": "Systemd, processes, services and system information."
+    },
+    {
+      "key": "network",
+      "label": "Networking & Security",
+      "description": "Network tools, diagnostics and firewall rules."
+    },
+    {
+      "key": "shell",
+      "label": "Shell & Productivity",
+      "description": "Shortcuts, history, aliases and terminal workflow improvements."
+    }
+  ]
+}
