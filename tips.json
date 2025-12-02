@@ -1608,7 +1608,7 @@
     "body": "`truncate -s 0 file` empties a file without deleting it; `truncate -s 10M file` sets an exact size.",
     "category": "filesystem",
     "tags": ["truncate", "size"]
-  }
+  },
   {
     "id": 231,
     "title": "Use flock to avoid running duplicate cron jobs",
