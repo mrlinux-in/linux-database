@@ -133,5 +133,1708 @@
     ],
     "level": "pro",
     "tags": ["firewall", "network", "security"]
+  },
+
+  {
+    "id": "pwd",
+    "command": "pwd",
+    "title": "Print working directory",
+    "category": "files",
+    "description": "Display the full path of the current working directory.",
+    "usage": "pwd",
+    "examples": [
+      {
+        "title": "Show current directory path",
+        "code": "pwd",
+        "explanation": "Prints the absolute path of your current location in the filesystem."
+      }
+    ],
+    "level": "beginner",
+    "tags": ["navigation", "basics"]
+  },
+  {
+    "id": "mkdir",
+    "command": "mkdir",
+    "title": "Create directories",
+    "category": "files",
+    "description": "Create one or more new directories.",
+    "usage": "mkdir [options] directory...",
+    "examples": [
+      {
+        "title": "Create a single directory",
+        "code": "mkdir projects",
+        "explanation": "Creates a directory named 'projects' in the current location."
+      },
+      {
+        "title": "Create nested directories",
+        "code": "mkdir -p projects/2025/app",
+        "explanation": "Creates the full path, including any missing parent directories."
+      }
+    ],
+    "level": "beginner",
+    "tags": ["files", "directories", "basics"]
+  },
+  {
+    "id": "rmdir",
+    "command": "rmdir",
+    "title": "Remove empty directories",
+    "category": "files",
+    "description": "Remove one or more empty directories.",
+    "usage": "rmdir [options] directory...",
+    "examples": [
+      {
+        "title": "Remove an empty directory",
+        "code": "rmdir old_logs",
+        "explanation": "Deletes the directory 'old_logs' if it is empty."
+      }
+    ],
+    "level": "beginner",
+    "tags": ["files", "directories", "cleanup"]
+  },
+  {
+    "id": "rm",
+    "command": "rm",
+    "title": "Remove files or directories",
+    "category": "files",
+    "description": "Delete files or directories permanently.",
+    "usage": "rm [options] file...",
+    "examples": [
+      {
+        "title": "Remove a single file",
+        "code": "rm file.txt",
+        "explanation": "Deletes file.txt without moving it to a recycle bin."
+      },
+      {
+        "title": "Recursively remove a directory",
+        "code": "rm -rf old_backup",
+        "explanation": "Deletes 'old_backup' and all its contents without confirmation."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["files", "delete", "dangerous"]
+  },
+  {
+    "id": "cp",
+    "command": "cp",
+    "title": "Copy files and directories",
+    "category": "files",
+    "description": "Copy files or directories to another location.",
+    "usage": "cp [options] source... destination",
+    "examples": [
+      {
+        "title": "Copy a file",
+        "code": "cp file.txt backup.txt",
+        "explanation": "Creates a copy of file.txt named backup.txt."
+      },
+      {
+        "title": "Copy directories recursively",
+        "code": "cp -r images/ backup_images/",
+        "explanation": "Copies the entire images directory into backup_images."
+      }
+    ],
+    "level": "beginner",
+    "tags": ["files", "copy", "backup"]
+  },
+  {
+    "id": "mv",
+    "command": "mv",
+    "title": "Move or rename files",
+    "category": "files",
+    "description": "Move files or directories or rename them.",
+    "usage": "mv [options] source... destination",
+    "examples": [
+      {
+        "title": "Rename a file",
+        "code": "mv oldname.txt newname.txt",
+        "explanation": "Changes the name of oldname.txt to newname.txt."
+      },
+      {
+        "title": "Move a file to another directory",
+        "code": "mv report.pdf ~/Documents/",
+        "explanation": "Moves report.pdf into the Documents directory."
+      }
+    ],
+    "level": "beginner",
+    "tags": ["files", "rename", "move"]
+  },
+  {
+    "id": "touch",
+    "command": "touch",
+    "title": "Create or update files",
+    "category": "files",
+    "description": "Create empty files or update file timestamps.",
+    "usage": "touch file...",
+    "examples": [
+      {
+        "title": "Create an empty file",
+        "code": "touch notes.txt",
+        "explanation": "Creates notes.txt if it does not exist."
+      },
+      {
+        "title": "Update file modification time",
+        "code": "touch script.sh",
+        "explanation": "Updates the modification time of script.sh to now."
+      }
+    ],
+    "level": "beginner",
+    "tags": ["files", "creation", "timestamps"]
+  },
+  {
+    "id": "cat",
+    "command": "cat",
+    "title": "Concatenate and display files",
+    "category": "text",
+    "description": "Display file contents or concatenate multiple files.",
+    "usage": "cat [options] [file...]",
+    "examples": [
+      {
+        "title": "Show a file's contents",
+        "code": "cat file.txt",
+        "explanation": "Prints file.txt to standard output."
+      },
+      {
+        "title": "Combine two files",
+        "code": "cat part1.txt part2.txt > full.txt",
+        "explanation": "Merges part1.txt and part2.txt into full.txt."
+      }
+    ],
+    "level": "beginner",
+    "tags": ["text", "view", "concat"]
+  },
+  {
+    "id": "less",
+    "command": "less",
+    "title": "View text one screen at a time",
+    "category": "text",
+    "description": "Interactively view large text files page by page.",
+    "usage": "less [options] [file]",
+    "examples": [
+      {
+        "title": "View a log file",
+        "code": "less /var/log/syslog",
+        "explanation": "Opens syslog in a scrollable pager."
+      },
+      {
+        "title": "View output of another command",
+        "code": "dmesg | less",
+        "explanation": "Pipes kernel messages into less for easier navigation."
+      }
+    ],
+    "level": "beginner",
+    "tags": ["text", "pager", "logs"]
+  },
+  {
+    "id": "more",
+    "command": "more",
+    "title": "Simple pager for text",
+    "category": "text",
+    "description": "Display text one screenful at a time.",
+    "usage": "more [options] [file]",
+    "examples": [
+      {
+        "title": "View a file with more",
+        "code": "more file.txt",
+        "explanation": "Shows file.txt screen by screen."
+      }
+    ],
+    "level": "beginner",
+    "tags": ["text", "pager"]
+  },
+  {
+    "id": "head",
+    "command": "head",
+    "title": "Show beginning of files",
+    "category": "text",
+    "description": "Display the first lines of a file.",
+    "usage": "head [options] [file...]",
+    "examples": [
+      {
+        "title": "Show first 10 lines",
+        "code": "head file.txt",
+        "explanation": "Displays the first 10 lines of file.txt."
+      },
+      {
+        "title": "Show first 50 lines",
+        "code": "head -n 50 file.txt",
+        "explanation": "Displays the first 50 lines."
+      }
+    ],
+    "level": "beginner",
+    "tags": ["text", "preview", "logs"]
+  },
+  {
+    "id": "tail",
+    "command": "tail",
+    "title": "Show end of files",
+    "category": "text",
+    "description": "Display the last lines of a file.",
+    "usage": "tail [options] [file...]",
+    "examples": [
+      {
+        "title": "Show last 10 lines",
+        "code": "tail file.txt",
+        "explanation": "Displays the final 10 lines of file.txt."
+      },
+      {
+        "title": "Follow a growing log file",
+        "code": "tail -f /var/log/syslog",
+        "explanation": "Shows new lines as they are appended to syslog."
+      }
+    ],
+    "level": "beginner",
+    "tags": ["text", "logs", "monitoring"]
+  },
+  {
+    "id": "find",
+    "command": "find",
+    "title": "Search for files in a directory hierarchy",
+    "category": "files",
+    "description": "Search for files and directories matching conditions.",
+    "usage": "find [path...] [expression]",
+    "examples": [
+      {
+        "title": "Find files by name",
+        "code": "find . -name '*.log'",
+        "explanation": "Lists all .log files under the current directory."
+      },
+      {
+        "title": "Find and delete old files",
+        "code": "find /tmp -type f -mtime +7 -delete",
+        "explanation": "Deletes regular files in /tmp older than 7 days."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["search", "files", "automation"]
+  },
+  {
+    "id": "locate",
+    "command": "locate",
+    "title": "Quickly find files by name",
+    "category": "files",
+    "description": "Search a prebuilt database to quickly find files.",
+    "usage": "locate pattern",
+    "examples": [
+      {
+        "title": "Find all paths containing 'bashrc'",
+        "code": "locate bashrc",
+        "explanation": "Lists cached locations of files with 'bashrc' in their path."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["search", "files", "database"]
+  },
+  {
+    "id": "updatedb",
+    "command": "updatedb",
+    "title": "Update locate database",
+    "category": "system",
+    "description": "Update the file name database used by locate.",
+    "usage": "sudo updatedb",
+    "examples": [
+      {
+        "title": "Refresh locate index",
+        "code": "sudo updatedb",
+        "explanation": "Rebuilds the locate database for accurate searches."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["search", "system", "maintenance"]
+  },
+  {
+    "id": "which",
+    "command": "which",
+    "title": "Show executable location",
+    "category": "system",
+    "description": "Display the full path of shell commands.",
+    "usage": "which command...",
+    "examples": [
+      {
+        "title": "Find where bash is installed",
+        "code": "which bash",
+        "explanation": "Shows the path of the bash executable in $PATH."
+      }
+    ],
+    "level": "beginner",
+    "tags": ["path", "diagnostics"]
+  },
+  {
+    "id": "whereis",
+    "command": "whereis",
+    "title": "Locate binary, source, and man page files",
+    "category": "system",
+    "description": "Find the binary, source, and manual files for a command.",
+    "usage": "whereis command",
+    "examples": [
+      {
+        "title": "Locate ls binary and man page",
+        "code": "whereis ls",
+        "explanation": "Shows the path to ls and related documentation."
+      }
+    ],
+    "level": "beginner",
+    "tags": ["path", "docs"]
+  },
+  {
+    "id": "man",
+    "command": "man",
+    "title": "Display manual pages",
+    "category": "help",
+    "description": "View the system reference manual for commands.",
+    "usage": "man [section] command",
+    "examples": [
+      {
+        "title": "Read ls manual",
+        "code": "man ls",
+        "explanation": "Opens the manual page for the ls command."
+      }
+    ],
+    "level": "beginner",
+    "tags": ["help", "docs", "basics"]
+  },
+  {
+    "id": "info",
+    "command": "info",
+    "title": "Read Info documentation",
+    "category": "help",
+    "description": "Display detailed info documents for commands and programs.",
+    "usage": "info [topic]",
+    "examples": [
+      {
+        "title": "Show coreutils info",
+        "code": "info coreutils",
+        "explanation": "Opens the GNU coreutils info manual."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["help", "docs"]
+  },
+  {
+    "id": "chmod",
+    "command": "chmod",
+    "title": "Change file permissions",
+    "category": "permissions",
+    "description": "Modify read, write, and execute permissions on files and directories.",
+    "usage": "chmod [options] mode file...",
+    "examples": [
+      {
+        "title": "Make a script executable",
+        "code": "chmod +x script.sh",
+        "explanation": "Adds execute permission for all users on script.sh."
+      },
+      {
+        "title": "Set permissions using octal",
+        "code": "chmod 640 secret.txt",
+        "explanation": "Owner can read/write, group can read, others have no access."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["permissions", "security"]
+  },
+  {
+    "id": "chown",
+    "command": "chown",
+    "title": "Change file owner and group",
+    "category": "permissions",
+    "description": "Change the owning user and/or group of files and directories.",
+    "usage": "chown [options] owner[:group] file...",
+    "examples": [
+      {
+        "title": "Change file owner",
+        "code": "sudo chown alice report.txt",
+        "explanation": "Makes alice the owner of report.txt."
+      },
+      {
+        "title": "Change owner and group recursively",
+        "code": "sudo chown -R www-data:www-data /var/www",
+        "explanation": "Changes owner and group of /var/www and its contents."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["permissions", "ownership", "admin"]
+  },
+  {
+    "id": "chgrp",
+    "command": "chgrp",
+    "title": "Change group ownership",
+    "category": "permissions",
+    "description": "Change the group associated with files and directories.",
+    "usage": "chgrp [options] group file...",
+    "examples": [
+      {
+        "title": "Change group of a directory",
+        "code": "chgrp developers project",
+        "explanation": "Sets the group owner of the project directory to developers."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["permissions", "groups"]
+  },
+  {
+    "id": "sudo",
+    "command": "sudo",
+    "title": "Run a command as another user",
+    "category": "system",
+    "description": "Execute a command with elevated privileges (usually root).",
+    "usage": "sudo [command]",
+    "examples": [
+      {
+        "title": "Edit a root-owned file",
+        "code": "sudo nano /etc/hosts",
+        "explanation": "Opens /etc/hosts in nano with root permissions."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["privileges", "admin", "security"]
+  },
+  {
+    "id": "su",
+    "command": "su",
+    "title": "Switch user",
+    "category": "system",
+    "description": "Switch to another user account, optionally with a login shell.",
+    "usage": "su [options] [username]",
+    "examples": [
+      {
+        "title": "Switch to root user",
+        "code": "su -",
+        "explanation": "Switches to the root account with login environment."
+      }
+    ],
+    "level": "pro",
+    "tags": ["users", "admin"]
+  },
+  {
+    "id": "ps",
+    "command": "ps",
+    "title": "Report process status",
+    "category": "processes",
+    "description": "List running processes and their details.",
+    "usage": "ps [options]",
+    "examples": [
+      {
+        "title": "Show processes for current terminal",
+        "code": "ps",
+        "explanation": "Lists processes started from the current shell."
+      },
+      {
+        "title": "Show all processes with full format",
+        "code": "ps aux",
+        "explanation": "Displays all processes with user, CPU, memory, and more."
+      }
+    ],
+    "level": "beginner",
+    "tags": ["processes", "monitoring"]
+  },
+  {
+    "id": "top",
+    "command": "top",
+    "title": "Interactive process viewer",
+    "category": "processes",
+    "description": "Display real-time information about running processes.",
+    "usage": "top",
+    "examples": [
+      {
+        "title": "Run top",
+        "code": "top",
+        "explanation": "Shows CPU, memory usage, and active processes interactively."
+      }
+    ],
+    "level": "beginner",
+    "tags": ["processes", "monitoring", "performance"]
+  },
+  {
+    "id": "htop",
+    "command": "htop",
+    "title": "Enhanced interactive process viewer",
+    "category": "processes",
+    "description": "Colorful, interactive process viewer with easier controls.",
+    "usage": "htop",
+    "examples": [
+      {
+        "title": "Start htop",
+        "code": "htop",
+        "explanation": "Launches htop with CPU, memory graphs and interactive controls."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["processes", "monitoring", "performance"]
+  },
+  {
+    "id": "kill",
+    "command": "kill",
+    "title": "Send signal to a process",
+    "category": "processes",
+    "description": "Send signals like TERM or KILL to processes by PID.",
+    "usage": "kill [options] pid...",
+    "examples": [
+      {
+        "title": "Terminate a process",
+        "code": "kill 1234",
+        "explanation": "Sends SIGTERM to process with PID 1234."
+      },
+      {
+        "title": "Force kill a process",
+        "code": "kill -9 1234",
+        "explanation": "Sends SIGKILL to immediately end the process."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["processes", "signals"]
+  },
+  {
+    "id": "killall",
+    "command": "killall",
+    "title": "Kill processes by name",
+    "category": "processes",
+    "description": "Send signals to all processes matching a given name.",
+    "usage": "killall [options] name...",
+    "examples": [
+      {
+        "title": "Kill all firefox processes",
+        "code": "killall firefox",
+        "explanation": "Sends SIGTERM to every process named firefox."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["processes", "signals"]
+  },
+  {
+    "id": "df",
+    "command": "df",
+    "title": "Report file system disk space usage",
+    "category": "system",
+    "description": "Show available and used space on mounted filesystems.",
+    "usage": "df [options]",
+    "examples": [
+      {
+        "title": "Human-readable disk usage",
+        "code": "df -h",
+        "explanation": "Displays disk sizes in KB/MB/GB units."
+      }
+    ],
+    "level": "beginner",
+    "tags": ["disk", "storage"]
+  },
+  {
+    "id": "du",
+    "command": "du",
+    "title": "Estimate file space usage",
+    "category": "system",
+    "description": "Summarize disk usage of files and directories.",
+    "usage": "du [options] [file...]",
+    "examples": [
+      {
+        "title": "Show size of current directory",
+        "code": "du -sh .",
+        "explanation": "Displays the total size of the current directory."
+      },
+      {
+        "title": "Show sizes of subdirectories",
+        "code": "du -sh *",
+        "explanation": "Shows sizes of each item in the current directory."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["disk", "storage", "cleanup"]
+  },
+  {
+    "id": "free",
+    "command": "free",
+    "title": "Display memory usage",
+    "category": "system",
+    "description": "Show total, used, and free system memory.",
+    "usage": "free [options]",
+    "examples": [
+      {
+        "title": "Human-readable memory info",
+        "code": "free -h",
+        "explanation": "Displays memory usage in human-readable units."
+      }
+    ],
+    "level": "beginner",
+    "tags": ["memory", "monitoring"]
+  },
+  {
+    "id": "uname",
+    "command": "uname",
+    "title": "Print system information",
+    "category": "system",
+    "description": "Display basic system and kernel information.",
+    "usage": "uname [options]",
+    "examples": [
+      {
+        "title": "Show kernel name",
+        "code": "uname",
+        "explanation": "Prints the operating system name."
+      },
+      {
+        "title": "Show detailed system info",
+        "code": "uname -a",
+        "explanation": "Shows kernel name, version, machine, and more."
+      }
+    ],
+    "level": "beginner",
+    "tags": ["system", "kernel"]
+  },
+  {
+    "id": "hostname",
+    "command": "hostname",
+    "title": "Show or set system hostname",
+    "category": "system",
+    "description": "Display or change the system's network hostname.",
+    "usage": "hostname [newname]",
+    "examples": [
+      {
+        "title": "Show hostname",
+        "code": "hostname",
+        "explanation": "Prints the current hostname."
+      }
+    ],
+    "level": "beginner",
+    "tags": ["network", "system"]
+  },
+  {
+    "id": "date",
+    "command": "date",
+    "title": "Display or set system date and time",
+    "category": "system",
+    "description": "Show current date and time or set them.",
+    "usage": "date [options] [+format]",
+    "examples": [
+      {
+        "title": "Show current date and time",
+        "code": "date",
+        "explanation": "Prints the local date and time."
+      },
+      {
+        "title": "Custom formatted date",
+        "code": "date '+%Y-%m-%d %H:%M:%S'",
+        "explanation": "Shows date and time in YYYY-MM-DD HH:MM:SS format."
+      }
+    ],
+    "level": "beginner",
+    "tags": ["time", "system"]
+  },
+  {
+    "id": "whoami",
+    "command": "whoami",
+    "title": "Show current username",
+    "category": "system",
+    "description": "Print the effective user ID's username.",
+    "usage": "whoami",
+    "examples": [
+      {
+        "title": "Check current user",
+        "code": "whoami",
+        "explanation": "Displays the username associated with the current shell."
+      }
+    ],
+    "level": "beginner",
+    "tags": ["users", "basics"]
+  },
+  {
+    "id": "who",
+    "command": "who",
+    "title": "Show logged-in users",
+    "category": "system",
+    "description": "Display who is logged into the system.",
+    "usage": "who",
+    "examples": [
+      {
+        "title": "List users",
+        "code": "who",
+        "explanation": "Shows users logged in and their terminals."
+      }
+    ],
+    "level": "beginner",
+    "tags": ["users", "sessions"]
+  },
+  {
+    "id": "w",
+    "command": "w",
+    "title": "Show logged-in users and activity",
+    "category": "system",
+    "description": "Display who is logged on and what they are doing.",
+    "usage": "w",
+    "examples": [
+      {
+        "title": "Show system activity",
+        "code": "w",
+        "explanation": "Displays users, their idle time, and CPU usage."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["users", "monitoring"]
+  },
+  {
+    "id": "id",
+    "command": "id",
+    "title": "Print user identity",
+    "category": "system",
+    "description": "Show user and group IDs and memberships.",
+    "usage": "id [username]",
+    "examples": [
+      {
+        "title": "Show current user IDs",
+        "code": "id",
+        "explanation": "Displays UID, GID, and group memberships."
+      }
+    ],
+    "level": "beginner",
+    "tags": ["users", "permissions"]
+  },
+  {
+    "id": "env",
+    "command": "env",
+    "title": "Show or set environment variables",
+    "category": "shell",
+    "description": "Display the environment or run a command with modified environment.",
+    "usage": "env [name=value]... [command [args...]]",
+    "examples": [
+      {
+        "title": "List environment variables",
+        "code": "env",
+        "explanation": "Prints all environment variables for the current shell."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["environment", "shell"]
+  },
+  {
+    "id": "echo",
+    "command": "echo",
+    "title": "Display a line of text",
+    "category": "shell",
+    "description": "Print the given arguments to standard output.",
+    "usage": "echo [options] [string...]",
+    "examples": [
+      {
+        "title": "Print a message",
+        "code": "echo 'Hello, world!'",
+        "explanation": "Outputs the text to the terminal."
+      },
+      {
+        "title": "Show value of an environment variable",
+        "code": "echo $HOME",
+        "explanation": "Prints the path of the user's home directory."
+      }
+    ],
+    "level": "beginner",
+    "tags": ["shell", "basics"]
+  },
+  {
+    "id": "history",
+    "command": "history",
+    "title": "Command history",
+    "category": "shell",
+    "description": "Display or manipulate the shell command history.",
+    "usage": "history [n]",
+    "examples": [
+      {
+        "title": "Show recent commands",
+        "code": "history",
+        "explanation": "Lists previously executed commands."
+      }
+    ],
+    "level": "beginner",
+    "tags": ["shell", "productivity"]
+  },
+  {
+    "id": "alias",
+    "command": "alias",
+    "title": "Create command aliases",
+    "category": "shell",
+    "description": "Define or display aliases for commands.",
+    "usage": "alias [name='value']",
+    "examples": [
+      {
+        "title": "Create a simple alias",
+        "code": "alias ll='ls -la'",
+        "explanation": "Defines ll as a shortcut for ls -la."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["shell", "productivity"]
+  },
+  {
+    "id": "unalias",
+    "command": "unalias",
+    "title": "Remove command aliases",
+    "category": "shell",
+    "description": "Remove previously defined aliases.",
+    "usage": "unalias name",
+    "examples": [
+      {
+        "title": "Remove ll alias",
+        "code": "unalias ll",
+        "explanation": "Deletes the alias named ll."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["shell", "productivity"]
+  },
+  {
+    "id": "ping",
+    "command": "ping",
+    "title": "Check network connectivity",
+    "category": "network",
+    "description": "Send ICMP echo requests to test reachability of a host.",
+    "usage": "ping [options] destination",
+    "examples": [
+      {
+        "title": "Ping a host",
+        "code": "ping google.com",
+        "explanation": "Continuously sends packets to google.com until interrupted."
+      },
+      {
+        "title": "Send a limited number of pings",
+        "code": "ping -c 4 8.8.8.8",
+        "explanation": "Sends 4 ICMP echo requests to 8.8.8.8."
+      }
+    ],
+    "level": "beginner",
+    "tags": ["network", "diagnostics"]
+  },
+  {
+    "id": "traceroute",
+    "command": "traceroute",
+    "title": "Trace network path",
+    "category": "network",
+    "description": "Show the route packets take to reach a network host.",
+    "usage": "traceroute [options] destination",
+    "examples": [
+      {
+        "title": "Trace route to a domain",
+        "code": "traceroute example.com",
+        "explanation": "Displays each hop on the path to example.com."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["network", "routing", "diagnostics"]
+  },
+  {
+    "id": "ssh",
+    "command": "ssh",
+    "title": "Secure shell remote login",
+    "category": "network",
+    "description": "Connect securely to a remote machine over SSH.",
+    "usage": "ssh [user@]host",
+    "examples": [
+      {
+        "title": "Connect to a server",
+        "code": "ssh user@server.example.com",
+        "explanation": "Opens an interactive shell on the remote server as user."
+      },
+      {
+        "title": "Use a specific key file",
+        "code": "ssh -i ~/.ssh/id_rsa user@server",
+        "explanation": "Authenticates with the specified private key."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["remote", "security", "network"]
+  },
+  {
+    "id": "scp",
+    "command": "scp",
+    "title": "Secure copy over SSH",
+    "category": "network",
+    "description": "Copy files between hosts over SSH.",
+    "usage": "scp [options] source destination",
+    "examples": [
+      {
+        "title": "Copy from local to remote",
+        "code": "scp file.txt user@server:/tmp/",
+        "explanation": "Uploads file.txt to /tmp on the remote server."
+      },
+      {
+        "title": "Copy from remote to local",
+        "code": "scp user@server:/var/log/syslog .",
+        "explanation": "Downloads syslog to the current directory."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["files", "remote", "network"]
+  },
+  {
+    "id": "rsync",
+    "command": "rsync",
+    "title": "Efficient file synchronization",
+    "category": "network",
+    "description": "Synchronize files and directories locally or over SSH.",
+    "usage": "rsync [options] source destination",
+    "examples": [
+      {
+        "title": "Sync a local directory to remote",
+        "code": "rsync -avz project/ user@server:~/project/",
+        "explanation": "Synchronizes project directory to the remote server with compression and verbose output."
+      },
+      {
+        "title": "Delete removed files on target",
+        "code": "rsync -av --delete src/ dest/",
+        "explanation": "Makes dest/ mirror src/, deleting files not present in src/."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["backup", "sync", "remote"]
+  },
+  {
+    "id": "wget",
+    "command": "wget",
+    "title": "Non-interactive network downloader",
+    "category": "network",
+    "description": "Download files from the web via HTTP, HTTPS, or FTP.",
+    "usage": "wget [options] url",
+    "examples": [
+      {
+        "title": "Download a file",
+        "code": "wget https://example.com/file.zip",
+        "explanation": "Saves file.zip in the current directory."
+      }
+    ],
+    "level": "beginner",
+    "tags": ["download", "http"]
+  },
+  {
+    "id": "curl",
+    "command": "curl",
+    "title": "Transfer data from or to a server",
+    "category": "network",
+    "description": "Send HTTP requests or transfer data using many protocols.",
+    "usage": "curl [options] url",
+    "examples": [
+      {
+        "title": "Fetch a webpage",
+        "code": "curl https://example.com",
+        "explanation": "Outputs the HTML content of the webpage."
+      },
+      {
+        "title": "Send a POST request with JSON",
+        "code": "curl -X POST -H 'Content-Type: application/json' -d '{\"key\":\"value\"}' https://api.example.com",
+        "explanation": "Sends JSON data to an API endpoint."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["http", "api", "network"]
+  },
+  {
+    "id": "dig",
+    "command": "dig",
+    "title": "DNS lookup",
+    "category": "network",
+    "description": "Query DNS servers for information about hostnames.",
+    "usage": "dig [options] [name] [type]",
+    "examples": [
+      {
+        "title": "Lookup A records",
+        "code": "dig example.com",
+        "explanation": "Retrieves IPv4 address records for example.com."
+      },
+      {
+        "title": "Query DNS server directly",
+        "code": "dig @8.8.8.8 example.com",
+        "explanation": "Uses Google DNS to resolve example.com."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["dns", "network", "diagnostics"]
+  },
+  {
+    "id": "ifconfig",
+    "command": "ifconfig",
+    "title": "Configure network interfaces (legacy)",
+    "category": "network",
+    "description": "View or configure network interfaces (superseded by ip on many systems).",
+    "usage": "ifconfig [interface]",
+    "examples": [
+      {
+        "title": "Show all interfaces",
+        "code": "ifconfig",
+        "explanation": "Displays information about all active network interfaces."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["network", "interfaces", "legacy"]
+  },
+  {
+    "id": "ip",
+    "command": "ip",
+    "title": "Show and manipulate routing, devices, and tunnels",
+    "category": "network",
+    "description": "Modern tool for configuring IP addresses and network interfaces.",
+    "usage": "ip [options] object command",
+    "examples": [
+      {
+        "title": "Show addresses",
+        "code": "ip addr",
+        "explanation": "Lists IP addresses assigned to interfaces."
+      },
+      {
+        "title": "Show routing table",
+        "code": "ip route",
+        "explanation": "Displays kernel routing table."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["network", "routing", "interfaces"]
+  },
+  {
+    "id": "ss",
+    "command": "ss",
+    "title": "View socket statistics",
+    "category": "network",
+    "description": "Dump socket statistics, similar to netstat but faster.",
+    "usage": "ss [options]",
+    "examples": [
+      {
+        "title": "Show listening TCP ports",
+        "code": "ss -tln",
+        "explanation": "Displays listening TCP sockets with numeric addresses."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["network", "sockets", "diagnostics"]
+  },
+  {
+    "id": "tar",
+    "command": "tar",
+    "title": "Archive files",
+    "category": "compression",
+    "description": "Create or extract tar archive files.",
+    "usage": "tar [options] [archive] [file...]",
+    "examples": [
+      {
+        "title": "Create a tar.gz archive",
+        "code": "tar -czf backup.tar.gz ~/project",
+        "explanation": "Archives the project directory with gzip compression."
+      },
+      {
+        "title": "Extract an archive",
+        "code": "tar -xzf backup.tar.gz",
+        "explanation": "Extracts files from backup.tar.gz into current directory."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["archive", "backup", "compression"]
+  },
+  {
+    "id": "gzip",
+    "command": "gzip",
+    "title": "Compress files",
+    "category": "compression",
+    "description": "Compress or decompress files using the gzip format.",
+    "usage": "gzip [options] file...",
+    "examples": [
+      {
+        "title": "Compress a file",
+        "code": "gzip file.txt",
+        "explanation": "Replaces file.txt with a compressed file.txt.gz."
+      }
+    ],
+    "level": "beginner",
+    "tags": ["compression"]
+  },
+  {
+    "id": "gunzip",
+    "command": "gunzip",
+    "title": "Decompress gzip files",
+    "category": "compression",
+    "description": "Decompress files compressed with gzip.",
+    "usage": "gunzip file.gz",
+    "examples": [
+      {
+        "title": "Decompress a gzip file",
+        "code": "gunzip file.txt.gz",
+        "explanation": "Restores the original file.txt."
+      }
+    ],
+    "level": "beginner",
+    "tags": ["compression", "decompress"]
+  },
+  {
+    "id": "zip",
+    "command": "zip",
+    "title": "Package and compress files into zip archive",
+    "category": "compression",
+    "description": "Create ZIP archives from files and directories.",
+    "usage": "zip [options] archive file...",
+    "examples": [
+      {
+        "title": "Create a zip archive",
+        "code": "zip -r project.zip project/",
+        "explanation": "Compresses the project directory into project.zip."
+      }
+    ],
+    "level": "beginner",
+    "tags": ["archive", "compression"]
+  },
+  {
+    "id": "unzip",
+    "command": "unzip",
+    "title": "Extract zip archives",
+    "category": "compression",
+    "description": "List or extract files from ZIP archives.",
+    "usage": "unzip [options] archive.zip",
+    "examples": [
+      {
+        "title": "Extract a zip file",
+        "code": "unzip project.zip",
+        "explanation": "Extracts files from project.zip into current directory."
+      }
+    ],
+    "level": "beginner",
+    "tags": ["archive", "compression", "extract"]
+  },
+  {
+    "id": "nano",
+    "command": "nano",
+    "title": "Simple text editor",
+    "category": "editor",
+    "description": "User-friendly terminal text editor.",
+    "usage": "nano [file]",
+    "examples": [
+      {
+        "title": "Edit a configuration file",
+        "code": "sudo nano /etc/fstab",
+        "explanation": "Opens /etc/fstab for editing with nano."
+      }
+    ],
+    "level": "beginner",
+    "tags": ["editor", "text"]
+  },
+  {
+    "id": "vim",
+    "command": "vim",
+    "title": "Powerful text editor",
+    "category": "editor",
+    "description": "Modal text editor for advanced editing workflows.",
+    "usage": "vim [file]",
+    "examples": [
+      {
+        "title": "Edit a file",
+        "code": "vim main.c",
+        "explanation": "Opens main.c in the vim editor."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["editor", "text", "development"]
+  },
+  {
+    "id": "sed",
+    "command": "sed",
+    "title": "Stream editor",
+    "category": "text",
+    "description": "Filter and transform text using editing commands.",
+    "usage": "sed [options] script [file...]",
+    "examples": [
+      {
+        "title": "Replace text in a file",
+        "code": "sed -i 's/foo/bar/g' file.txt",
+        "explanation": "Replaces all occurrences of 'foo' with 'bar' in file.txt."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["text", "automation", "scripts"]
+  },
+  {
+    "id": "awk",
+    "command": "awk",
+    "title": "Pattern scanning and processing language",
+    "category": "text",
+    "description": "Powerful text processing tool for columns and records.",
+    "usage": "awk 'program' [file...]",
+    "examples": [
+      {
+        "title": "Print the first column",
+        "code": "awk '{print $1}' file.txt",
+        "explanation": "Outputs the first whitespace-separated field of each line."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["text", "columns", "scripts"]
+  },
+  {
+    "id": "sort",
+    "command": "sort",
+    "title": "Sort lines of text files",
+    "category": "text",
+    "description": "Sort lines in alphabetical or numerical order.",
+    "usage": "sort [options] [file...]",
+    "examples": [
+      {
+        "title": "Alphabetically sort a file",
+        "code": "sort names.txt",
+        "explanation": "Outputs names.txt with lines in sorted order."
+      },
+      {
+        "title": "Sort numerically in reverse",
+        "code": "sort -nr values.txt",
+        "explanation": "Sorts numbers from largest to smallest."
+      }
+    ],
+    "level": "beginner",
+    "tags": ["text", "sorting"]
+  },
+  {
+    "id": "uniq",
+    "command": "uniq",
+    "title": "Report or omit repeated lines",
+    "category": "text",
+    "description": "Filter or count repeated lines in sorted input.",
+    "usage": "uniq [options] [input [output]]",
+    "examples": [
+      {
+        "title": "Remove duplicate lines",
+        "code": "sort names.txt | uniq",
+        "explanation": "Outputs unique lines from names.txt."
+      },
+      {
+        "title": "Count occurrences",
+        "code": "sort names.txt | uniq -c",
+        "explanation": "Shows how many times each line appears."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["text", "duplicates"]
+  },
+  {
+    "id": "cut",
+    "command": "cut",
+    "title": "Remove sections from lines",
+    "category": "text",
+    "description": "Extract specific columns or character ranges from each line.",
+    "usage": "cut [options] [file...]",
+    "examples": [
+      {
+        "title": "Extract first field",
+        "code": "cut -d',' -f1 data.csv",
+        "explanation": "Prints the first comma-separated column of data.csv."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["text", "columns"]
+  },
+  {
+    "id": "tr",
+    "command": "tr",
+    "title": "Translate or delete characters",
+    "category": "text",
+    "description": "Replace or remove specific characters from input.",
+    "usage": "tr SET1 [SET2]",
+    "examples": [
+      {
+        "title": "Convert lowercase to uppercase",
+        "code": "echo 'hello' | tr 'a-z' 'A-Z'",
+        "explanation": "Outputs HELLO."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["text", "characters"]
+  },
+  {
+    "id": "tee",
+    "command": "tee",
+    "title": "Read from standard input and write to files and standard output",
+    "category": "text",
+    "description": "Split command output to both terminal and files.",
+    "usage": "tee [options] [file...]",
+    "examples": [
+      {
+        "title": "Save and display output",
+        "code": "ls | tee listing.txt",
+        "explanation": "Shows ls output and writes it to listing.txt."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["text", "logging", "pipes"]
+  },
+  {
+    "id": "xargs",
+    "command": "xargs",
+    "title": "Build and execute command lines from standard input",
+    "category": "shell",
+    "description": "Convert input into arguments for another command.",
+    "usage": "xargs [options] [command]",
+    "examples": [
+      {
+        "title": "Delete files listed from find",
+        "code": "find . -name '*.tmp' -print0 | xargs -0 rm",
+        "explanation": "Removes all .tmp files found under the current directory."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["automation", "pipes"]
+  },
+  {
+    "id": "diff",
+    "command": "diff",
+    "title": "Compare files line by line",
+    "category": "text",
+    "description": "Show differences between two files or directories.",
+    "usage": "diff [options] file1 file2",
+    "examples": [
+      {
+        "title": "Compare two config files",
+        "code": "diff old.conf new.conf",
+        "explanation": "Shows line-by-line differences between the two files."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["compare", "development"]
+  },
+  {
+    "id": "patch",
+    "command": "patch",
+    "title": "Apply a diff file to original files",
+    "category": "development",
+    "description": "Apply changes described by a diff file.",
+    "usage": "patch < patchfile",
+    "examples": [
+      {
+        "title": "Patch source code",
+        "code": "patch < fix-bug.patch",
+        "explanation": "Applies changes from fix-bug.patch to files in the current directory."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["development", "patches"]
+  },
+  {
+    "id": "ln",
+    "command": "ln",
+    "title": "Create links between files",
+    "category": "files",
+    "description": "Create hard or symbolic links.",
+    "usage": "ln [options] target [link_name]",
+    "examples": [
+      {
+        "title": "Create a symbolic link",
+        "code": "ln -s /var/log logs",
+        "explanation": "Creates a symlink named logs pointing to /var/log."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["links", "files"]
+  },
+  {
+    "id": "lsblk",
+    "command": "lsblk",
+    "title": "List block devices",
+    "category": "system",
+    "description": "Show information about block devices such as disks and partitions.",
+    "usage": "lsblk [options]",
+    "examples": [
+      {
+        "title": "Show block device tree",
+        "code": "lsblk",
+        "explanation": "Lists disks, partitions, and mount points."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["disk", "partitions"]
+  },
+  {
+    "id": "mount",
+    "command": "mount",
+    "title": "Mount a filesystem",
+    "category": "system",
+    "description": "Attach a filesystem to the directory tree.",
+    "usage": "mount [options] device dir",
+    "examples": [
+      {
+        "title": "Mount a USB drive",
+        "code": "sudo mount /dev/sdb1 /mnt/usb",
+        "explanation": "Mounts /dev/sdb1 at /mnt/usb."
+      }
+    ],
+    "level": "pro",
+    "tags": ["disk", "filesystem", "admin"]
+  },
+  {
+    "id": "umount",
+    "command": "umount",
+    "title": "Unmount a filesystem",
+    "category": "system",
+    "description": "Detach a filesystem from the directory tree.",
+    "usage": "umount [options] dir_or_device",
+    "examples": [
+      {
+        "title": "Unmount a USB drive",
+        "code": "sudo umount /mnt/usb",
+        "explanation": "Safely unmounts the filesystem at /mnt/usb."
+      }
+    ],
+    "level": "pro",
+    "tags": ["disk", "filesystem", "admin"]
+  },
+  {
+    "id": "fdisk",
+    "command": "fdisk",
+    "title": "Disk partitioning tool",
+    "category": "system",
+    "description": "Create and manipulate partition tables on disks.",
+    "usage": "fdisk device",
+    "examples": [
+      {
+        "title": "Edit partitions on a disk",
+        "code": "sudo fdisk /dev/sda",
+        "explanation": "Opens an interactive partition editor for /dev/sda."
+      }
+    ],
+    "level": "pro",
+    "tags": ["disk", "partitions", "dangerous"]
+  },
+  {
+    "id": "journalctl",
+    "command": "journalctl",
+    "title": "Query the systemd journal",
+    "category": "system",
+    "description": "View and filter logs collected by systemd-journald.",
+    "usage": "journalctl [options]",
+    "examples": [
+      {
+        "title": "View recent boot logs",
+        "code": "journalctl -b",
+        "explanation": "Shows messages from the current boot."
+      },
+      {
+        "title": "Follow logs for a unit",
+        "code": "journalctl -u nginx -f",
+        "explanation": "Tails log entries for the nginx service."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["logs", "systemd", "debugging"]
+  },
+  {
+    "id": "dmesg",
+    "command": "dmesg",
+    "title": "Print kernel ring buffer",
+    "category": "system",
+    "description": "Show kernel messages, often useful for debugging hardware issues.",
+    "usage": "dmesg [options]",
+    "examples": [
+      {
+        "title": "View recent kernel messages",
+        "code": "dmesg | tail",
+        "explanation": "Shows the latest lines from the kernel log."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["kernel", "logs", "debugging"]
+  },
+  {
+    "id": "reboot",
+    "command": "reboot",
+    "title": "Restart the system",
+    "category": "system",
+    "description": "Reboot the operating system.",
+    "usage": "sudo reboot",
+    "examples": [
+      {
+        "title": "Reboot immediately",
+        "code": "sudo reboot",
+        "explanation": "Instructs the system to restart."
+      }
+    ],
+    "level": "pro",
+    "tags": ["shutdown", "admin"]
+  },
+  {
+    "id": "shutdown",
+    "command": "shutdown",
+    "title": "Halt or power off the system",
+    "category": "system",
+    "description": "Schedule a shutdown or reboot.",
+    "usage": "shutdown [options] [time] [message]",
+    "examples": [
+      {
+        "title": "Power off immediately",
+        "code": "sudo shutdown now",
+        "explanation": "Shuts down the machine right away."
+      },
+      {
+        "title": "Reboot in 5 minutes",
+        "code": "sudo shutdown -r +5",
+        "explanation": "Schedules a reboot in five minutes."
+      }
+    ],
+    "level": "pro",
+    "tags": ["shutdown", "admin", "schedule"]
+  },
+  {
+    "id": "crontab",
+    "command": "crontab",
+    "title": "Schedule periodic jobs",
+    "category": "automation",
+    "description": "Install, edit, or list cron tables used to schedule commands.",
+    "usage": "crontab [options] [file]",
+    "examples": [
+      {
+        "title": "Edit current user's cron jobs",
+        "code": "crontab -e",
+        "explanation": "Opens the user's crontab in an editor."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["schedule", "automation"]
+  },
+  {
+    "id": "at",
+    "command": "at",
+    "title": "Schedule a one-time job",
+    "category": "automation",
+    "description": "Schedule a command to be run at a particular time.",
+    "usage": "at TIME",
+    "examples": [
+      {
+        "title": "Run a command at 10 PM",
+        "code": "echo 'backup.sh' | at 22:00",
+        "explanation": "Schedules backup.sh to run at 10 PM today."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["schedule", "automation"]
+  },
+  {
+    "id": "useradd",
+    "command": "useradd",
+    "title": "Create a new user",
+    "category": "users",
+    "description": "Create a new user account.",
+    "usage": "useradd [options] username",
+    "examples": [
+      {
+        "title": "Add a user with home directory",
+        "code": "sudo useradd -m alice",
+        "explanation": "Creates user alice with a home directory."
+      }
+    ],
+    "level": "pro",
+    "tags": ["users", "admin"]
+  },
+  {
+    "id": "usermod",
+    "command": "usermod",
+    "title": "Modify a user account",
+    "category": "users",
+    "description": "Change properties of an existing user.",
+    "usage": "usermod [options] username",
+    "examples": [
+      {
+        "title": "Add user to a group",
+        "code": "sudo usermod -aG sudo alice",
+        "explanation": "Adds alice to the sudo group."
+      }
+    ],
+    "level": "pro",
+    "tags": ["users", "groups", "admin"]
+  },
+  {
+    "id": "userdel",
+    "command": "userdel",
+    "title": "Delete a user account",
+    "category": "users",
+    "description": "Remove a user from the system.",
+    "usage": "userdel [options] username",
+    "examples": [
+      {
+        "title": "Delete a user and home directory",
+        "code": "sudo userdel -r alice",
+        "explanation": "Removes alice and their home directory."
+      }
+    ],
+    "level": "pro",
+    "tags": ["users", "admin", "dangerous"]
+  },
+  {
+    "id": "passwd",
+    "command": "passwd",
+    "title": "Change user password",
+    "category": "users",
+    "description": "Update user account passwords.",
+    "usage": "passwd [username]",
+    "examples": [
+      {
+        "title": "Change your own password",
+        "code": "passwd",
+        "explanation": "Prompts for the current and new password."
+      }
+    ],
+    "level": "beginner",
+    "tags": ["users", "security"]
+  },
+  {
+    "id": "apt",
+    "command": "apt",
+    "title": "Package manager (Debian/Ubuntu)",
+    "category": "packages",
+    "description": "Install, update, and remove software packages.",
+    "usage": "sudo apt [command] [package]",
+    "examples": [
+      {
+        "title": "Update package index",
+        "code": "sudo apt update",
+        "explanation": "Refreshes the list of available packages."
+      },
+      {
+        "title": "Install a package",
+        "code": "sudo apt install nginx",
+        "explanation": "Installs the nginx web server."
+      }
+    ],
+    "level": "beginner",
+    "tags": ["packages", "debian", "ubuntu"]
+  },
+  {
+    "id": "yum",
+    "command": "yum",
+    "title": "Package manager (RHEL/CentOS legacy)",
+    "category": "packages",
+    "description": "Install, update, and remove packages on RPM-based systems.",
+    "usage": "sudo yum [command] [package]",
+    "examples": [
+      {
+        "title": "Install a package",
+        "code": "sudo yum install httpd",
+        "explanation": "Installs the Apache HTTP server."
+      }
+    ],
+    "level": "beginner",
+    "tags": ["packages", "rhel", "centos"]
+  },
+  {
+    "id": "dnf",
+    "command": "dnf",
+    "title": "Modern package manager (RHEL/Fedora)",
+    "category": "packages",
+    "description": "Next-generation package manager for RPM-based systems.",
+    "usage": "sudo dnf [command] [package]",
+    "examples": [
+      {
+        "title": "Update all packages",
+        "code": "sudo dnf upgrade",
+        "explanation": "Upgrades all installed packages."
+      }
+    ],
+    "level": "beginner",
+    "tags": ["packages", "fedora", "rhel"]
+  },
+  {
+    "id": "pacman",
+    "command": "pacman",
+    "title": "Package manager (Arch Linux)",
+    "category": "packages",
+    "description": "Install, update, and remove packages on Arch-based systems.",
+    "usage": "sudo pacman [options] package",
+    "examples": [
+      {
+        "title": "Install a package",
+        "code": "sudo pacman -S nginx",
+        "explanation": "Installs the nginx package on Arch Linux."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["packages", "arch"]
   }
 ]
