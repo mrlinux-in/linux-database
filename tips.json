@@ -1,26 +1,212 @@
 [
   {
     "id": 1,
-    "title": "Use the shell history efficiently",
-    "body": "Press the Up arrow to cycle through previous commands, and use `history | grep <keyword>` to find old commands quickly.",
+    "title": "Search shell history instantly with Ctrl + R",
+    "body": "Press Ctrl + R and start typing to interactively search previously executed commands instead of scrolling with arrow keys.",
     "category": "productivity",
-    "level": "beginner",
-    "tags": ["history", "navigation"]
+    "tags": ["history", "shell"]
   },
   {
     "id": 2,
-    "title": "Use aliases for frequent commands",
-    "body": "Define aliases like `alias ll='ls -la'` in your shell config (e.g. ~/.bashrc or ~/.zshrc) to speed up everyday commands.",
+    "title": "Create command aliases to save time",
+    "body": "Add lines like `alias ll='ls -la'` or `alias gs='git status'` to ~/.bashrc or ~/.zshrc to shorten frequently used commands.",
     "category": "shell",
-    "level": "intermediate",
-    "tags": ["alias", "shell", "bash", "zsh"]
+    "tags": ["alias", "customization"]
   },
   {
     "id": 3,
-    "title": "Combine SSH with tmux for remote work",
-    "body": "Run long tasks over SSH inside tmux or screen sessions to avoid losing work when your connection drops.",
+    "title": "Use tmux to protect SSH workloads",
+    "body": "Run long-running remote tasks inside tmux to avoid losing progress if your SSH connection drops.",
     "category": "remote",
-    "level": "pro",
-    "tags": ["ssh", "tmux", "admin"]
+    "tags": ["tmux", "ssh"]
+  },
+  {
+    "id": 4,
+    "title": "Use `sudo !!` to rerun last command with root",
+    "body": "If you forget sudo, run `sudo !!` to execute the last command again as root.",
+    "category": "productivity",
+    "tags": ["sudo", "shortcuts"]
+  },
+  {
+    "id": 5,
+    "title": "Navigate directories with pushd and popd",
+    "body": "`pushd` temporarily switches directories while storing the current one; `popd` returns to it — great for multitasking.",
+    "category": "shell",
+    "tags": ["navigation", "directories"]
+  },
+  {
+    "id": 6,
+    "title": "Show disk usage of folders quickly",
+    "body": "Run `du -sh *` inside a directory to see the sizes of each item in human-readable format.",
+    "category": "filesystem",
+    "tags": ["disk", "storage"]
+  },
+  {
+    "id": 7,
+    "title": "View big files while they grow",
+    "body": "Use `tail -f logfile.log` to monitor a file as new content is added.",
+    "category": "monitoring",
+    "tags": ["logs", "tail"]
+  },
+  {
+    "id": 8,
+    "title": "Measure execution time of a command",
+    "body": "Prefix a command with `time`, like `time ./script.sh`, to show execution duration and resource usage.",
+    "category": "performance",
+    "tags": ["benchmark", "time"]
+  },
+  {
+    "id": 9,
+    "title": "Pretty-print JSON in the terminal",
+    "body": "Use `jq . file.json` or `echo '{...}' | jq .` for colorful formatted JSON output.",
+    "category": "development",
+    "tags": ["json", "jq"]
+  },
+  {
+    "id": 10,
+    "title": "Repeat a command every second",
+    "body": "Use `watch -n 1 <command>` to rerun and display command output repeatedly, useful for monitoring changes.",
+    "category": "monitoring",
+    "tags": ["watch", "loop"]
+  },
+  {
+    "id": 11,
+    "title": "Extract tar archives with a single command",
+    "body": "Instead of memorizing flags, use `tar xf archive.tar.gz`; tar auto-detects compression.",
+    "category": "filesystem",
+    "tags": ["tar", "compression"]
+  },
+  {
+    "id": 12,
+    "title": "Generate random passwords from the terminal",
+    "body": "Run `openssl rand -base64 32` to create a strong random password.",
+    "category": "security",
+    "tags": ["openssl", "passwords"]
+  },
+  {
+    "id": 13,
+    "title": "Check what's listening on every port",
+    "body": "`sudo lsof -i -P -n | grep LISTEN` shows processes bound to TCP/UDP ports.",
+    "category": "network",
+    "tags": ["ports", "lsof"]
+  },
+  {
+    "id": 14,
+    "title": "Batch rename files with rename",
+    "body": "Use `rename 's/.txt/.md/' *.txt` to change file extensions instantly.",
+    "category": "filesystem",
+    "tags": ["rename", "automation"]
+  },
+  {
+    "id": 15,
+    "title": "Use grep recursively in projects",
+    "body": "`grep -R \"text\" .` searches all files under the current directory.",
+    "category": "search",
+    "tags": ["grep", "text"]
+  },
+  {
+    "id": 16,
+    "title": "Use fzf for blazing-fast fuzzy search",
+    "body": "`fzf` lets you search filenames, command history, git branches, and more interactively.",
+    "category": "productivity",
+    "tags": ["fzf", "search"]
+  },
+  {
+    "id": 17,
+    "title": "Quickly find recently modified files",
+    "body": "`ls -lt` lists files sorted by modification time, newest first.",
+    "category": "filesystem",
+    "tags": ["files", "sorting"]
+  },
+  {
+    "id": 18,
+    "title": "Find large files consuming disk space",
+    "body": "`find / -type f -size +1G` finds files larger than 1GB anywhere in the system.",
+    "category": "filesystem",
+    "tags": ["search", "disk"]
+  },
+  {
+    "id": 19,
+    "title": "Copy SSH keys to remote server automatically",
+    "body": "`ssh-copy-id user@server` adds your public key to authorized_keys for password-less login.",
+    "category": "remote",
+    "tags": ["ssh", "authentication"]
+  },
+  {
+    "id": 20,
+    "title": "Transfer files between servers with SCP",
+    "body": "`scp file user@server:/path` securely copies files over SSH.",
+    "category": "remote",
+    "tags": ["ssh", "transfer"]
+  },
+  {
+    "id": 21,
+    "title": "Use rsync for fast backup and sync",
+    "body": "Run `rsync -avh --progress src/ dest/` to synchronize directories efficiently.",
+    "category": "filesystem",
+    "tags": ["backup", "migration"]
+  },
+  {
+    "id": 22,
+    "title": "Sort processes by memory in htop",
+    "body": "In htop, press F6 to change sorting, then select RES to sort by memory usage.",
+    "category": "monitoring",
+    "tags": ["htop", "ram"]
+  },
+  {
+    "id": 23,
+    "title": "Check Linux distribution and version",
+    "body": "Run `cat /etc/os-release` to see distribution name, version, and codename.",
+    "category": "system",
+    "tags": ["os", "info"]
+  },
+  {
+    "id": 24,
+    "title": "Create a backup of installed packages",
+    "body": "`apt list --installed > packages.txt` creates a list of all installed packages on Debian-based systems.",
+    "category": "system",
+    "tags": ["backup", "packages"]
+  },
+  {
+    "id": 25,
+    "title": "Auto-jump quickly between directories with zoxide",
+    "body": "`z` or `zi` jumps to recently visited folders using frecency ranking.",
+    "category": "productivity",
+    "tags": ["navigation", "zoxide"]
+  },
+  {
+    "id": 26,
+    "title": "Search command manual pages",
+    "body": "Run `man -k <keyword>` to search man pages by topic instead of exact name.",
+    "category": "help",
+    "tags": ["man", "docs"]
+  },
+  {
+    "id": 27,
+    "title": "Show what a command really runs",
+    "body": "Use `type <command>` to check whether a command is an alias, builtin, function, or binary.",
+    "category": "shell",
+    "tags": ["debug", "aliases"]
+  },
+  {
+    "id": 28,
+    "title": "Show full command path",
+    "body": "`which command` prints the exact executable being launched.",
+    "category": "shell",
+    "tags": ["path", "binaries"]
+  },
+  {
+    "id": 29,
+    "title": "Kill processes by name instead of PID",
+    "body": "`pkill <name>` sends a signal to all processes matching the name.",
+    "category": "system",
+    "tags": ["processes", "pkill"]
+  },
+  {
+    "id": 30,
+    "title": "Synchronize system time with NTP",
+    "body": "Use `timedatectl set-ntp true` to enable automatic time sync.",
+    "category": "system",
+    "tags": ["time", "ntp"]
   }
 ]
