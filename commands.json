@@ -1836,5 +1836,3956 @@
     ],
     "level": "intermediate",
     "tags": ["packages", "arch"]
+  },
+  {
+    "id": "bc",
+    "command": "bc",
+    "title": "Arbitrary precision calculator language",
+    "category": "system",
+    "description": "Interactive calculator supporting arbitrary precision arithmetic and scripting.",
+    "usage": "bc [options] [file...]",
+    "examples": [
+      {
+        "title": "Start interactive calculator",
+        "code": "bc",
+        "explanation": "Opens bc in interactive mode for calculations."
+      },
+      {
+        "title": "Enable floating point math",
+        "code": "echo 'scale=4; 10/3' | bc",
+        "explanation": "Computes 10 divided by 3 with 4 decimal places."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["math", "calculator", "scripts"]
+  },
+  {
+    "id": "cal",
+    "command": "cal",
+    "title": "Display a calendar",
+    "category": "system",
+    "description": "Show a simple text calendar for a given month or year.",
+    "usage": "cal [month] [year]",
+    "examples": [
+      {
+        "title": "Show current month",
+        "code": "cal",
+        "explanation": "Displays the calendar for the current month."
+      },
+      {
+        "title": "Show specific month and year",
+        "code": "cal 12 2025",
+        "explanation": "Shows the calendar for December 2025."
+      }
+    ],
+    "level": "beginner",
+    "tags": ["time", "calendar"]
+  },
+  {
+    "id": "uptime",
+    "command": "uptime",
+    "title": "Show how long the system has been running",
+    "category": "system",
+    "description": "Display system uptime, load average, and logged-in users.",
+    "usage": "uptime",
+    "examples": [
+      {
+        "title": "Check uptime",
+        "code": "uptime",
+        "explanation": "Shows current time, how long the system has been running, and load averages."
+      }
+    ],
+    "level": "beginner",
+    "tags": ["monitoring", "system"]
+  },
+  {
+    "id": "vmstat",
+    "command": "vmstat",
+    "title": "Report virtual memory statistics",
+    "category": "system",
+    "description": "Show information about processes, memory, paging, block IO, and CPU.",
+    "usage": "vmstat [delay [count]]",
+    "examples": [
+      {
+        "title": "Show a one-time snapshot",
+        "code": "vmstat",
+        "explanation": "Displays current virtual memory statistics."
+      },
+      {
+        "title": "Monitor every 2 seconds",
+        "code": "vmstat 2",
+        "explanation": "Refreshes memory and CPU stats every 2 seconds."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["memory", "performance", "monitoring"]
+  },
+  {
+    "id": "iostat",
+    "command": "iostat",
+    "title": "Report CPU and I/O statistics",
+    "category": "system",
+    "description": "Display CPU utilization and input/output statistics for devices.",
+    "usage": "iostat [options] [interval [count]]",
+    "examples": [
+      {
+        "title": "Show default stats",
+        "code": "iostat",
+        "explanation": "Prints basic CPU and disk I/O statistics."
+      },
+      {
+        "title": "Monitor every 5 seconds",
+        "code": "iostat 5",
+        "explanation": "Updates CPU and I/O stats every 5 seconds."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["disk", "performance", "monitoring"]
+  },
+  {
+    "id": "sar",
+    "command": "sar",
+    "title": "Collect and report system activity",
+    "category": "system",
+    "description": "System Activity Reporter for CPU, memory, disk, and network statistics.",
+    "usage": "sar [options] [interval [count]]",
+    "examples": [
+      {
+        "title": "CPU usage over time",
+        "code": "sar -u 5 5",
+        "explanation": "Reports CPU utilization every 5 seconds, 5 times."
+      }
+    ],
+    "level": "pro",
+    "tags": ["performance", "monitoring"]
+  },
+  {
+    "id": "lscpu",
+    "command": "lscpu",
+    "title": "Display CPU architecture information",
+    "category": "system",
+    "description": "Show details about the CPU architecture.",
+    "usage": "lscpu",
+    "examples": [
+      {
+        "title": "Show CPU info",
+        "code": "lscpu",
+        "explanation": "Displays number of cores, threads, architecture, and more."
+      }
+    ],
+    "level": "beginner",
+    "tags": ["cpu", "hardware"]
+  },
+  {
+    "id": "lsusb",
+    "command": "lsusb",
+    "title": "List USB devices",
+    "category": "system",
+    "description": "Display information about USB buses and devices connected to them.",
+    "usage": "lsusb [options]",
+    "examples": [
+      {
+        "title": "List connected USB devices",
+        "code": "lsusb",
+        "explanation": "Shows vendor and product IDs for USB devices."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["usb", "hardware"]
+  },
+  {
+    "id": "lspci",
+    "command": "lspci",
+    "title": "List PCI devices",
+    "category": "system",
+    "description": "Show information about all PCI buses and devices.",
+    "usage": "lspci [options]",
+    "examples": [
+      {
+        "title": "List PCI devices",
+        "code": "lspci",
+        "explanation": "Displays devices like GPUs, network cards, and controllers."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["pci", "hardware"]
+  },
+  {
+    "id": "lsmod",
+    "command": "lsmod",
+    "title": "Show kernel modules",
+    "category": "system",
+    "description": "Display the status of loaded kernel modules.",
+    "usage": "lsmod",
+    "examples": [
+      {
+        "title": "List kernel modules",
+        "code": "lsmod",
+        "explanation": "Shows currently loaded kernel modules and their usage counts."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["kernel", "modules"]
+  },
+  {
+    "id": "modprobe",
+    "command": "modprobe",
+    "title": "Add or remove kernel modules",
+    "category": "system",
+    "description": "Load or unload kernel modules, resolving dependencies.",
+    "usage": "modprobe [options] module",
+    "examples": [
+      {
+        "title": "Load a module",
+        "code": "sudo modprobe vfat",
+        "explanation": "Loads the vfat kernel module."
+      },
+      {
+        "title": "Remove a module",
+        "code": "sudo modprobe -r vfat",
+        "explanation": "Unloads the vfat kernel module."
+      }
+    ],
+    "level": "pro",
+    "tags": ["kernel", "modules", "admin"]
+  },
+  {
+    "id": "insmod",
+    "command": "insmod",
+    "title": "Insert a kernel module",
+    "category": "system",
+    "description": "Insert a module into the Linux kernel.",
+    "usage": "insmod module.ko",
+    "examples": [
+      {
+        "title": "Load a module directly",
+        "code": "sudo insmod mymodule.ko",
+        "explanation": "Inserts mymodule.ko into the kernel."
+      }
+    ],
+    "level": "pro",
+    "tags": ["kernel", "modules"]
+  },
+  {
+    "id": "rmmod",
+    "command": "rmmod",
+    "title": "Remove a kernel module",
+    "category": "system",
+    "description": "Remove modules from the Linux kernel.",
+    "usage": "rmmod module",
+    "examples": [
+      {
+        "title": "Remove a module",
+        "code": "sudo rmmod mymodule",
+        "explanation": "Removes the mymodule kernel module."
+      }
+    ],
+    "level": "pro",
+    "tags": ["kernel", "modules"]
+  },
+  {
+    "id": "screen",
+    "command": "screen",
+    "title": "Terminal multiplexer",
+    "category": "shell",
+    "description": "Run multiple shell sessions inside a single terminal.",
+    "usage": "screen [command]",
+    "examples": [
+      {
+        "title": "Start a screen session",
+        "code": "screen",
+        "explanation": "Opens a new screen session."
+      },
+      {
+        "title": "List screen sessions",
+        "code": "screen -ls",
+        "explanation": "Shows existing screen sessions."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["tmux", "multiplexer", "sessions"]
+  },
+  {
+    "id": "tmux",
+    "command": "tmux",
+    "title": "Terminal multiplexer (tmux)",
+    "category": "shell",
+    "description": "Manage multiple terminal windows and panes.",
+    "usage": "tmux [command]",
+    "examples": [
+      {
+        "title": "Start tmux",
+        "code": "tmux",
+        "explanation": "Begins a new tmux session."
+      },
+      {
+        "title": "List tmux sessions",
+        "code": "tmux ls",
+        "explanation": "Shows existing tmux sessions."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["multiplexer", "sessions", "productivity"]
+  },
+  {
+    "id": "yes",
+    "command": "yes",
+    "title": "Output a string repeatedly",
+    "category": "shell",
+    "description": "Output a string repeatedly until killed.",
+    "usage": "yes [string]",
+    "examples": [
+      {
+        "title": "Spam y",
+        "code": "yes",
+        "explanation": "Outputs 'y' over and over until interrupted."
+      }
+    ],
+    "level": "beginner",
+    "tags": ["testing", "shell"]
+  },
+  {
+    "id": "watch",
+    "command": "watch",
+    "title": "Run a command periodically",
+    "category": "automation",
+    "description": "Execute a program repeatedly, showing its output.",
+    "usage": "watch [options] command",
+    "examples": [
+      {
+        "title": "Monitor disk usage",
+        "code": "watch df -h",
+        "explanation": "Runs df -h every 2 seconds by default."
+      },
+      {
+        "title": "Change interval to 5 seconds",
+        "code": "watch -n 5 free -h",
+        "explanation": "Runs free -h every 5 seconds."
+      }
+    ],
+    "level": "beginner",
+    "tags": ["monitoring", "automation"]
+  },
+  {
+    "id": "timeout",
+    "command": "timeout",
+    "title": "Run a command with a time limit",
+    "category": "automation",
+    "description": "Run a command and kill it if it runs longer than a specified duration.",
+    "usage": "timeout DURATION command",
+    "examples": [
+      {
+        "title": "Limit a command to 10 seconds",
+        "code": "timeout 10s ping google.com",
+        "explanation": "Stops ping after 10 seconds."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["automation", "safety"]
+  },
+  {
+    "id": "nohup",
+    "command": "nohup",
+    "title": "Run a command immune to hangups",
+    "category": "shell",
+    "description": "Run a command that continues running after logout.",
+    "usage": "nohup command [args...] &",
+    "examples": [
+      {
+        "title": "Run a script in background",
+        "code": "nohup ./long_script.sh &",
+        "explanation": "Keeps long_script.sh running even if the terminal closes."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["background", "shell"]
+  },
+  {
+    "id": "bg",
+    "command": "bg",
+    "title": "Resume a job in the background",
+    "category": "shell",
+    "description": "Continue a stopped job in the background.",
+    "usage": "bg [job_spec]",
+    "examples": [
+      {
+        "title": "Background last stopped job",
+        "code": "bg",
+        "explanation": "Continues the most recent stopped job in the background."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["jobs", "shell"]
+  },
+  {
+    "id": "fg",
+    "command": "fg",
+    "title": "Bring a job to the foreground",
+    "category": "shell",
+    "description": "Resume jobs in the foreground.",
+    "usage": "fg [job_spec]",
+    "examples": [
+      {
+        "title": "Return a job to foreground",
+        "code": "fg",
+        "explanation": "Brings the most recent job to the foreground."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["jobs", "shell"]
+  },
+  {
+    "id": "jobs",
+    "command": "jobs",
+    "title": "List active jobs",
+    "category": "shell",
+    "description": "Show jobs that were started in the current shell.",
+    "usage": "jobs",
+    "examples": [
+      {
+        "title": "List background jobs",
+        "code": "jobs",
+        "explanation": "Displays currently running or stopped jobs."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["jobs", "shell"]
+  },
+  {
+    "id": "printenv",
+    "command": "printenv",
+    "title": "Print environment variables",
+    "category": "shell",
+    "description": "Display the values of environment variables.",
+    "usage": "printenv [name]",
+    "examples": [
+      {
+        "title": "Show all environment variables",
+        "code": "printenv",
+        "explanation": "Prints current environment variables."
+      },
+      {
+        "title": "Show PATH variable",
+        "code": "printenv PATH",
+        "explanation": "Displays the PATH value."
+      }
+    ],
+    "level": "beginner",
+    "tags": ["environment", "shell"]
+  },
+  {
+    "id": "printf",
+    "command": "printf",
+    "title": "Format and print data",
+    "category": "shell",
+    "description": "Print formatted text similar to C printf.",
+    "usage": "printf FORMAT [ARGUMENT]...",
+    "examples": [
+      {
+        "title": "Print with formatting",
+        "code": "printf 'Name: %s\\nAge: %d\\n' \"Alice\" 30",
+        "explanation": "Formats a string with placeholders."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["shell", "format"]
+  },
+  {
+    "id": "seq",
+    "command": "seq",
+    "title": "Print a sequence of numbers",
+    "category": "shell",
+    "description": "Generate sequences of numbers.",
+    "usage": "seq [first [increment]] last",
+    "examples": [
+      {
+        "title": "Print 1 to 10",
+        "code": "seq 10",
+        "explanation": "Outputs numbers 1 through 10."
+      },
+      {
+        "title": "Print even numbers",
+        "code": "seq 2 2 10",
+        "explanation": "Outputs 2 4 6 8 10."
+      }
+    ],
+    "level": "beginner",
+    "tags": ["numbers", "scripts"]
+  },
+  {
+    "id": "shuf",
+    "command": "shuf",
+    "title": "Generate random permutations",
+    "category": "shell",
+    "description": "Shuffle lines of text or generate random numbers.",
+    "usage": "shuf [options] [file]",
+    "examples": [
+      {
+        "title": "Shuffle lines in a file",
+        "code": "shuf list.txt",
+        "explanation": "Outputs lines of list.txt in random order."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["random", "scripts"]
+  },
+  {
+    "id": "stat",
+    "command": "stat",
+    "title": "Display file or filesystem status",
+    "category": "files",
+    "description": "Show detailed information about a file or filesystem.",
+    "usage": "stat [file]",
+    "examples": [
+      {
+        "title": "View file stats",
+        "code": "stat file.txt",
+        "explanation": "Shows size, permissions, and timestamps for file.txt."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["files", "metadata"]
+  },
+  {
+    "id": "file",
+    "command": "file",
+    "title": "Determine file type",
+    "category": "files",
+    "description": "Classify file contents based on magic numbers and metadata.",
+    "usage": "file [options] file...",
+    "examples": [
+      {
+        "title": "Check type of a file",
+        "code": "file script.sh",
+        "explanation": "Reports what kind of file script.sh is."
+      }
+    ],
+    "level": "beginner",
+    "tags": ["files", "diagnostics"]
+  },
+  {
+    "id": "split",
+    "command": "split",
+    "title": "Split a file into pieces",
+    "category": "files",
+    "description": "Split a file into pieces according to size or number of lines.",
+    "usage": "split [options] [input [prefix]]",
+    "examples": [
+      {
+        "title": "Split by line count",
+        "code": "split -l 1000 big.log part_",
+        "explanation": "Breaks big.log into files of 1000 lines each."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["files", "large-files"]
+  },
+  {
+    "id": "paste",
+    "command": "paste",
+    "title": "Merge lines of files",
+    "category": "text",
+    "description": "Combine lines of files horizontally.",
+    "usage": "paste [options] file...",
+    "examples": [
+      {
+        "title": "Combine two files column-wise",
+        "code": "paste names.txt scores.txt",
+        "explanation": "Creates tab-separated pairs from two files."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["text", "columns"]
+  },
+  {
+    "id": "column",
+    "command": "column",
+    "title": "Format text into columns",
+    "category": "text",
+    "description": "Format input into multiple columns for easier reading.",
+    "usage": "column [options]",
+    "examples": [
+      {
+        "title": "Pretty-print a table",
+        "code": "cat data.txt | column -t",
+        "explanation": "Aligns fields in columns."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["text", "format"]
+  },
+  {
+    "id": "grep-extended",
+    "command": "egrep",
+    "title": "Extended regex grep",
+    "category": "text",
+    "description": "Use extended regular expressions with grep.",
+    "usage": "egrep PATTERN [file...]",
+    "examples": [
+      {
+        "title": "Use alternation",
+        "code": "egrep 'error|warning' app.log",
+        "explanation": "Matches lines containing either 'error' or 'warning'."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["grep", "regex"]
+  },
+  {
+    "id": "fgrep",
+    "command": "fgrep",
+    "title": "Fixed string grep",
+    "category": "text",
+    "description": "Search for fixed strings instead of regular expressions.",
+    "usage": "fgrep STRING [file...]",
+    "examples": [
+      {
+        "title": "Search literal string",
+        "code": "fgrep 'a.b' file.txt",
+        "explanation": "Matches 'a.b' exactly, without regex interpretation."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["grep", "search"]
+  },
+  {
+    "id": "hexdump",
+    "command": "hexdump",
+    "title": "View binary data as hex",
+    "category": "development",
+    "description": "Display file contents in hexadecimal, decimal, or ASCII.",
+    "usage": "hexdump [options] file",
+    "examples": [
+      {
+        "title": "Hex and ASCII view",
+        "code": "hexdump -C file.bin",
+        "explanation": "Shows hex and ASCII representation of file.bin."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["binary", "debug"]
+  },
+  {
+    "id": "xxd",
+    "command": "xxd",
+    "title": "Hex dump and reverse",
+    "category": "development",
+    "description": "Create a hex dump or reverse a hex dump back into binary.",
+    "usage": "xxd [options] [file]",
+    "examples": [
+      {
+        "title": "Hex dump of a file",
+        "code": "xxd file.bin",
+        "explanation": "Creates a hex dump of file.bin."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["binary", "debug", "hex"]
+  },
+  {
+    "id": "strings",
+    "command": "strings",
+    "title": "Print strings in binary files",
+    "category": "development",
+    "description": "Find printable strings in binary files.",
+    "usage": "strings [options] file...",
+    "examples": [
+      {
+        "title": "Extract strings from binary",
+        "code": "strings program",
+        "explanation": "Shows human-readable text inside the program binary."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["binary", "reverse-engineering"]
+  },
+  {
+    "id": "nm",
+    "command": "nm",
+    "title": "List symbols from object files",
+    "category": "development",
+    "description": "Display the symbol table of object files or libraries.",
+    "usage": "nm [options] file...",
+    "examples": [
+      {
+        "title": "Show symbols in a binary",
+        "code": "nm a.out",
+        "explanation": "Lists functions and variables in a.out."
+      }
+    ],
+    "level": "pro",
+    "tags": ["symbols", "debug", "linking"]
+  },
+  {
+    "id": "ldd",
+    "command": "ldd",
+    "title": "Print shared library dependencies",
+    "category": "development",
+    "description": "List dynamic libraries required by an executable.",
+    "usage": "ldd program",
+    "examples": [
+      {
+        "title": "Check library dependencies",
+        "code": "ldd /bin/ls",
+        "explanation": "Shows shared libraries used by /bin/ls."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["libraries", "debug"]
+  },
+  {
+    "id": "strace",
+    "command": "strace",
+    "title": "Trace system calls",
+    "category": "debugging",
+    "description": "Monitor system calls and signals received by a process.",
+    "usage": "strace [options] command",
+    "examples": [
+      {
+        "title": "Trace a command",
+        "code": "strace ls",
+        "explanation": "Shows system calls made by ls."
+      }
+    ],
+    "level": "pro",
+    "tags": ["debug", "syscalls", "diagnostics"]
+  },
+  {
+    "id": "ltrace",
+    "command": "ltrace",
+    "title": "Trace library calls",
+    "category": "debugging",
+    "description": "Display calls to shared library functions.",
+    "usage": "ltrace [options] command",
+    "examples": [
+      {
+        "title": "Trace library calls",
+        "code": "ltrace ls",
+        "explanation": "Shows dynamic library function calls made by ls."
+      }
+    ],
+    "level": "pro",
+    "tags": ["debug", "libraries"]
+  },
+  {
+    "id": "gdb",
+    "command": "gdb",
+    "title": "GNU Debugger",
+    "category": "development",
+    "description": "Debug programs written in C, C++, and other languages.",
+    "usage": "gdb [program] [core]",
+    "examples": [
+      {
+        "title": "Debug a program",
+        "code": "gdb ./a.out",
+        "explanation": "Starts gdb with a.out loaded."
+      }
+    ],
+    "level": "pro",
+    "tags": ["debug", "development"]
+  },
+  {
+    "id": "make",
+    "command": "make",
+    "title": "Build automation tool",
+    "category": "development",
+    "description": "Control compilation and build processes using Makefiles.",
+    "usage": "make [target]",
+    "examples": [
+      {
+        "title": "Build default target",
+        "code": "make",
+        "explanation": "Runs the first target in the Makefile."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["build", "automation", "development"]
+  },
+  {
+    "id": "gcc",
+    "command": "gcc",
+    "title": "GNU C compiler",
+    "category": "development",
+    "description": "Compile C programs from source code.",
+    "usage": "gcc [options] file...",
+    "examples": [
+      {
+        "title": "Compile a C program",
+        "code": "gcc main.c -o main",
+        "explanation": "Compiles main.c into an executable named main."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["c", "compiler", "development"]
+  },
+  {
+    "id": "g++",
+    "command": "g++",
+    "title": "GNU C++ compiler",
+    "category": "development",
+    "description": "Compile C++ programs from source code.",
+    "usage": "g++ [options] file...",
+    "examples": [
+      {
+        "title": "Compile a C++ program",
+        "code": "g++ main.cpp -o main",
+        "explanation": "Compiles main.cpp into an executable named main."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["c++", "compiler", "development"]
+  },
+  {
+    "id": "pkg-config",
+    "command": "pkg-config",
+    "title": "Manage compile and link flags",
+    "category": "development",
+    "description": "Retrieve metadata about installed libraries.",
+    "usage": "pkg-config [options] package...",
+    "examples": [
+      {
+        "title": "Get cflags for a library",
+        "code": "pkg-config --cflags gtk+-3.0",
+        "explanation": "Outputs compiler flags needed to use GTK+ 3."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["libraries", "build"]
+  },
+  {
+    "id": "cmake",
+    "command": "cmake",
+    "title": "Cross-platform build system",
+    "category": "development",
+    "description": "Generate build files for various build systems.",
+    "usage": "cmake [options] path",
+    "examples": [
+      {
+        "title": "Configure a project",
+        "code": "cmake ..",
+        "explanation": "Generates build files using CMakeLists.txt in parent directory."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["build", "development"]
+  },
+  {
+    "id": "git",
+    "command": "git",
+    "title": "Distributed version control",
+    "category": "development",
+    "description": "Track changes in source code and collaborate with others.",
+    "usage": "git [command] [options]",
+    "examples": [
+      {
+        "title": "Clone a repository",
+        "code": "git clone https://github.com/user/repo.git",
+        "explanation": "Downloads a copy of the remote repository."
+      },
+      {
+        "title": "Check git status",
+        "code": "git status",
+        "explanation": "Shows modified, staged, and untracked files."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["version-control", "development"]
+  },
+  {
+    "id": "svn",
+    "command": "svn",
+    "title": "Subversion version control client",
+    "category": "development",
+    "description": "Old centralized version control client.",
+    "usage": "svn [command] [options]",
+    "examples": [
+      {
+        "title": "Check out a repository",
+        "code": "svn checkout https://example.com/svn/repo",
+        "explanation": "Downloads working copy from an SVN repository."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["version-control", "legacy"]
+  },
+  {
+    "id": "docker",
+    "command": "docker",
+    "title": "Container manager",
+    "category": "containers",
+    "description": "Build, run, and manage containers.",
+    "usage": "docker [command] [options]",
+    "examples": [
+      {
+        "title": "List running containers",
+        "code": "docker ps",
+        "explanation": "Shows currently running containers."
+      },
+      {
+        "title": "Run an image",
+        "code": "docker run -it ubuntu bash",
+        "explanation": "Starts an interactive bash shell inside an Ubuntu container."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["containers", "devops"]
+  },
+  {
+    "id": "podman",
+    "command": "podman",
+    "title": "Daemonless container engine",
+    "category": "containers",
+    "description": "Manage containers and images without a daemon.",
+    "usage": "podman [command] [options]",
+    "examples": [
+      {
+        "title": "List containers",
+        "code": "podman ps",
+        "explanation": "Shows running containers (rootless by default)."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["containers", "devops"]
+  },
+  {
+    "id": "kubectl",
+    "command": "kubectl",
+    "title": "Kubernetes cluster manager",
+    "category": "containers",
+    "description": "Control Kubernetes clusters from the command line.",
+    "usage": "kubectl [command] [type] [name] [flags]",
+    "examples": [
+      {
+        "title": "List pods",
+        "code": "kubectl get pods",
+        "explanation": "Shows all pods in the current namespace."
+      }
+    ],
+    "level": "pro",
+    "tags": ["kubernetes", "devops", "containers"]
+  },
+  {
+    "id": "nc",
+    "command": "nc",
+    "title": "Netcat networking utility",
+    "category": "network",
+    "description": "Read and write data across network connections using TCP or UDP.",
+    "usage": "nc [options] host port",
+    "examples": [
+      {
+        "title": "Simple TCP client",
+        "code": "nc example.com 80",
+        "explanation": "Opens a TCP connection to port 80 on example.com."
+      }
+    ],
+    "level": "pro",
+    "tags": ["network", "debug"]
+  },
+  {
+    "id": "telnet",
+    "command": "telnet",
+    "title": "Telnet client",
+    "category": "network",
+    "description": "Interact with remote hosts using the Telnet protocol.",
+    "usage": "telnet host [port]",
+    "examples": [
+      {
+        "title": "Connect to port 25",
+        "code": "telnet mail.example.com 25",
+        "explanation": "Opens a connection to an SMTP server."
+      }
+    ],
+    "level": "pro",
+    "tags": ["network", "legacy"]
+  },
+  {
+    "id": "ftp",
+    "command": "ftp",
+    "title": "FTP client",
+    "category": "network",
+    "description": "Transfer files using the File Transfer Protocol.",
+    "usage": "ftp host",
+    "examples": [
+      {
+        "title": "Connect to FTP server",
+        "code": "ftp ftp.example.com",
+        "explanation": "Starts an FTP session with the remote server."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["network", "files", "legacy"]
+  },
+  {
+    "id": "nmap",
+    "command": "nmap",
+    "title": "Network mapper",
+    "category": "network",
+    "description": "Scan networks for hosts and open ports.",
+    "usage": "nmap [options] target",
+    "examples": [
+      {
+        "title": "Scan common ports",
+        "code": "nmap example.com",
+        "explanation": "Performs a basic scan of example.com."
+      }
+    ],
+    "level": "pro",
+    "tags": ["security", "scan", "network"]
+  },
+  {
+    "id": "tcpdump",
+    "command": "tcpdump",
+    "title": "Network packet analyzer",
+    "category": "network",
+    "description": "Capture and display packets on a network interface.",
+    "usage": "tcpdump [options]",
+    "examples": [
+      {
+        "title": "Capture on interface eth0",
+        "code": "sudo tcpdump -i eth0",
+        "explanation": "Shows packets passing through eth0."
+      }
+    ],
+    "level": "pro",
+    "tags": ["network", "sniffer", "debug"]
+  },
+  {
+    "id": "route",
+    "command": "route",
+    "title": "Show or manipulate IP routing table",
+    "category": "network",
+    "description": "Display or modify the kernel routing table.",
+    "usage": "route [options]",
+    "examples": [
+      {
+        "title": "Show route table",
+        "code": "route -n",
+        "explanation": "Displays the routing table with numeric IPs."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["routing", "network"]
+  },
+  {
+    "id": "arp",
+    "command": "arp",
+    "title": "Manage ARP cache",
+    "category": "network",
+    "description": "Show and manipulate the system ARP cache.",
+    "usage": "arp [options]",
+    "examples": [
+      {
+        "title": "Display ARP table",
+        "code": "arp -n",
+        "explanation": "Shows cached IP-to-MAC address mappings."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["network", "arp"]
+  },
+  {
+    "id": "hostnamectl",
+    "command": "hostnamectl",
+    "title": "Control hostname and related settings",
+    "category": "system",
+    "description": "Query and change the system hostname and related info.",
+    "usage": "hostnamectl [command]",
+    "examples": [
+      {
+        "title": "Show hostname information",
+        "code": "hostnamectl",
+        "explanation": "Displays static, transient, and pretty hostnames."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["systemd", "hostname"]
+  },
+  {
+    "id": "localectl",
+    "command": "localectl",
+    "title": "Control system locale and keyboard layout",
+    "category": "system",
+    "description": "Query and set system locale and keyboard settings.",
+    "usage": "localectl [command]",
+    "examples": [
+      {
+        "title": "Show locale settings",
+        "code": "localectl",
+        "explanation": "Displays current locale and keymap."
+      }
+    ],
+    "level": "pro",
+    "tags": ["systemd", "locale"]
+  },
+  {
+    "id": "timedatectl",
+    "command": "timedatectl",
+    "title": "Control system time",
+    "category": "system",
+    "description": "Query and change system time and date settings.",
+    "usage": "timedatectl [command]",
+    "examples": [
+      {
+        "title": "Show time settings",
+        "code": "timedatectl",
+        "explanation": "Displays current time, timezone, and NTP status."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["systemd", "time"]
+  },
+  {
+    "id": "service",
+    "command": "service",
+    "title": "Run System V init scripts",
+    "category": "system",
+    "description": "Start, stop, and check status of services using init scripts.",
+    "usage": "service name command",
+    "examples": [
+      {
+        "title": "Status of a service",
+        "code": "service ssh status",
+        "explanation": "Shows status of the SSH service (legacy)."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["services", "init"]
+  },
+  {
+    "id": "chkconfig",
+    "command": "chkconfig",
+    "title": "System service manager (legacy)",
+    "category": "system",
+    "description": "Manage runlevel information for system services.",
+    "usage": "chkconfig [options]",
+    "examples": [
+      {
+        "title": "List services",
+        "code": "chkconfig --list",
+        "explanation": "Shows services and their runlevel settings."
+      }
+    ],
+    "level": "pro",
+    "tags": ["services", "init", "legacy"]
+  },
+  {
+    "id": "journalctl-boot",
+    "command": "journalctl -xe",
+    "title": "View recent critical logs",
+    "category": "system",
+    "description": "Show recent systemd journal logs with extra detail.",
+    "usage": "journalctl -xe",
+    "examples": [
+      {
+        "title": "Check recent errors",
+        "code": "journalctl -xe",
+        "explanation": "Shows recent errors and explanatory messages."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["logs", "debug", "systemd"]
+  }  ,
+  {
+    "id": "bzip2",
+    "command": "bzip2",
+    "title": "Compress files with bzip2",
+    "category": "compression",
+    "description": "Compress files using the bzip2 algorithm for better compression ratios than gzip.",
+    "usage": "bzip2 [options] file...",
+    "examples": [
+      {
+        "title": "Compress a file",
+        "code": "bzip2 logfile",
+        "explanation": "Replaces logfile with logfile.bz2."
+      }
+    ],
+    "level": "beginner",
+    "tags": ["compression", "archive"]
+  },
+  {
+    "id": "bunzip2",
+    "command": "bunzip2",
+    "title": "Decompress bzip2 files",
+    "category": "compression",
+    "description": "Decompress files created by bzip2.",
+    "usage": "bunzip2 file.bz2",
+    "examples": [
+      {
+        "title": "Decompress a file",
+        "code": "bunzip2 logfile.bz2",
+        "explanation": "Restores logfile from logfile.bz2."
+      }
+    ],
+    "level": "beginner",
+    "tags": ["compression", "decompress"]
+  },
+  {
+    "id": "xz",
+    "command": "xz",
+    "title": "Compress files with xz",
+    "category": "compression",
+    "description": "Compress files using the xz format (LZMA/LZMA2).",
+    "usage": "xz [options] file...",
+    "examples": [
+      {
+        "title": "Compress a file",
+        "code": "xz image.iso",
+        "explanation": "Replaces image.iso with image.iso.xz."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["compression", "archive"]
+  },
+  {
+    "id": "unxz",
+    "command": "unxz",
+    "title": "Decompress xz files",
+    "category": "compression",
+    "description": "Decompress files compressed with xz.",
+    "usage": "unxz file.xz",
+    "examples": [
+      {
+        "title": "Decompress an xz file",
+        "code": "unxz image.iso.xz",
+        "explanation": "Restores image.iso from image.iso.xz."
+      }
+    ],
+    "level": "beginner",
+    "tags": ["compression", "decompress"]
+  },
+  {
+    "id": "7z",
+    "command": "7z",
+    "title": "7-Zip file archiver",
+    "category": "compression",
+    "description": "Create and extract 7z and many other archive formats.",
+    "usage": "7z [command] [switches] archive [files...]",
+    "examples": [
+      {
+        "title": "Create a 7z archive",
+        "code": "7z a backup.7z ~/project",
+        "explanation": "Adds the project directory to backup.7z."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["archive", "compression"]
+  },
+  {
+    "id": "cpio",
+    "command": "cpio",
+    "title": "Copy files to and from archives",
+    "category": "compression",
+    "description": "Create or extract cpio archives, often used in initramfs.",
+    "usage": "cpio [options]",
+    "examples": [
+      {
+        "title": "Create an archive from file list",
+        "code": "find . | cpio -o > archive.cpio",
+        "explanation": "Creates archive.cpio from files under the current directory."
+      }
+    ],
+    "level": "pro",
+    "tags": ["archive", "system"]
+  },
+  {
+    "id": "dd",
+    "command": "dd",
+    "title": "Convert and copy data",
+    "category": "system",
+    "description": "Low-level copy tool for raw data, disks, and partitions.",
+    "usage": "dd if=INPUT of=OUTPUT [options]",
+    "examples": [
+      {
+        "title": "Create a disk image",
+        "code": "sudo dd if=/dev/sda of=/mnt/backup/sda.img bs=4M status=progress",
+        "explanation": "Copies the entire /dev/sda device to an image file."
+      }
+    ],
+    "level": "pro",
+    "tags": ["disks", "backup", "dangerous"]
+  },
+  {
+    "id": "shred",
+    "command": "shred",
+    "title": "Overwrite a file to hide contents",
+    "category": "security",
+    "description": "Securely overwrite files so that data is harder to recover.",
+    "usage": "shred [options] file...",
+    "examples": [
+      {
+        "title": "Securely delete a file",
+        "code": "shred -u secrets.txt",
+        "explanation": "Overwrites secrets.txt and then deletes it."
+      }
+    ],
+    "level": "pro",
+    "tags": ["security", "erase", "dangerous"]
+  },
+  {
+    "id": "md5sum",
+    "command": "md5sum",
+    "title": "Compute MD5 checksums",
+    "category": "security",
+    "description": "Calculate and verify MD5 hash values for files.",
+    "usage": "md5sum [file...]",
+    "examples": [
+      {
+        "title": "Checksum a file",
+        "code": "md5sum image.iso",
+        "explanation": "Outputs the MD5 hash of image.iso."
+      }
+    ],
+    "level": "beginner",
+    "tags": ["hash", "integrity"]
+  },
+  {
+    "id": "sha256sum",
+    "command": "sha256sum",
+    "title": "Compute SHA-256 checksums",
+    "category": "security",
+    "description": "Calculate and verify SHA-256 hash values for files.",
+    "usage": "sha256sum [file...]",
+    "examples": [
+      {
+        "title": "Verify a download",
+        "code": "sha256sum image.iso",
+        "explanation": "Computes SHA-256 hash to compare with upstream checksum."
+      }
+    ],
+    "level": "beginner",
+    "tags": ["hash", "integrity", "security"]
+  },
+  {
+    "id": "openssl",
+    "command": "openssl",
+    "title": "Toolkit for TLS/SSL and crypto",
+    "category": "security",
+    "description": "Encrypt, decrypt, generate keys and certificates, and debug TLS connections.",
+    "usage": "openssl subcommand [options]",
+    "examples": [
+      {
+        "title": "Generate a private key",
+        "code": "openssl genrsa -out key.pem 2048",
+        "explanation": "Creates a 2048-bit RSA private key."
+      }
+    ],
+    "level": "pro",
+    "tags": ["crypto", "certificates", "security"]
+  },
+  {
+    "id": "gpg",
+    "command": "gpg",
+    "title": "GNU Privacy Guard",
+    "category": "security",
+    "description": "Encrypt, decrypt, sign, and verify data using OpenPGP.",
+    "usage": "gpg [options] [file]",
+    "examples": [
+      {
+        "title": "Encrypt a file for a user",
+        "code": "gpg -e -r alice secret.txt",
+        "explanation": "Encrypts secret.txt so only alice can decrypt it."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["encryption", "signing"]
+  },
+  {
+    "id": "ssh-keygen",
+    "command": "ssh-keygen",
+    "title": "Generate SSH keys",
+    "category": "security",
+    "description": "Create and manage SSH public/private key pairs.",
+    "usage": "ssh-keygen [options]",
+    "examples": [
+      {
+        "title": "Generate an RSA key",
+        "code": "ssh-keygen -t rsa -b 4096",
+        "explanation": "Creates a 4096-bit RSA key for SSH authentication."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["ssh", "keys", "security"]
+  },
+  {
+    "id": "ssh-copy-id",
+    "command": "ssh-copy-id",
+    "title": "Install SSH public key on a server",
+    "category": "security",
+    "description": "Copy your SSH public key to a remote host for passwordless login.",
+    "usage": "ssh-copy-id user@host",
+    "examples": [
+      {
+        "title": "Enable key-based login",
+        "code": "ssh-copy-id user@server",
+        "explanation": "Appends your public key to the remote user's authorized_keys."
+      }
+    ],
+    "level": "beginner",
+    "tags": ["ssh", "keys", "remote"]
+  },
+  {
+    "id": "chattr",
+    "command": "chattr",
+    "title": "Change file attributes on ext filesystems",
+    "category": "security",
+    "description": "Set special attributes like immutable on files.",
+    "usage": "chattr [options] mode file...",
+    "examples": [
+      {
+        "title": "Make a file immutable",
+        "code": "sudo chattr +i /etc/resolv.conf",
+        "explanation": "Prevents any changes to /etc/resolv.conf until attribute is removed."
+      }
+    ],
+    "level": "pro",
+    "tags": ["attributes", "security"]
+  },
+  {
+    "id": "lsattr",
+    "command": "lsattr",
+    "title": "List file attributes",
+    "category": "security",
+    "description": "Display attributes set with chattr.",
+    "usage": "lsattr [file...]",
+    "examples": [
+      {
+        "title": "Check attributes",
+        "code": "lsattr /etc/resolv.conf",
+        "explanation": "Shows if the immutable or other flags are set."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["attributes", "security"]
+  },
+  {
+    "id": "getenforce",
+    "command": "getenforce",
+    "title": "Show SELinux status",
+    "category": "security",
+    "description": "Display whether SELinux is enforcing, permissive, or disabled.",
+    "usage": "getenforce",
+    "examples": [
+      {
+        "title": "Check SELinux mode",
+        "code": "getenforce",
+        "explanation": "Shows current SELinux enforcement mode."
+      }
+    ],
+    "level": "pro",
+    "tags": ["selinux", "security"]
+  },
+  {
+    "id": "setenforce",
+    "command": "setenforce",
+    "title": "Change SELinux mode",
+    "category": "security",
+    "description": "Switch SELinux between enforcing and permissive (runtime only).",
+    "usage": "setenforce [Enforcing|Permissive|0|1]",
+    "examples": [
+      {
+        "title": "Temporarily set SELinux to permissive",
+        "code": "sudo setenforce 0",
+        "explanation": "Stops blocking actions, logs policy violations instead."
+      }
+    ],
+    "level": "pro",
+    "tags": ["selinux", "security", "dangerous"]
+  },
+  {
+    "id": "sestatus",
+    "command": "sestatus",
+    "title": "SELinux status tool",
+    "category": "security",
+    "description": "Show SELinux status and policy being used.",
+    "usage": "sestatus",
+    "examples": [
+      {
+        "title": "View SELinux info",
+        "code": "sestatus",
+        "explanation": "Displays whether SELinux is enabled and mode details."
+      }
+    ],
+    "level": "pro",
+    "tags": ["selinux", "security"]
+  },
+  {
+    "id": "semanage",
+    "command": "semanage",
+    "title": "Manage SELinux policy settings",
+    "category": "security",
+    "description": "Configure SELinux policy elements like ports, file contexts, and booleans.",
+    "usage": "semanage [subcommand] [options]",
+    "examples": [
+      {
+        "title": "List managed ports",
+        "code": "sudo semange port -l",
+        "explanation": "Shows ports and their SELinux types."
+      }
+    ],
+    "level": "pro",
+    "tags": ["selinux", "policy"]
+  },
+  {
+    "id": "ausearch",
+    "command": "ausearch",
+    "title": "Search audit logs",
+    "category": "security",
+    "description": "Query Linux audit logs for specific events.",
+    "usage": "ausearch [options]",
+    "examples": [
+      {
+        "title": "Search by username",
+        "code": "sudo ausearch -ua alice",
+        "explanation": "Shows audit events associated with user alice."
+      }
+    ],
+    "level": "pro",
+    "tags": ["audit", "security"]
+  },
+  {
+    "id": "auditctl",
+    "command": "auditctl",
+    "title": "Control the audit system",
+    "category": "security",
+    "description": "Configure Linux kernel auditing rules.",
+    "usage": "auditctl [options]",
+    "examples": [
+      {
+        "title": "List audit rules",
+        "code": "sudo auditctl -l",
+        "explanation": "Shows current audit rules."
+      }
+    ],
+    "level": "pro",
+    "tags": ["audit", "security"]
+  },
+  {
+    "id": "fail2ban-client",
+    "command": "fail2ban-client",
+    "title": "Control Fail2ban service",
+    "category": "security",
+    "description": "Manage jails and bans for the Fail2ban intrusion prevention system.",
+    "usage": "fail2ban-client [command]",
+    "examples": [
+      {
+        "title": "List jails",
+        "code": "sudo fail2ban-client status",
+        "explanation": "Shows jails and global status."
+      }
+    ],
+    "level": "pro",
+    "tags": ["security", "intrusion-prevention"]
+  },
+  {
+    "id": "logrotate",
+    "command": "logrotate",
+    "title": "Rotate and compress system logs",
+    "category": "system",
+    "description": "Manage log file rotation, compression, and deletion based on configuration.",
+    "usage": "logrotate [config-file]",
+    "examples": [
+      {
+        "title": "Force log rotation",
+        "code": "sudo logrotate -f /etc/logrotate.conf",
+        "explanation": "Forces all logs configured in logrotate.conf to rotate."
+      }
+    ],
+    "level": "pro",
+    "tags": ["logs", "maintenance"]
+  },
+  {
+    "id": "hwclock",
+    "command": "hwclock",
+    "title": "Read or set hardware clock",
+    "category": "system",
+    "description": "Query or adjust the hardware (RTC) clock.",
+    "usage": "hwclock [options]",
+    "examples": [
+      {
+        "title": "Show hardware time",
+        "code": "sudo hwclock --show",
+        "explanation": "Displays the time from the hardware clock."
+      }
+    ],
+    "level": "pro",
+    "tags": ["time", "hardware"]
+  },
+  {
+    "id": "sysctl",
+    "command": "sysctl",
+    "title": "Configure kernel parameters",
+    "category": "system",
+    "description": "View and modify kernel parameters at runtime.",
+    "usage": "sysctl [options] [name[=value]]",
+    "examples": [
+      {
+        "title": "Show all tunable parameters",
+        "code": "sysctl -a",
+        "explanation": "Lists all available kernel parameters."
+      },
+      {
+        "title": "Set a parameter",
+        "code": "sudo sysctl -w net.ipv4.ip_forward=1",
+        "explanation": "Enables IPv4 packet forwarding."
+      }
+    ],
+    "level": "pro",
+    "tags": ["kernel", "tuning"]
+  },
+  {
+    "id": "ulimit",
+    "command": "ulimit",
+    "title": "Control shell resource limits",
+    "category": "shell",
+    "description": "Set or show limits on system resources for the current shell.",
+    "usage": "ulimit [options] [limit]",
+    "examples": [
+      {
+        "title": "Show all limits",
+        "code": "ulimit -a",
+        "explanation": "Displays current resource limits."
+      }
+    ],
+    "level": "pro",
+    "tags": ["resources", "shell"]
+  },
+  {
+    "id": "nice",
+    "command": "nice",
+    "title": "Run a command with modified priority",
+    "category": "processes",
+    "description": "Start a process with a different scheduling priority.",
+    "usage": "nice [-n adjustment] command",
+    "examples": [
+      {
+        "title": "Run with lower priority",
+        "code": "nice -n 10 long_task",
+        "explanation": "Starts long_task with reduced priority."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["priority", "cpu"]
+  },
+  {
+    "id": "renice",
+    "command": "renice",
+    "title": "Change priority of running processes",
+    "category": "processes",
+    "description": "Alter the scheduling priority of existing processes.",
+    "usage": "renice priority -p pid",
+    "examples": [
+      {
+        "title": "Make a process less resource hungry",
+        "code": "sudo renice 10 -p 1234",
+        "explanation": "Lowers priority of process 1234."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["priority", "cpu"]
+  },
+  {
+    "id": "pmap",
+    "command": "pmap",
+    "title": "Process memory map",
+    "category": "processes",
+    "description": "Report memory map of a process.",
+    "usage": "pmap [options] pid",
+    "examples": [
+      {
+        "title": "Show memory map",
+        "code": "pmap 1234",
+        "explanation": "Displays the memory segments used by process 1234."
+      }
+    ],
+    "level": "pro",
+    "tags": ["memory", "debug"]
+  },
+  {
+    "id": "pstree",
+    "command": "pstree",
+    "title": "Display processes as a tree",
+    "category": "processes",
+    "description": "Show running processes in a tree-like format.",
+    "usage": "pstree [options] [pid|user]",
+    "examples": [
+      {
+        "title": "View process tree",
+        "code": "pstree",
+        "explanation": "Displays all processes hierarchically."
+      }
+    ],
+    "level": "beginner",
+    "tags": ["processes", "visualization"]
+  },
+  {
+    "id": "iotop",
+    "command": "iotop",
+    "title": "Monitor disk I/O",
+    "category": "system",
+    "description": "Show real-time disk I/O usage per process.",
+    "usage": "sudo iotop",
+    "examples": [
+      {
+        "title": "Run interactive I/O monitor",
+        "code": "sudo iotop",
+        "explanation": "Shows processes doing the most disk I/O."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["disk", "monitoring"]
+  },
+  {
+    "id": "iftop",
+    "command": "iftop",
+    "title": "Monitor bandwidth usage",
+    "category": "network",
+    "description": "Display bandwidth usage per connection in real time.",
+    "usage": "sudo iftop -i interface",
+    "examples": [
+      {
+        "title": "Monitor on eth0",
+        "code": "sudo iftop -i eth0",
+        "explanation": "Shows top network connections on eth0."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["network", "monitoring"]
+  },
+  {
+    "id": "nethogs",
+    "command": "nethogs",
+    "title": "Per-process network bandwidth monitor",
+    "category": "network",
+    "description": "Show which processes are using the most network bandwidth.",
+    "usage": "sudo nethogs",
+    "examples": [
+      {
+        "title": "Monitor network usage",
+        "code": "sudo nethogs",
+        "explanation": "Displays bandwidth usage grouped by process."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["network", "monitoring"]
+  },
+  {
+    "id": "mkfs",
+    "command": "mkfs",
+    "title": "Create a filesystem",
+    "category": "system",
+    "description": "Build a filesystem on a block device.",
+    "usage": "mkfs -t type device",
+    "examples": [
+      {
+        "title": "Create an ext4 filesystem",
+        "code": "sudo mkfs -t ext4 /dev/sdb1",
+        "explanation": "Formats /dev/sdb1 as ext4."
+      }
+    ],
+    "level": "pro",
+    "tags": ["filesystem", "disks", "dangerous"]
+  },
+  {
+    "id": "fsck",
+    "command": "fsck",
+    "title": "Check and repair filesystems",
+    "category": "system",
+    "description": "Check and optionally repair a Linux filesystem.",
+    "usage": "fsck [options] device",
+    "examples": [
+      {
+        "title": "Check a filesystem",
+        "code": "sudo fsck /dev/sdb1",
+        "explanation": "Scans and repairs filesystem errors on /dev/sdb1."
+      }
+    ],
+    "level": "pro",
+    "tags": ["filesystem", "repair"]
+  },
+  {
+    "id": "tune2fs",
+    "command": "tune2fs",
+    "title": "Adjust ext filesystems",
+    "category": "system",
+    "description": "Adjust tunable filesystem parameters on ext2/3/4.",
+    "usage": "tune2fs [options] device",
+    "examples": [
+      {
+        "title": "Change reserved blocks percentage",
+        "code": "sudo tune2fs -m 1 /dev/sda1",
+        "explanation": "Sets reserved block percentage to 1%."
+      }
+    ],
+    "level": "pro",
+    "tags": ["filesystem", "tuning"]
+  },
+  {
+    "id": "mkswap",
+    "command": "mkswap",
+    "title": "Set up a swap area",
+    "category": "system",
+    "description": "Initialize a device or file for use as swap space.",
+    "usage": "mkswap device",
+    "examples": [
+      {
+        "title": "Create swap on a partition",
+        "code": "sudo mkswap /dev/sdc2",
+        "explanation": "Marks /dev/sdc2 as swap."
+      }
+    ],
+    "level": "pro",
+    "tags": ["swap", "memory"]
+  },
+  {
+    "id": "swapon",
+    "command": "swapon",
+    "title": "Enable swap devices",
+    "category": "system",
+    "description": "Enable a device or file for swapping.",
+    "usage": "swapon device",
+    "examples": [
+      {
+        "title": "Activate swap",
+        "code": "sudo swapon /dev/sdc2",
+        "explanation": "Enables swapping on /dev/sdc2."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["swap", "memory"]
+  },
+  {
+    "id": "swapoff",
+    "command": "swapoff",
+    "title": "Disable swap devices",
+    "category": "system",
+    "description": "Disable devices and files for swapping.",
+    "usage": "swapoff device",
+    "examples": [
+      {
+        "title": "Deactivate swap",
+        "code": "sudo swapoff /dev/sdc2",
+        "explanation": "Turns off swapping for /dev/sdc2."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["swap", "memory"]
+  },
+  {
+    "id": "blkid",
+    "command": "blkid",
+    "title": "Locate block devices by attributes",
+    "category": "system",
+    "description": "Print information about block devices, like UUID and filesystem type.",
+    "usage": "blkid [device]",
+    "examples": [
+      {
+        "title": "List block devices",
+        "code": "sudo blkid",
+        "explanation": "Shows UUIDs and filesystem types for block devices."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["disks", "uuid"]
+  },
+  {
+    "id": "partprobe",
+    "command": "partprobe",
+    "title": "Inform OS of partition table changes",
+    "category": "system",
+    "description": "Ask the kernel to re-read the partition table.",
+    "usage": "partprobe [device]",
+    "examples": [
+      {
+        "title": "Reload partitions",
+        "code": "sudo partprobe /dev/sda",
+        "explanation": "Notifies the kernel about changes made to /dev/sda."
+      }
+    ],
+    "level": "pro",
+    "tags": ["disks", "partitions"]
+  },
+  {
+    "id": "pvcreate",
+    "command": "pvcreate",
+    "title": "Create LVM physical volume",
+    "category": "storage",
+    "description": "Initialize a block device as a physical volume for LVM.",
+    "usage": "pvcreate device",
+    "examples": [
+      {
+        "title": "Create PV on a disk",
+        "code": "sudo pvcreate /dev/sdb1",
+        "explanation": "Prepares /dev/sdb1 for use with LVM."
+      }
+    ],
+    "level": "pro",
+    "tags": ["lvm", "storage"]
+  },
+  {
+    "id": "vgcreate",
+    "command": "vgcreate",
+    "title": "Create LVM volume group",
+    "category": "storage",
+    "description": "Create a volume group from one or more physical volumes.",
+    "usage": "vgcreate vg_name pv...",
+    "examples": [
+      {
+        "title": "Create a volume group",
+        "code": "sudo vgcreate vgdata /dev/sdb1",
+        "explanation": "Creates volume group vgdata using /dev/sdb1."
+      }
+    ],
+    "level": "pro",
+    "tags": ["lvm", "storage"]
+  },
+  {
+    "id": "lvcreate",
+    "command": "lvcreate",
+    "title": "Create LVM logical volume",
+    "category": "storage",
+    "description": "Create a logical volume inside a volume group.",
+    "usage": "lvcreate -L size -n name vg",
+    "examples": [
+      {
+        "title": "Create a 20G LV",
+        "code": "sudo lvcreate -L 20G -n data vgdata",
+        "explanation": "Creates a 20G logical volume named data."
+      }
+    ],
+    "level": "pro",
+    "tags": ["lvm", "storage"]
+  },
+  {
+    "id": "lvextend",
+    "command": "lvextend",
+    "title": "Extend LVM logical volume",
+    "category": "storage",
+    "description": "Increase the size of an existing logical volume.",
+    "usage": "lvextend [options] LV",
+    "examples": [
+      {
+        "title": "Extend by 10G",
+        "code": "sudo lvextend -L +10G /dev/vgdata/data",
+        "explanation": "Adds 10G to the data logical volume."
+      }
+    ],
+    "level": "pro",
+    "tags": ["lvm", "resize"]
+  },
+  {
+    "id": "lvdisplay",
+    "command": "lvdisplay",
+    "title": "Display LVM logical volumes",
+    "category": "storage",
+    "description": "Show details about logical volumes.",
+    "usage": "lvdisplay [LV]",
+    "examples": [
+      {
+        "title": "List logical volumes",
+        "code": "sudo lvdisplay",
+        "explanation": "Shows all logical volumes and their sizes."
+      }
+    ],
+    "level": "pro",
+    "tags": ["lvm", "storage"]
+  },
+  {
+    "id": "mdadm",
+    "command": "mdadm",
+    "title": "Manage software RAID arrays",
+    "category": "storage",
+    "description": "Create and manage Linux MD RAID devices.",
+    "usage": "mdadm [mode] [options]",
+    "examples": [
+      {
+        "title": "Show RAID status",
+        "code": "sudo mdadm --detail /dev/md0",
+        "explanation": "Displays details about RAID device /dev/md0."
+      }
+    ],
+    "level": "pro",
+    "tags": ["raid", "storage"]
+  },
+  {
+    "id": "anacron",
+    "command": "anacron",
+    "title": "Run cron jobs that were missed",
+    "category": "automation",
+    "description": "Run periodic commands on systems that are not always powered on.",
+    "usage": "anacron [options] [job]",
+    "examples": [
+      {
+        "title": "Run daily jobs",
+        "code": "sudo anacron -s",
+        "explanation": "Executes jobs that should have run while the system was off."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["cron", "schedule"]
+  },
+  {
+    "id": "emacs",
+    "command": "emacs",
+    "title": "Extensible text editor",
+    "category": "editor",
+    "description": "Powerful, extensible text editor with many modes and packages.",
+    "usage": "emacs [file]",
+    "examples": [
+      {
+        "title": "Edit a file",
+        "code": "emacs notes.txt",
+        "explanation": "Opens notes.txt in Emacs."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["editor", "development"]
+  },
+  {
+    "id": "bash",
+    "command": "bash",
+    "title": "GNU Bourne Again SHell",
+    "category": "shell",
+    "description": "Popular command-line shell and scripting language.",
+    "usage": "bash [script] [arguments]",
+    "examples": [
+      {
+        "title": "Run a script with bash",
+        "code": "bash script.sh",
+        "explanation": "Executes script.sh using bash."
+      }
+    ],
+    "level": "beginner",
+    "tags": ["shell", "scripts"]
+  },
+  {
+    "id": "zsh",
+    "command": "zsh",
+    "title": "Z shell",
+    "category": "shell",
+    "description": "Advanced shell with powerful completion and customization.",
+    "usage": "zsh [options] [script]",
+    "examples": [
+      {
+        "title": "Start a zsh session",
+        "code": "zsh",
+        "explanation": "Opens an interactive Z shell."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["shell"]
+  },
+  {
+    "id": "xrandr",
+    "command": "xrandr",
+    "title": "Configure X11 displays",
+    "category": "desktop",
+    "description": "Query and configure X screen size, rotation, and multiple monitors.",
+    "usage": "xrandr [options]",
+    "examples": [
+      {
+        "title": "List displays",
+        "code": "xrandr",
+        "explanation": "Shows connected monitors and supported resolutions."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["x11", "display"]
+  },
+  {
+    "id": "xclip",
+    "command": "xclip",
+    "title": "Access X11 clipboard",
+    "category": "desktop",
+    "description": "Copy and paste data to and from the X clipboard.",
+    "usage": "xclip [options]",
+    "examples": [
+      {
+        "title": "Copy a file's contents to clipboard",
+        "code": "cat file.txt | xclip -selection clipboard",
+        "explanation": "Places file.txt content into the desktop clipboard."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["clipboard", "x11"]
+  },
+  {
+    "id": "xdg-open",
+    "command": "xdg-open",
+    "title": "Open a file or URL with default app",
+    "category": "desktop",
+    "description": "Open a file or URL in the user’s preferred application.",
+    "usage": "xdg-open FILE_OR_URL",
+    "examples": [
+      {
+        "title": "Open a PDF",
+        "code": "xdg-open manual.pdf",
+        "explanation": "Launches the default PDF viewer with manual.pdf."
+      }
+    ],
+    "level": "beginner",
+    "tags": ["desktop", "apps"]
+  },
+  {
+    "id": "notify-send",
+    "command": "notify-send",
+    "title": "Send desktop notifications",
+    "category": "desktop",
+    "description": "Display a desktop notification on systems with a notification daemon.",
+    "usage": "notify-send [options] summary [body]",
+    "examples": [
+      {
+        "title": "Simple notification",
+        "code": "notify-send 'Backup done' 'All files copied.'",
+        "explanation": "Shows a desktop notification about backup completion."
+      }
+    ],
+    "level": "beginner",
+    "tags": ["notifications", "desktop"]
+  },
+  {
+    "id": "alsamixer",
+    "command": "alsamixer",
+    "title": "ALSAmixer sound control",
+    "category": "audio",
+    "description": "ncurses mixer program for ALSA sound devices.",
+    "usage": "alsamixer",
+    "examples": [
+      {
+        "title": "Open mixer",
+        "code": "alsamixer",
+        "explanation": "Allows interactive control of sound levels."
+      }
+    ],
+    "level": "beginner",
+    "tags": ["audio", "volume"]
+  },
+  {
+    "id": "ffmpeg",
+    "command": "ffmpeg",
+    "title": "Audio and video converter",
+    "category": "media",
+    "description": "Record, convert and stream audio and video.",
+    "usage": "ffmpeg [options] -i input output",
+    "examples": [
+      {
+        "title": "Convert video format",
+        "code": "ffmpeg -i input.mkv output.mp4",
+        "explanation": "Converts an MKV file to MP4."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["video", "audio", "convert"]
+  },
+  {
+    "id": "snap",
+    "command": "snap",
+    "title": "Snap package manager",
+    "category": "packages",
+    "description": "Install and manage snap packages.",
+    "usage": "sudo snap [command] [package]",
+    "examples": [
+      {
+        "title": "Install a snap",
+        "code": "sudo snap install code --classic",
+        "explanation": "Installs Visual Studio Code from the Snap store."
+      }
+    ],
+    "level": "beginner",
+    "tags": ["packages", "snap"]
+  },
+  {
+    "id": "flatpak",
+    "command": "flatpak",
+    "title": "Flatpak application manager",
+    "category": "packages",
+    "description": "Install and manage sandboxed desktop applications.",
+    "usage": "flatpak [command] [options]",
+    "examples": [
+      {
+        "title": "List installed flatpaks",
+        "code": "flatpak list",
+        "explanation": "Shows installed Flatpak applications."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["packages", "desktop"]
+  },
+  {
+    "id": "pip3",
+    "command": "pip3",
+    "title": "Python 3 package installer",
+    "category": "development",
+    "description": "Install and manage Python 3 packages from PyPI.",
+    "usage": "pip3 [command] [package]",
+    "examples": [
+      {
+        "title": "Install a Python package",
+        "code": "pip3 install requests",
+        "explanation": "Installs the requests library for Python 3."
+      }
+    ],
+    "level": "beginner",
+    "tags": ["python", "packages"]
+  },
+  {
+    "id": "npm",
+    "command": "npm",
+    "title": "Node.js package manager",
+    "category": "development",
+    "description": "Install and manage JavaScript packages for Node.js.",
+    "usage": "npm [command] [package]",
+    "examples": [
+      {
+        "title": "Install a global package",
+        "code": "npm install -g typescript",
+        "explanation": "Installs the TypeScript compiler globally."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["node", "javascript", "packages"]
+  },
+  {
+    "id": "virsh",
+    "command": "virsh",
+    "title": "Libvirt virtual machine manager",
+    "category": "virtualization",
+    "description": "Manage virtual machines using libvirt.",
+    "usage": "virsh [command] [options]",
+    "examples": [
+      {
+        "title": "List running VMs",
+        "code": "virsh list",
+        "explanation": "Shows virtual machines currently running."
+      }
+    ],
+    "level": "pro",
+    "tags": ["kvm", "virtualization"]
+  },
+  {
+    "id": "virt-install",
+    "command": "virt-install",
+    "title": "Create new virtual machines",
+    "category": "virtualization",
+    "description": "Provide command-line interface for creating KVM/Xen VMs.",
+    "usage": "virt-install [options]",
+    "examples": [
+      {
+        "title": "Create a minimal VM",
+        "code": "virt-install --name testvm --ram 2048 --disk size=20 --cdrom debian.iso --os-variant debian10",
+        "explanation": "Starts an installer VM using the specified ISO."
+      }
+    ],
+    "level": "pro",
+    "tags": ["virtualization", "kvm"]
+  },
+  {
+    "id": "vboxmanage",
+    "command": "vboxmanage",
+    "title": "VirtualBox command-line tool",
+    "category": "virtualization",
+    "description": "Control Oracle VirtualBox virtual machines.",
+    "usage": "vboxmanage [command] [options]",
+    "examples": [
+      {
+        "title": "List VMs",
+        "code": "vboxmanage list vms",
+        "explanation": "Shows registered VirtualBox virtual machines."
+      }
+    ],
+    "level": "pro",
+    "tags": ["virtualbox", "virtualization"]
+  },
+  {
+    "id": "last",
+    "command": "last",
+    "title": "Show login history",
+    "category": "security",
+    "description": "Display a list of last logged in users.",
+    "usage": "last [options] [user]",
+    "examples": [
+      {
+        "title": "Show recent logins",
+        "code": "last",
+        "explanation": "Lists user login sessions and reboots."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["logins", "audit"]
+  },
+  {
+    "id": "lastlog",
+    "command": "lastlog",
+    "title": "Show last login for each user",
+    "category": "security",
+    "description": "Reports the most recent login of all users or a single user.",
+    "usage": "lastlog [options]",
+    "examples": [
+      {
+        "title": "List last logins",
+        "code": "sudo lastlog",
+        "explanation": "Shows last login time for each user."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["logins", "audit"]
+  }  ,
+  {
+    "id": "clear",
+    "command": "clear",
+    "title": "Clear the terminal screen",
+    "category": "shell",
+    "description": "Clear the terminal display and move the cursor to the top.",
+    "usage": "clear",
+    "examples": [
+      {
+        "title": "Clear the screen",
+        "code": "clear",
+        "explanation": "Clears all visible output in the terminal window."
+      }
+    ],
+    "level": "beginner",
+    "tags": ["shell", "basics"]
+  },
+  {
+    "id": "reset",
+    "command": "reset",
+    "title": "Reset the terminal",
+    "category": "shell",
+    "description": "Reinitialize the terminal to fix display issues or broken states.",
+    "usage": "reset",
+    "examples": [
+      {
+        "title": "Fix a broken terminal",
+        "code": "reset",
+        "explanation": "Resets terminal settings, useful after binary output corrupts the display."
+      }
+    ],
+    "level": "beginner",
+    "tags": ["shell", "terminal"]
+  },
+  {
+    "id": "tput",
+    "command": "tput",
+    "title": "Query terminfo database",
+    "category": "shell",
+    "description": "Set terminal capabilities like colors, cursor movement, and clear screen.",
+    "usage": "tput capability",
+    "examples": [
+      {
+        "title": "Move cursor to top-left",
+        "code": "tput home",
+        "explanation": "Sends escape sequence to move cursor to home position."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["terminal", "scripts"]
+  },
+  {
+    "id": "tree",
+    "command": "tree",
+    "title": "Display directory tree",
+    "category": "files",
+    "description": "Recursively list directory contents in a tree-like format.",
+    "usage": "tree [options] [directory]",
+    "examples": [
+      {
+        "title": "Show directory structure",
+        "code": "tree",
+        "explanation": "Displays the current directory and all subdirectories as a tree."
+      }
+    ],
+    "level": "beginner",
+    "tags": ["files", "visualization"]
+  },
+  {
+    "id": "ncdu",
+    "command": "ncdu",
+    "title": "NCurses disk usage analyzer",
+    "category": "system",
+    "description": "Interactive disk usage viewer with a text-based UI.",
+    "usage": "ncdu [directory]",
+    "examples": [
+      {
+        "title": "Analyze current directory",
+        "code": "ncdu .",
+        "explanation": "Shows disk usage per directory, allowing you to delete files interactively."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["disk", "cleanup", "ncurses"]
+  },
+  {
+    "id": "ranger",
+    "command": "ranger",
+    "title": "Console file manager",
+    "category": "files",
+    "description": "Text-based file manager with VI key bindings.",
+    "usage": "ranger [path]",
+    "examples": [
+      {
+        "title": "Open file manager",
+        "code": "ranger",
+        "explanation": "Starts ranger in the current directory."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["files", "ncurses"]
+  },
+  {
+    "id": "mc",
+    "command": "mc",
+    "title": "Midnight Commander",
+    "category": "files",
+    "description": "Full-screen text-based file manager with two panels.",
+    "usage": "mc",
+    "examples": [
+      {
+        "title": "Launch Midnight Commander",
+        "code": "mc",
+        "explanation": "Opens the dual-pane file manager in the terminal."
+      }
+    ],
+    "level": "beginner",
+    "tags": ["files", "ncurses"]
+  },
+  {
+    "id": "btop",
+    "command": "btop",
+    "title": "Resource monitor with TUI",
+    "category": "system",
+    "description": "Modern, colorful TUI for CPU, memory, disk, and network usage.",
+    "usage": "btop",
+    "examples": [
+      {
+        "title": "Start btop",
+        "code": "btop",
+        "explanation": "Launches an interactive resource monitor."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["monitoring", "performance", "ncurses"]
+  },
+  {
+    "id": "glances",
+    "command": "glances",
+    "title": "Cross-platform system monitor",
+    "category": "system",
+    "description": "Real-time system monitoring tool showing CPU, memory, disk, network, and more.",
+    "usage": "glances",
+    "examples": [
+      {
+        "title": "Start glances",
+        "code": "glances",
+        "explanation": "Shows an overview of system metrics in the terminal."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["monitoring", "performance"]
+  },
+  {
+    "id": "dstat",
+    "command": "dstat",
+    "title": "Versatile resource statistics tool",
+    "category": "system",
+    "description": "Show various system resource statistics in real time.",
+    "usage": "dstat [options]",
+    "examples": [
+      {
+        "title": "Show basic stats",
+        "code": "dstat",
+        "explanation": "Displays CPU, disk, net, and paging statistics."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["monitoring", "performance"]
+  },
+  {
+    "id": "atop",
+    "command": "atop",
+    "title": "Advanced system and process monitor",
+    "category": "system",
+    "description": "Monitor system resource usage per process and per system.",
+    "usage": "atop",
+    "examples": [
+      {
+        "title": "Start atop",
+        "code": "sudo atop",
+        "explanation": "Shows detailed metrics including per-process disk usage."
+      }
+    ],
+    "level": "pro",
+    "tags": ["monitoring", "performance"]
+  },
+  {
+    "id": "perf",
+    "command": "perf",
+    "title": "Linux performance analysis toolkit",
+    "category": "debugging",
+    "description": "Collect and analyze performance counters and profiling data.",
+    "usage": "perf [command] [options]",
+    "examples": [
+      {
+        "title": "Record CPU profile",
+        "code": "sudo perf record ls",
+        "explanation": "Profiles CPU events while running ls."
+      }
+    ],
+    "level": "pro",
+    "tags": ["profiling", "performance", "debug"]
+  },
+  {
+    "id": "stress",
+    "command": "stress",
+    "title": "Simple workload generator",
+    "category": "testing",
+    "description": "Impose load on CPU, memory, I/O, and disk.",
+    "usage": "stress [options]",
+    "examples": [
+      {
+        "title": "Stress CPU",
+        "code": "stress --cpu 4 --timeout 30",
+        "explanation": "Runs 4 CPU workers for 30 seconds."
+      }
+    ],
+    "level": "pro",
+    "tags": ["load-test", "performance"]
+  },
+  {
+    "id": "stress-ng",
+    "command": "stress-ng",
+    "title": "Advanced stress testing tool",
+    "category": "testing",
+    "description": "Stress test many aspects of a Linux system.",
+    "usage": "stress-ng [options]",
+    "examples": [
+      {
+        "title": "Stress CPUs with various methods",
+        "code": "stress-ng --cpu 8 --timeout 60s",
+        "explanation": "Runs 8 CPU stressors for 60 seconds."
+      }
+    ],
+    "level": "pro",
+    "tags": ["load-test", "performance"]
+  },
+  {
+    "id": "mtr",
+    "command": "mtr",
+    "title": "Network diagnostic tool",
+    "category": "network",
+    "description": "Combines ping and traceroute into a continuous network diagnostics tool.",
+    "usage": "mtr [options] host",
+    "examples": [
+      {
+        "title": "Trace and monitor route",
+        "code": "mtr example.com",
+        "explanation": "Shows route and quality of each hop to example.com."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["network", "diagnostics"]
+  },
+  {
+    "id": "iperf3",
+    "command": "iperf3",
+    "title": "Network throughput tester",
+    "category": "network",
+    "description": "Measure maximum TCP and UDP bandwidth between two hosts.",
+    "usage": "iperf3 [options]",
+    "examples": [
+      {
+        "title": "Run server",
+        "code": "iperf3 -s",
+        "explanation": "Starts iperf3 in server mode."
+      },
+      {
+        "title": "Run client",
+        "code": "iperf3 -c server.example.com",
+        "explanation": "Measures bandwidth to iperf3 server."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["network", "benchmark"]
+  },
+  {
+    "id": "socat",
+    "command": "socat",
+    "title": "Bidirectional data relay",
+    "category": "network",
+    "description": "Relay data between two addresses: files, sockets, pipes, and more.",
+    "usage": "socat [options] <address> <address>",
+    "examples": [
+      {
+        "title": "Simple TCP port forward",
+        "code": "socat TCP-LISTEN:1234,fork TCP:localhost:22",
+        "explanation": "Forwards local port 1234 to local SSH port 22."
+      }
+    ],
+    "level": "pro",
+    "tags": ["network", "tunneling"]
+  },
+  {
+    "id": "w3m",
+    "command": "w3m",
+    "title": "Text-based web browser",
+    "category": "network",
+    "description": "Browse the web from the terminal.",
+    "usage": "w3m [url]",
+    "examples": [
+      {
+        "title": "Open a website",
+        "code": "w3m https://example.com",
+        "explanation": "Loads the page in text mode in your terminal."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["web", "browser", "terminal"]
+  },
+  {
+    "id": "lynx",
+    "command": "lynx",
+    "title": "Text web browser",
+    "category": "network",
+    "description": "Navigate web pages using the keyboard in text mode.",
+    "usage": "lynx [url]",
+    "examples": [
+      {
+        "title": "Browse a website",
+        "code": "lynx https://example.com",
+        "explanation": "Opens the site with keyboard-driven navigation."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["web", "browser"]
+  },
+  {
+    "id": "aria2c",
+    "command": "aria2c",
+    "title": "Advanced download utility",
+    "category": "network",
+    "description": "Download files via HTTP(S), FTP, BitTorrent, and Metalink with multi-connection support.",
+    "usage": "aria2c [options] url",
+    "examples": [
+      {
+        "title": "Download with multiple connections",
+        "code": "aria2c -x 8 https://example.com/file.iso",
+        "explanation": "Uses up to 8 connections to download file.iso."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["download", "http", "torrent"]
+  },
+  {
+    "id": "host",
+    "command": "host",
+    "title": "DNS lookup utility",
+    "category": "network",
+    "description": "Perform DNS lookups for hostnames and IP addresses.",
+    "usage": "host name",
+    "examples": [
+      {
+        "title": "Lookup a hostname",
+        "code": "host example.com",
+        "explanation": "Shows IP addresses for example.com."
+      }
+    ],
+    "level": "beginner",
+    "tags": ["dns", "network"]
+  },
+  {
+    "id": "nslookup",
+    "command": "nslookup",
+    "title": "Query Internet name servers",
+    "category": "network",
+    "description": "Legacy tool to query DNS servers for name information.",
+    "usage": "nslookup [name] [server]",
+    "examples": [
+      {
+        "title": "Basic DNS query",
+        "code": "nslookup example.com",
+        "explanation": "Retrieves IP addresses of example.com."
+      }
+    ],
+    "level": "beginner",
+    "tags": ["dns", "network", "legacy"]
+  },
+  {
+    "id": "sshfs",
+    "command": "sshfs",
+    "title": "Mount remote filesystem over SSH",
+    "category": "network",
+    "description": "Mount a remote directory over SSH as a local filesystem using FUSE.",
+    "usage": "sshfs user@host:/path /mountpoint",
+    "examples": [
+      {
+        "title": "Mount home directory from server",
+        "code": "sshfs user@server:/home/user ~/remote-home",
+        "explanation": "Mounts remote home directory at ~/remote-home."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["ssh", "filesystem", "fuse"]
+  },
+  {
+    "id": "fusermount",
+    "command": "fusermount",
+    "title": "Unmount FUSE filesystems",
+    "category": "system",
+    "description": "Mount and unmount FUSE-based filesystems.",
+    "usage": "fusermount -u mountpoint",
+    "examples": [
+      {
+        "title": "Unmount sshfs",
+        "code": "fusermount -u ~/remote-home",
+        "explanation": "Unmounts the FUSE-mounted remote-home directory."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["fuse", "filesystem"]
+  },
+  {
+    "id": "mount.cifs",
+    "command": "mount.cifs",
+    "title": "Mount SMB/CIFS network shares",
+    "category": "network",
+    "description": "Mount Windows or Samba network shares as local filesystems.",
+    "usage": "mount -t cifs //server/share /mountpoint -o options",
+    "examples": [
+      {
+        "title": "Mount Windows share",
+        "code": "sudo mount -t cifs //server/share /mnt/share -o username=user",
+        "explanation": "Mounts a Windows/Samba share at /mnt/share."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["smb", "filesystem", "network"]
+  },
+  {
+    "id": "smbclient",
+    "command": "smbclient",
+    "title": "FTP-like client for SMB/CIFS",
+    "category": "network",
+    "description": "Access SMB shares from the command line.",
+    "usage": "smbclient //server/share [options]",
+    "examples": [
+      {
+        "title": "Connect to share",
+        "code": "smbclient //server/share -U user",
+        "explanation": "Opens an interactive session with the share."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["smb", "network"]
+  },
+  {
+    "id": "iconv",
+    "command": "iconv",
+    "title": "Convert text encoding",
+    "category": "text",
+    "description": "Convert text from one character encoding to another.",
+    "usage": "iconv -f from-encoding -t to-encoding [file]",
+    "examples": [
+      {
+        "title": "Convert from ISO-8859-1 to UTF-8",
+        "code": "iconv -f ISO-8859-1 -t UTF-8 input.txt > output.txt",
+        "explanation": "Re-encodes input.txt to UTF-8."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["encoding", "text"]
+  },
+  {
+    "id": "jq",
+    "command": "jq",
+    "title": "Command-line JSON processor",
+    "category": "text",
+    "description": "Parse, filter, and transform JSON data.",
+    "usage": "jq [filter] [file]",
+    "examples": [
+      {
+        "title": "Pretty-print JSON",
+        "code": "cat data.json | jq '.'",
+        "explanation": "Outputs formatted JSON."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["json", "parsing", "scripts"]
+  },
+  {
+    "id": "yq",
+    "command": "yq",
+    "title": "YAML processor",
+    "category": "text",
+    "description": "Read and modify YAML documents from the command line.",
+    "usage": "yq [command] [file]",
+    "examples": [
+      {
+        "title": "Read YAML key",
+        "code": "yq '.spec.replicas' deployment.yaml",
+        "explanation": "Outputs the replicas field from a Kubernetes deployment file."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["yaml", "kubernetes", "scripts"]
+  },
+  {
+    "id": "xmlstarlet",
+    "command": "xmlstarlet",
+    "title": "XML command-line toolkit",
+    "category": "text",
+    "description": "Query, transform, validate, and edit XML documents.",
+    "usage": "xmlstarlet [subcommand] [options]",
+    "examples": [
+      {
+        "title": "Select nodes with XPath",
+        "code": "xmlstarlet sel -t -v '//item/title' feed.xml",
+        "explanation": "Prints title elements from an RSS feed."
+      }
+    ],
+    "level": "pro",
+    "tags": ["xml", "parsing"]
+  },
+  {
+    "id": "bat",
+    "command": "bat",
+    "title": "cat clone with syntax highlighting",
+    "category": "text",
+    "description": "Display file contents with syntax highlighting and line numbers.",
+    "usage": "bat [options] [file...]",
+    "examples": [
+      {
+        "title": "View a script",
+        "code": "bat script.sh",
+        "explanation": "Shows script.sh with colors and line numbers."
+      }
+    ],
+    "level": "beginner",
+    "tags": ["view", "highlight"]
+  },
+  {
+    "id": "exa",
+    "command": "exa",
+    "title": "Modern replacement for ls",
+    "category": "files",
+    "description": "List files with colors, icons, and git integration.",
+    "usage": "exa [options] [path...]",
+    "examples": [
+      {
+        "title": "Long view with git info",
+        "code": "exa -lg",
+        "explanation": "Shows detailed file info and git status."
+      }
+    ],
+    "level": "beginner",
+    "tags": ["ls", "files"]
+  },
+  {
+    "id": "diffstat",
+    "command": "diffstat",
+    "title": "Display diff statistics",
+    "category": "development",
+    "description": "Generate a histogram of insertions and deletions from a diff.",
+    "usage": "diffstat [options] [file]",
+    "examples": [
+      {
+        "title": "Summarize a patch",
+        "code": "git diff | diffstat",
+        "explanation": "Shows how many lines were changed per file."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["diff", "development"]
+  },
+  {
+    "id": "ctags",
+    "command": "ctags",
+    "title": "Generate tag files for source code",
+    "category": "development",
+    "description": "Create an index of identifiers to quickly jump to definitions in editors.",
+    "usage": "ctags [options] [files...]",
+    "examples": [
+      {
+        "title": "Tag all source files",
+        "code": "ctags -R .",
+        "explanation": "Generates tags for all code in the current project."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["navigation", "development"]
+  },
+  {
+    "id": "cscope",
+    "command": "cscope",
+    "title": "Interactively browse C code",
+    "category": "development",
+    "description": "Search and navigate C source code.",
+    "usage": "cscope [options]",
+    "examples": [
+      {
+        "title": "Index source tree",
+        "code": "cscope -R",
+        "explanation": "Builds cross-reference database for C code recursively."
+      }
+    ],
+    "level": "pro",
+    "tags": ["c", "development", "navigation"]
+  },
+  {
+    "id": "lsof",
+    "command": "lsof",
+    "title": "List open files",
+    "category": "system",
+    "description": "List information about files opened by processes.",
+    "usage": "lsof [options]",
+    "examples": [
+      {
+        "title": "Find process using a port",
+        "code": "sudo lsof -i :80",
+        "explanation": "Shows which processes are listening on port 80."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["files", "processes", "debug"]
+  },
+  {
+    "id": "fuser",
+    "command": "fuser",
+    "title": "Identify processes using files or sockets",
+    "category": "system",
+    "description": "Show which processes are using a file, directory, or socket.",
+    "usage": "fuser [options] name",
+    "examples": [
+      {
+        "title": "Check who uses a filesystem",
+        "code": "fuser -m /mnt/backup",
+        "explanation": "Lists processes using /mnt/backup."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["files", "processes"]
+  },
+  {
+    "id": "watchman",
+    "command": "watchman",
+    "title": "File watching service",
+    "category": "automation",
+    "description": "Watch files and directories for changes and trigger actions.",
+    "usage": "watchman [command] [options]",
+    "examples": [
+      {
+        "title": "Watch a directory",
+        "code": "watchman watch ~/project",
+        "explanation": "Starts watching ~/project for file changes."
+      }
+    ],
+    "level": "pro",
+    "tags": ["filesystem", "watch", "automation"]
+  },
+  {
+    "id": "entr",
+    "command": "entr",
+    "title": "Run commands when files change",
+    "category": "automation",
+    "description": "Run arbitrary commands when files change, useful in development.",
+    "usage": "ls *.c | entr command",
+    "examples": [
+      {
+        "title": "Rebuild on source change",
+        "code": "ls *.c | entr make",
+        "explanation": "Runs make whenever any .c file changes."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["watch", "development", "automation"]
+  },
+  {
+    "id": "mysql",
+    "command": "mysql",
+    "title": "MySQL/MariaDB command-line client",
+    "category": "database",
+    "description": "Connect and run SQL queries against a MySQL or MariaDB server.",
+    "usage": "mysql [options] [database]",
+    "examples": [
+      {
+        "title": "Connect to local database",
+        "code": "mysql -u root -p",
+        "explanation": "Prompts for password and opens MySQL shell as root."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["sql", "database"]
+  },
+  {
+    "id": "psql",
+    "command": "psql",
+    "title": "PostgreSQL interactive terminal",
+    "category": "database",
+    "description": "CLI front-end for PostgreSQL, used to execute SQL commands.",
+    "usage": "psql [options] [dbname]",
+    "examples": [
+      {
+        "title": "Connect to database",
+        "code": "psql -U postgres mydb",
+        "explanation": "Connects to the mydb database as postgres user."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["sql", "database"]
+  },
+  {
+    "id": "sqlite3",
+    "command": "sqlite3",
+    "title": "SQLite command-line shell",
+    "category": "database",
+    "description": "Interact with SQLite database files from the CLI.",
+    "usage": "sqlite3 database.db",
+    "examples": [
+      {
+        "title": "Create a new SQLite database",
+        "code": "sqlite3 my.db",
+        "explanation": "Opens SQLite shell; SQL statements create tables and data."
+      }
+    ],
+    "level": "beginner",
+    "tags": ["sql", "database", "embedded"]
+  },
+  {
+    "id": "mail",
+    "command": "mail",
+    "title": "Send and receive mail",
+    "category": "network",
+    "description": "Simple command-line email client.",
+    "usage": "mail [options] [address...]",
+    "examples": [
+      {
+        "title": "Send a quick email",
+        "code": "echo 'Body' | mail -s 'Subject' user@example.com",
+        "explanation": "Sends a short email from the command line."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["email", "cli"]
+  },
+  {
+    "id": "sendmail",
+    "command": "sendmail",
+    "title": "Send mail via MTA",
+    "category": "network",
+    "description": "Mail Transfer Agent interface for sending messages.",
+    "usage": "sendmail [options] recipient...",
+    "examples": [
+      {
+        "title": "Send a message",
+        "code": "printf 'Subject: Test\\n\\nBody' | sendmail user@example.com",
+        "explanation": "Delivers an email using the local MTA."
+      }
+    ],
+    "level": "pro",
+    "tags": ["email", "mta"]
+  },
+  {
+    "id": "htpasswd",
+    "command": "htpasswd",
+    "title": "Manage basic auth password files",
+    "category": "security",
+    "description": "Create and update password files for HTTP basic authentication.",
+    "usage": "htpasswd [options] passwordfile username",
+    "examples": [
+      {
+        "title": "Add a user",
+        "code": "htpasswd /etc/nginx/.htpasswd alice",
+        "explanation": "Prompts for password and adds alice to .htpasswd."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["web", "auth"]
+  },
+  {
+    "id": "docker-compose",
+    "command": "docker-compose",
+    "title": "Multi-container Docker manager",
+    "category": "containers",
+    "description": "Define and run multi-container Docker applications.",
+    "usage": "docker-compose [command] [options]",
+    "examples": [
+      {
+        "title": "Start services",
+        "code": "docker-compose up",
+        "explanation": "Builds and starts all services defined in docker-compose.yml."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["docker", "orchestration"]
+  },
+  {
+    "id": "ansible",
+    "command": "ansible",
+    "title": "Ansible ad-hoc command runner",
+    "category": "automation",
+    "description": "Run commands or modules on remote hosts via SSH.",
+    "usage": "ansible [pattern] -m module -a args",
+    "examples": [
+      {
+        "title": "Ping all hosts",
+        "code": "ansible all -m ping",
+        "explanation": "Checks connectivity to all hosts in inventory."
+      }
+    ],
+    "level": "pro",
+    "tags": ["devops", "automation"]
+  },
+  {
+    "id": "terraform",
+    "command": "terraform",
+    "title": "Infrastructure as code CLI",
+    "category": "automation",
+    "description": "Provision and manage infrastructure using configuration files.",
+    "usage": "terraform [command]",
+    "examples": [
+      {
+        "title": "Plan changes",
+        "code": "terraform plan",
+        "explanation": "Shows what actions Terraform would take without applying them."
+      }
+    ],
+    "level": "pro",
+    "tags": ["iac", "cloud", "devops"]
+  },
+  {
+    "id": "helm",
+    "command": "helm",
+    "title": "Kubernetes package manager",
+    "category": "containers",
+    "description": "Install and manage Kubernetes applications as charts.",
+    "usage": "helm [command] [chart]",
+    "examples": [
+      {
+        "title": "Install a chart",
+        "code": "helm install myapp bitnami/nginx",
+        "explanation": "Deploys an nginx release into Kubernetes."
+      }
+    ],
+    "level": "pro",
+    "tags": ["kubernetes", "packages"]
+  },
+  {
+    "id": "dialog",
+    "command": "dialog",
+    "title": "Generate dialog boxes in shell scripts",
+    "category": "shell",
+    "description": "Display dialog boxes from shell scripts using ncurses.",
+    "usage": "dialog [options] widget",
+    "examples": [
+      {
+        "title": "Show a yes/no dialog",
+        "code": "dialog --yesno 'Continue?' 7 40",
+        "explanation": "Prompts the user with a yes/no question."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["ncurses", "ui", "scripts"]
+  },
+  {
+    "id": "whiptail",
+    "command": "whiptail",
+    "title": "Display dialog boxes from shell scripts",
+    "category": "shell",
+    "description": "Lightweight program to create text-based dialog boxes.",
+    "usage": "whiptail [options] widget",
+    "examples": [
+      {
+        "title": "Show message box",
+        "code": "whiptail --msgbox 'Hello!' 7 30",
+        "explanation": "Displays a simple message dialog."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["ncurses", "ui", "scripts"]
+  },
+  {
+    "id": "zenity",
+    "command": "zenity",
+    "title": "Display GTK dialogs from shell scripts",
+    "category": "desktop",
+    "description": "Create GUI dialogs from command-line scripts.",
+    "usage": "zenity [options] --dialog-type",
+    "examples": [
+      {
+        "title": "Show info dialog",
+        "code": "zenity --info --text='Backup finished.'",
+        "explanation": "Displays a graphical info box on the desktop."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["gui", "scripts"]
+  },
+  {
+    "id": "lp",
+    "command": "lp",
+    "title": "Submit print jobs",
+    "category": "system",
+    "description": "Send files to printers managed by CUPS.",
+    "usage": "lp [options] [file...]",
+    "examples": [
+      {
+        "title": "Print a document",
+        "code": "lp report.pdf",
+        "explanation": "Sends report.pdf to the default printer."
+      }
+    ],
+    "level": "beginner",
+    "tags": ["printing", "cups"]
+  },
+  {
+    "id": "lpstat",
+    "command": "lpstat",
+    "title": "Display printer status",
+    "category": "system",
+    "description": "Show status information about printers and print jobs.",
+    "usage": "lpstat [options]",
+    "examples": [
+      {
+        "title": "List all printers",
+        "code": "lpstat -p",
+        "explanation": "Displays printers known to CUPS and their status."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["printing", "cups"]
+  },
+  {
+    "id": "cronie",
+    "command": "cronie",
+    "title": "Cron daemon implementation",
+    "category": "automation",
+    "description": "Cron daemon used on some distributions to schedule periodic jobs.",
+    "usage": "systemctl [start|stop|status] crond",
+    "examples": [
+      {
+        "title": "Check cron service status",
+        "code": "systemctl status crond",
+        "explanation": "Shows status of the cron daemon."
+      }
+    ],
+    "level": "pro",
+    "tags": ["cron", "services"]
+  }  ,
+  {
+    "id": "groups",
+    "command": "groups",
+    "title": "Show group memberships",
+    "category": "users",
+    "description": "Display the groups that the current or specified user belongs to.",
+    "usage": "groups [username]",
+    "examples": [
+      {
+        "title": "Show your groups",
+        "code": "groups",
+        "explanation": "Lists all groups of the current user."
+      },
+      {
+        "title": "Show groups of another user",
+        "code": "groups alice",
+        "explanation": "Lists all groups that alice belongs to."
+      }
+    ],
+    "level": "beginner",
+    "tags": ["users", "groups"]
+  },
+  {
+    "id": "groupadd",
+    "command": "groupadd",
+    "title": "Create a new group",
+    "category": "users",
+    "description": "Add a new group to the system.",
+    "usage": "groupadd [options] groupname",
+    "examples": [
+      {
+        "title": "Create a group",
+        "code": "sudo groupadd developers",
+        "explanation": "Adds a new group called developers."
+      }
+    ],
+    "level": "pro",
+    "tags": ["groups", "admin"]
+  },
+  {
+    "id": "groupdel",
+    "command": "groupdel",
+    "title": "Delete a group",
+    "category": "users",
+    "description": "Remove an existing group from the system.",
+    "usage": "groupdel groupname",
+    "examples": [
+      {
+        "title": "Remove a group",
+        "code": "sudo groupdel developers",
+        "explanation": "Deletes the developers group."
+      }
+    ],
+    "level": "pro",
+    "tags": ["groups", "admin", "dangerous"]
+  },
+  {
+    "id": "chfn",
+    "command": "chfn",
+    "title": "Change user information",
+    "category": "users",
+    "description": "Change real name and other information stored in /etc/passwd.",
+    "usage": "chfn [options] [username]",
+    "examples": [
+      {
+        "title": "Change your own info",
+        "code": "chfn",
+        "explanation": "Prompts for full name and contact details."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["users", "info"]
+  },
+  {
+    "id": "chsh",
+    "command": "chsh",
+    "title": "Change login shell",
+    "category": "users",
+    "description": "Change the default login shell for a user.",
+    "usage": "chsh [options] [username]",
+    "examples": [
+      {
+        "title": "Change your shell to zsh",
+        "code": "chsh -s /bin/zsh",
+        "explanation": "Sets zsh as your default login shell."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["shell", "users"]
+  },
+  {
+    "id": "newgrp",
+    "command": "newgrp",
+    "title": "Log in to a new group",
+    "category": "users",
+    "description": "Change the current group ID during a login session.",
+    "usage": "newgrp group",
+    "examples": [
+      {
+        "title": "Switch primary group",
+        "code": "newgrp developers",
+        "explanation": "Starts a subshell with developers as primary group."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["groups", "permissions"]
+  },
+  {
+    "id": "getfacl",
+    "command": "getfacl",
+    "title": "Get file ACL",
+    "category": "permissions",
+    "description": "Display file access control lists (ACLs).",
+    "usage": "getfacl file",
+    "examples": [
+      {
+        "title": "View ACLs",
+        "code": "getfacl project",
+        "explanation": "Shows extended permissions on the project directory."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["acl", "permissions"]
+  },
+  {
+    "id": "setfacl",
+    "command": "setfacl",
+    "title": "Set file ACL",
+    "category": "permissions",
+    "description": "Modify file access control lists to give fine-grained permissions.",
+    "usage": "setfacl [options] file",
+    "examples": [
+      {
+        "title": "Give user read access",
+        "code": "setfacl -m u:alice:r file.txt",
+        "explanation": "Grants read permission on file.txt to alice."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["acl", "permissions"]
+  },
+  {
+    "id": "quota",
+    "command": "quota",
+    "title": "Display disk usage and limits",
+    "category": "system",
+    "description": "Show your disk space usage and quota limits.",
+    "usage": "quota [options]",
+    "examples": [
+      {
+        "title": "View your quota",
+        "code": "quota -s",
+        "explanation": "Displays disk usage with human-readable sizes."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["quota", "disk"]
+  },
+  {
+    "id": "edquota",
+    "command": "edquota",
+    "title": "Edit user quotas",
+    "category": "system",
+    "description": "Edit disk quotas for users or groups.",
+    "usage": "edquota [options] user",
+    "examples": [
+      {
+        "title": "Edit alice's quota",
+        "code": "sudo edquota alice",
+        "explanation": "Opens an editor to change disk limits for alice."
+      }
+    ],
+    "level": "pro",
+    "tags": ["quota", "admin"]
+  },
+  {
+    "id": "quotacheck",
+    "command": "quotacheck",
+    "title": "Scan a filesystem for disk usage",
+    "category": "system",
+    "description": "Build or rebuild disk quota files.",
+    "usage": "quotacheck [options] filesystem",
+    "examples": [
+      {
+        "title": "Check quotas on /home",
+        "code": "sudo quotacheck -avug /home",
+        "explanation": "Verifies and updates quota records for /home."
+      }
+    ],
+    "level": "pro",
+    "tags": ["quota", "maintenance"]
+  },
+  {
+    "id": "locate-update",
+    "command": "updatedb",
+    "title": "Update locate database",
+    "category": "system",
+    "description": "Regenerate the database used by locate for file searches.",
+    "usage": "sudo updatedb",
+    "examples": [
+      {
+        "title": "Update file index",
+        "code": "sudo updatedb",
+        "explanation": "Rescans the filesystem to refresh locate's index."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["search", "maintenance"]
+  },
+  {
+    "id": "alias-builtins",
+    "command": "type",
+    "title": "Describe a command type",
+    "category": "shell",
+    "description": "Tell whether a command is a shell builtin, file, alias, or function.",
+    "usage": "type name",
+    "examples": [
+      {
+        "title": "Check if ls is an alias",
+        "code": "type ls",
+        "explanation": "Shows whether ls is aliased or a binary."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["shell", "diagnostics"]
+  },
+  {
+    "id": "disown",
+    "command": "disown",
+    "title": "Remove jobs from shell job table",
+    "category": "shell",
+    "description": "Detach jobs from the shell so they are not sent signals like HUP.",
+    "usage": "disown [job_spec]",
+    "examples": [
+      {
+        "title": "Detach last job",
+        "code": "disown",
+        "explanation": "Removes the most recent background job from job control."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["jobs", "shell"]
+  },
+  {
+    "id": "pushd",
+    "command": "pushd",
+    "title": "Save and change directory",
+    "category": "shell",
+    "description": "Change directory and push the old one onto the directory stack.",
+    "usage": "pushd [dir]",
+    "examples": [
+      {
+        "title": "Push and move",
+        "code": "pushd /var/log",
+        "explanation": "Goes to /var/log while saving the old directory on the stack."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["navigation", "shell"]
+  },
+  {
+    "id": "popd",
+    "command": "popd",
+    "title": "Pop directory from stack",
+    "category": "shell",
+    "description": "Change to the directory on top of the directory stack.",
+    "usage": "popd",
+    "examples": [
+      {
+        "title": "Return to previous dir",
+        "code": "popd",
+        "explanation": "Moves back to the directory at the top of the stack."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["navigation", "shell"]
+  },
+  {
+    "id": "dirs",
+    "command": "dirs",
+    "title": "Display directory stack",
+    "category": "shell",
+    "description": "Show the contents of the directory stack.",
+    "usage": "dirs",
+    "examples": [
+      {
+        "title": "List stack",
+        "code": "dirs -v",
+        "explanation": "Shows directories in the stack with their index."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["navigation", "shell"]
+  },
+  {
+    "id": "compgen",
+    "command": "compgen",
+    "title": "Generate possible completions",
+    "category": "shell",
+    "description": "Generate completion matches for commands, files, and more (Bash).",
+    "usage": "compgen [options] [word]",
+    "examples": [
+      {
+        "title": "List all commands",
+        "code": "compgen -c",
+        "explanation": "Outputs all commands available in the shell."
+      }
+    ],
+    "level": "pro",
+    "tags": ["completion", "shell"]
+  },
+  {
+    "id": "bind",
+    "command": "bind",
+    "title": "Set/read readline key bindings",
+    "category": "shell",
+    "description": "Display or modify readline key and function bindings.",
+    "usage": "bind [options]",
+    "examples": [
+      {
+        "title": "Show all key bindings",
+        "code": "bind -P",
+        "explanation": "Lists readline functions and their key sequences."
+      }
+    ],
+    "level": "pro",
+    "tags": ["shell", "keybindings"]
+  },
+  {
+    "id": "fc",
+    "command": "fc",
+    "title": "Fix command",
+    "category": "shell",
+    "description": "List, edit, and re-run commands from the history.",
+    "usage": "fc [options] [first] [last]",
+    "examples": [
+      {
+        "title": "Edit last command",
+        "code": "fc",
+        "explanation": "Opens the previous command in an editor and re-runs it."
+      }
+    ],
+    "level": "pro",
+    "tags": ["history", "shell"]
+  },
+  {
+    "id": "time",
+    "command": "time",
+    "title": "Measure program execution time",
+    "category": "shell",
+    "description": "Report real, user, and system time used by a command.",
+    "usage": "time command [args]",
+    "examples": [
+      {
+        "title": "Time a script",
+        "code": "time ./script.sh",
+        "explanation": "Shows how long script.sh took to run."
+      }
+    ],
+    "level": "beginner",
+    "tags": ["performance", "shell"]
+  },
+  {
+    "id": "envsubst",
+    "command": "envsubst",
+    "title": "Substitute environment variables in text",
+    "category": "shell",
+    "description": "Replace environment variable references in input with their values.",
+    "usage": "envsubst < input > output",
+    "examples": [
+      {
+        "title": "Template config file",
+        "code": "envsubst < config.template > config",
+        "explanation": "Expands variables in config.template into config."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["templates", "shell"]
+  },
+  {
+    "id": "columnify-ps",
+    "command": "ps -o",
+    "title": "Custom process columns",
+    "category": "processes",
+    "description": "Show selected process columns for better readability.",
+    "usage": "ps -eo col1,col2,...",
+    "examples": [
+      {
+        "title": "Show PID and command only",
+        "code": "ps -eo pid,cmd",
+        "explanation": "Displays a compact list of processes."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["processes", "monitoring"]
+  },
+  {
+    "id": "pgrep",
+    "command": "pgrep",
+    "title": "Search processes by name",
+    "category": "processes",
+    "description": "List process IDs of processes that match a pattern.",
+    "usage": "pgrep [options] pattern",
+    "examples": [
+      {
+        "title": "Find nginx processes",
+        "code": "pgrep nginx",
+        "explanation": "Outputs PIDs of all running nginx processes."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["processes", "search"]
+  },
+  {
+    "id": "pkill",
+    "command": "pkill",
+    "title": "Signal processes by name",
+    "category": "processes",
+    "description": "Send signals to processes based on their name or attributes.",
+    "usage": "pkill [options] pattern",
+    "examples": [
+      {
+        "title": "Terminate all nginx workers",
+        "code": "sudo pkill nginx",
+        "explanation": "Sends SIGTERM to processes whose name matches nginx."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["processes", "signals"]
+  },
+  {
+    "id": "watch-ps",
+    "command": "watch -n 1 'ps aux | head'",
+    "title": "Watch process snapshot",
+    "category": "processes",
+    "description": "Repeatedly show a snapshot of top processes using watch and ps.",
+    "usage": "watch -n 1 'ps aux | head'",
+    "examples": [
+      {
+        "title": "Quick process monitor",
+        "code": "watch -n 1 'ps aux | head'",
+        "explanation": "Refreshes process snapshot every second."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["processes", "monitoring"]
+  },
+  {
+    "id": "zipinfo",
+    "command": "zipinfo",
+    "title": "List information about zip archives",
+    "category": "compression",
+    "description": "Display contents and metadata of zip files without extracting.",
+    "usage": "zipinfo archive.zip",
+    "examples": [
+      {
+        "title": "Inspect a zip file",
+        "code": "zipinfo project.zip",
+        "explanation": "Shows list of files and their sizes in project.zip."
+      }
+    ],
+    "level": "beginner",
+    "tags": ["archive", "inspect"]
+  },
+  {
+    "id": "rename",
+    "command": "rename",
+    "title": "Batch rename files",
+    "category": "files",
+    "description": "Rename multiple files using patterns or Perl expressions.",
+    "usage": "rename 's/old/new/' files...",
+    "examples": [
+      {
+        "title": "Change extension",
+        "code": "rename 's/\\.txt$/.md/' *.txt",
+        "explanation": "Renames .txt files to .md."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["files", "batch"]
+  },
+  {
+    "id": "realpath",
+    "command": "realpath",
+    "title": "Print canonical file name",
+    "category": "files",
+    "description": "Resolve all symbolic links, . and .. to get the absolute path.",
+    "usage": "realpath path",
+    "examples": [
+      {
+        "title": "Get real path",
+        "code": "realpath ../project",
+        "explanation": "Shows the absolute path of ../project."
+      }
+    ],
+    "level": "beginner",
+    "tags": ["paths", "files"]
+  },
+  {
+    "id": "basename",
+    "command": "basename",
+    "title": "Strip directory and suffix from filename",
+    "category": "files",
+    "description": "Return the last component of a path.",
+    "usage": "basename NAME [SUFFIX]",
+    "examples": [
+      {
+        "title": "Get filename only",
+        "code": "basename /var/log/syslog",
+        "explanation": "Outputs syslog."
+      }
+    ],
+    "level": "beginner",
+    "tags": ["paths", "shell"]
+  },
+  {
+    "id": "dirname",
+    "command": "dirname",
+    "title": "Strip last component from filename",
+    "category": "files",
+    "description": "Return the directory portion of a path.",
+    "usage": "dirname NAME",
+    "examples": [
+      {
+        "title": "Get directory name",
+        "code": "dirname /var/log/syslog",
+        "explanation": "Outputs /var/log."
+      }
+    ],
+    "level": "beginner",
+    "tags": ["paths", "shell"]
+  },
+  {
+    "id": "yes-no",
+    "command": "read",
+    "title": "Read input from user",
+    "category": "shell",
+    "description": "Built-in to read a line of input into a variable.",
+    "usage": "read [options] var",
+    "examples": [
+      {
+        "title": "Prompt for confirmation",
+        "code": "read -p 'Continue? (y/n) ' answer",
+        "explanation": "Stores user input in the variable answer."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["input", "shell"]
+  },
+  {
+    "id": "mapfile",
+    "command": "mapfile",
+    "title": "Read lines into an array",
+    "category": "shell",
+    "description": "Read standard input into an indexed array variable (Bash).",
+    "usage": "mapfile [options] array",
+    "examples": [
+      {
+        "title": "Read file into array",
+        "code": "mapfile lines < file.txt",
+        "explanation": "Stores each line of file.txt into the array lines."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["arrays", "shell"]
+  },
+  {
+    "id": "printf-bash",
+    "command": "printf",
+    "title": "Bash printf builtin",
+    "category": "shell",
+    "description": "Format and print data within Bash scripts.",
+    "usage": "printf FORMAT [ARG...]",
+    "examples": [
+      {
+        "title": "Zero-padded numbers",
+        "code": "printf '%03d\\n' 7",
+        "explanation": "Prints 007."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["format", "shell"]
+  },
+  {
+    "id": "killall5",
+    "command": "killall5",
+    "title": "Send signal to all processes",
+    "category": "processes",
+    "description": "Send a signal to all processes except the ones needed for the system.",
+    "usage": "killall5 [signal]",
+    "examples": [
+      {
+        "title": "Terminate all user processes",
+        "code": "sudo killall5 -15",
+        "explanation": "Sends SIGTERM to almost all processes (dangerous)."
+      }
+    ],
+    "level": "pro",
+    "tags": ["signals", "dangerous"]
+  },
+  {
+    "id": "wall",
+    "command": "wall",
+    "title": "Write a message to all users",
+    "category": "users",
+    "description": "Broadcast a message to all logged-in users' terminals.",
+    "usage": "wall [file]",
+    "examples": [
+      {
+        "title": "Warn about reboot",
+        "code": "echo 'System reboot in 10 minutes' | sudo wall",
+        "explanation": "Sends a broadcast message to all users."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["users", "broadcast"]
+  },
+  {
+    "id": "mesg",
+    "command": "mesg",
+    "title": "Control write access to terminal",
+    "category": "users",
+    "description": "Allow or deny other users from writing to your terminal.",
+    "usage": "mesg [y|n]",
+    "examples": [
+      {
+        "title": "Disable write access",
+        "code": "mesg n",
+        "explanation": "Prevents other users from sending you terminal messages."
+      }
+    ],
+    "level": "beginner",
+    "tags": ["terminal", "privacy"]
+  },
+  {
+    "id": "script",
+    "command": "script",
+    "title": "Record terminal session",
+    "category": "shell",
+    "description": "Make a typescript of a terminal session.",
+    "usage": "script [file]",
+    "examples": [
+      {
+        "title": "Record a session",
+        "code": "script session.log",
+        "explanation": "Saves all terminal input and output to session.log."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["logging", "terminal"]
+  },
+  {
+    "id": "col",
+    "command": "col",
+    "title": "Filter reverse line feeds",
+    "category": "text",
+    "description": "Filter out reverse line feeds so text displays correctly.",
+    "usage": "col [options]",
+    "examples": [
+      {
+        "title": "Clean up man page output",
+        "code": "man ls | col -b",
+        "explanation": "Removes backspace sequences from man page output."
+      }
+    ],
+    "level": "pro",
+    "tags": ["text", "format"]
+  },
+  {
+    "id": "rev",
+    "command": "rev",
+    "title": "Reverse lines of a file",
+    "category": "text",
+    "description": "Reverse the characters of each line in input.",
+    "usage": "rev [file...]",
+    "examples": [
+      {
+        "title": "Reverse each line",
+        "code": "echo 'abcd' | rev",
+        "explanation": "Outputs dcba."
+      }
+    ],
+    "level": "beginner",
+    "tags": ["text", "fun"]
+  },
+  {
+    "id": "yes-head",
+    "command": "head -c",
+    "title": "Generate dummy data",
+    "category": "testing",
+    "description": "Use head -c with /dev/urandom or /dev/zero to create test files.",
+    "usage": "head -c SIZE source > file",
+    "examples": [
+      {
+        "title": "Create 10MB zero file",
+        "code": "head -c 10M /dev/zero > test.img",
+        "explanation": "Generates a 10MB file of zeros for testing."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["testing", "files"]
+  },
+  {
+    "id": "hexdump-od",
+    "command": "od",
+    "title": "Dump files in octal and other formats",
+    "category": "development",
+    "description": "Display file contents in octal, hex, decimal, or char.",
+    "usage": "od [options] file",
+    "examples": [
+      {
+        "title": "Hex dump with chars",
+        "code": "od -Ax -tx1z file.bin",
+        "explanation": "Shows file.bin in hex and ASCII."
+      }
+    ],
+    "level": "intermediate",
+    "tags": ["binary", "debug"]
   }
 ]
